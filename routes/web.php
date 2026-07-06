@@ -27,18 +27,19 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // Secure Deployment Webhook Route
-Route::post('/deploy-app', function (\Illuminate\Http\Request $request) {
+Route::match(['get', 'post'], '/deploy-app', function (\Illuminate\Http\Request $request) {
     if ($request->query('token') !== 'euroworld123') {
         abort(403, 'Unauthorized');
     }
     
-    // Run database migrations
+    // Run database migrations and seed default admin
     \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
     
     // Clear caches
     \Illuminate\Support\Facades\Artisan::call('cache:clear');
     \Illuminate\Support\Facades\Artisan::call('config:clear');
     \Illuminate\Support\Facades\Artisan::call('view:clear');
     
-    return response()->json(['message' => 'Deployment & Migrations Successful!']);
+    return response()->json(['message' => 'Deployment, Migrations & Seeding Successful!']);
 });
