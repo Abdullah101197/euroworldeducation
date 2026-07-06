@@ -25,3 +25,20 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Secure Deployment Webhook Route
+Route::post('/deploy-app', function (\Illuminate\Http\Request $request) {
+    if ($request->query('token') !== 'euroworld123') {
+        abort(403, 'Unauthorized');
+    }
+    
+    // Run database migrations
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    
+    // Clear caches
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    
+    return response()->json(['message' => 'Deployment & Migrations Successful!']);
+});
