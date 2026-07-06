@@ -25,8 +25,13 @@ class PageController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Normally we would save to DB here, e.g., Lead::create($validated);
-        // For now, redirect with success message
+        \App\Models\Contact::create([
+            'name' => $validated['first_name'] . ' ' . $validated['last_name'],
+            'email' => $validated['email'],
+            'subject' => $validated['subject'],
+            'message' => $validated['message'],
+        ]);
+
         return back()->with('success', 'Thank you, ' . $validated['first_name'] . '! Your message has been received.');
     }
 }
