@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fully Funded European Scholarships - Euro World</title>
+    <meta name="description" content="Unlock financial aid and merit-based excellence awards at the world's best universities.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // dark blue
+                        secondary: '#facc15', // yellow
+                        accent: '#3b82f6', // blue
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light text-dark font-sans antialiased overflow-x-hidden">
+
+    <!-- Header (Section 1) -->
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 shadow-sm font-sans">
+        <!-- Top Bar -->
+        <div class="bg-[#0b1b3d] text-white text-xs py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-red-600"></i>
+                        <span>Head Office: Karachi, Pakistan</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>info@euroworld.edu</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="mr-2">Follow Us:</span>
+                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-facebook-f text-[10px]"></i></a>
+                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-instagram text-[10px]"></i></a>
+                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-youtube text-[10px]"></i></a>
+                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-linkedin-in text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="bg-white py-4 transition-all duration-300" id="main-nav">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <!-- Logo placeholder -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
+                        <i class="fa-solid fa-earth-europe"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Euro World</h1>
+                </div>
+                
+                <!-- Nav Links -->
+                <nav class="hidden lg:flex space-x-6 text-sm font-semibold text-[#0b1b3d]">
+                    <a href="index.html" class="relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-red-600"></span>
+                    </a>
+                    <a href="about.html" class="hover:text-red-600 transition-colors">About Us</a>
+                    <a href="destinations.html" class="hover:text-red-600 transition-colors flex items-center gap-1">Destinations <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
+                    <a href="services.html" class="hover:text-red-600 transition-colors flex items-center gap-1">Services <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
+                    <a href="scholarships.html" class="hover:text-red-600 transition-colors">Scholarships</a>
+                    <a href="success-stories.html" class="hover:text-red-600 transition-colors">Success Stories</a>
+                    <a href="blog.html" class="hover:text-red-600 transition-colors">Blog</a>
+                    <a href="contact.html" class="hover:text-red-600 transition-colors">Contact Us</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <a href="contact.html" class="hidden md:flex items-center gap-2 bg-[#c6181b] text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-red-800 transition-colors shadow-md">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    Free Assessment
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-dark hover:text-red-600 transition-colors">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="hidden absolute top-[72px] left-0 w-full bg-[#0b1b3d] text-white shadow-xl border-t border-white/10 flex flex-col font-sans">
+                <a href="index.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Home</a>
+                <a href="about.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">About Us</a>
+                <a href="destinations.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center">Destinations <i class="fa-solid fa-chevron-down text-xs"></i></a>
+                <a href="services.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center">Services <i class="fa-solid fa-chevron-down text-xs"></i></a>
+                <a href="scholarships.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Scholarships</a>
+                <a href="success-stories.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Success Stories</a>
+                <a href="blog.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Blog</a>
+                <a href="contact.html" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Contact Us</a>
+                <div class="p-6">
+                    <a href="contact.html" class="mobile-link flex items-center justify-center gap-2 w-full bg-[#c6181b] text-white py-3 rounded-full font-semibold hover:bg-red-800 transition-colors">
+                        <i class="fa-regular fa-paper-plane"></i> Free Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scholarships Hero -->
+    <section class="relative pt-40 pb-20 bg-[#0b1b3d] font-sans overflow-hidden text-center">
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Global <span class="text-[#ffc107]">Scholarships</span></h1>
+            <p class="text-gray-300 max-w-2xl mx-auto">Unlock financial aid opportunities and fully-funded programs at the world's best universities.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col md:flex-row gap-8 items-center mb-12">
+                <div class="w-24 h-24 bg-yellow-50 text-yellow-500 rounded-full flex items-center justify-center text-4xl shrink-0">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-[#0b1b3d] mb-2">Merit-Based Excellence Awards</h2>
+                    <p class="text-gray-600 mb-4">Many of our partner universities in the UK and Australia offer significant tuition fee discounts (up to 50%) for students with outstanding academic records.</p>
+                    <a href="contact.html" class="inline-block bg-[#0b1b3d] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors">Check Eligibility</a>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-24 h-24 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-4xl shrink-0">
+                    <i class="fa-solid fa-landmark"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-[#0b1b3d] mb-2">Government & Regional Scholarships</h2>
+                    <p class="text-gray-600 mb-4">We specialize in helping students apply for regional government scholarships (such as DSU in Italy or DAAD in Germany) which can cover full tuition and provide living stipends.</p>
+                    <a href="contact.html" class="inline-block bg-[#0b1b3d] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer (Last Section) -->
+    <footer class="bg-[#0b1b3d] text-gray-300 pt-32 pb-8 border-t border-[#0b1b3d] font-sans">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex flex-col items-start gap-1 mb-6">
+                        <i class="fa-solid fa-graduation-cap text-white text-3xl ml-6"></i>
+                        <h1 class="text-2xl font-black text-white tracking-widest">EURO<span class="text-white">WORLD</span></h1>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">Empowering students to achieve global success through quality education in Europe.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a></li>
+                        <li><a href="destinations.html" class="hover:text-yellow-400 transition-colors">Destinations</a></li>
+                        <li><a href="services.html" class="hover:text-yellow-400 transition-colors">Our Services</a></li>
+                        <li><a href="success-stories.html" class="hover:text-yellow-400 transition-colors">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm">Top Destinations</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="destinations.html" class="hover:text-yellow-400 transition-colors">Study in Italy</a></li>
+                        <li><a href="destinations.html" class="hover:text-yellow-400 transition-colors">Study in France</a></li>
+                        <li><a href="destinations.html" class="hover:text-yellow-400 transition-colors">Study in UK</a></li>
+                        <li><a href="destinations.html" class="hover:text-yellow-400 transition-colors">Study in Germany</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-red-600"></i>
+                            <span class="text-gray-400">123 Education Boulevard,<br>City Center, 10001</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-red-600"></i>
+                            <span class="text-gray-400">+1 234 567 8900</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-red-600"></i>
+                            <span class="text-gray-400">info@euroworld.edu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Euro World Education. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Custom Script -->
+    <script src="main.js"></script>
+</body>
+</html>
+
