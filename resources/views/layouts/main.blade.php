@@ -1,9 +1,41 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Euro World Education')</title>
+    <meta name="description" content="@yield('description', 'Study abroad with Euro World Education')">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // dark blue
+                        secondary: '#facc15', // yellow
+                        accent: '#3b82f6', // blue
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
+</head>
+<body class="bg-light text-dark font-sans antialiased overflow-x-hidden">
+
     <meta name="description" content="@yield('description', 'Study abroad with Euro World Education')">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,11 +76,11 @@
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-location-dot text-red-600"></i>
-                        <span>Head Office: Karachi, Pakistan</span>
+                        <span>Head Office: Pakistan</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <i class="fa-regular fa-envelope"></i>
-                        <span>info@euroworld.edu</span>
+                        <span>info@euroworld.education.com</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
@@ -56,7 +88,7 @@
                     <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-facebook-f text-[10px]"></i></a>
                     <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-instagram text-[10px]"></i></a>
                     <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-youtube text-[10px]"></i></a>
-                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-linkedin-in text-[10px]"></i></a>
+                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-tiktok text-[10px]"></i></a>
                 </div>
             </div>
         </div>
@@ -69,11 +101,11 @@
                     <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
                         <i class="fa-solid fa-earth-europe"></i>
                     </div>
-                    <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Euro World</h1>
+                    <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">EuroWorld Education</h1>
                 </div>
                 
                 <!-- Nav Links -->
-                <nav class="hidden lg:flex space-x-6 text-sm font-semibold text-[#0b1b3d]">
+                <nav class="hidden lg:flex flex-1 justify-end mr-8 space-x-6 text-sm font-semibold text-[#0b1b3d]">
                     <a href="{{ route('home') }}" class="relative group">
                         Home
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-red-600"></span>
@@ -90,7 +122,7 @@
                 <!-- CTA Button -->
                 <a href="{{ route('contact') }}" class="hidden md:flex items-center gap-2 bg-[#c6181b] text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-red-800 transition-colors shadow-md">
                     <i class="fa-regular fa-paper-plane"></i>
-                    Free Assessment
+                    Free Consultation
                 </a>
                 
                 <!-- Mobile Menu Button -->
@@ -111,7 +143,7 @@
                 <a href="{{ route('contact') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Contact Us</a>
                 <div class="p-6">
                     <a href="{{ route('contact') }}" class="mobile-link flex items-center justify-center gap-2 w-full bg-[#c6181b] text-white py-3 rounded-full font-semibold hover:bg-red-800 transition-colors">
-                        <i class="fa-regular fa-paper-plane"></i> Free Assessment
+                        <i class="fa-regular fa-paper-plane"></i> Free Consultation
                     </a>
                 </div>
             </div>
