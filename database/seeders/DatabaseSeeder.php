@@ -21,10 +21,13 @@ class DatabaseSeeder extends Seeder
             SettingsTableSeeder::class,
         ]);
 
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@euroworldeducation.com',
-            'password' => bcrypt('password123'),
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['email' => 'admin@euroworldeducation.com'],
+            [
+                'name' => 'Admin',
+                'password' => bcrypt('password'),
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }
