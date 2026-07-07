@@ -21,12 +21,11 @@
                     </div>
                     
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-                        Study in Europe &<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Shape Your Future</span>
+                        {!! $global_settings->where('key', 'home_hero_title')->first()->value ?? 'Study in Europe &<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Shape Your Future</span>' !!}
                     </h1>
                     
-                    <p class="text-base md:text-lg text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-                        Expert guidance for university admissions, visa processing, and career counseling to help you achieve your dreams of studying abroad.
+                    <p class="text-base md:text-lg text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light whitespace-pre-line">
+                        {{ $global_settings->where('key', 'home_hero_subtitle')->first()->value ?? 'Expert guidance for university admissions, visa processing, and career counseling to help you achieve your dreams of studying abroad.' }}
                     </p>
                     
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">

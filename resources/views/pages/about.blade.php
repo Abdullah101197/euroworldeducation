@@ -18,9 +18,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl font-bold text-[#0b1b3d] mb-6">Our Mission</h2>
-                    <p class="text-gray-600 leading-relaxed mb-6">At Euro World Education, our mission is to empower students by providing transparent, ethical, and comprehensive guidance for studying abroad. We believe that global education transforms lives, and we strive to make this transformation accessible to everyone.</p>
-                    <h2 class="text-3xl font-bold text-[#0b1b3d] mb-6">Our Vision</h2>
-                    <p class="text-gray-600 leading-relaxed">To be the most trusted educational consultancy globally, recognized for our commitment to student success and our extensive network of top-tier university partnerships.</p>
+                    <div class="prose max-w-none text-gray-600 leading-relaxed mb-6">
+                        {!! $global_settings->where('key', 'about_mission')->first()->value ?? '<p>At Euro World Education, our mission is to empower students by providing transparent, ethical, and comprehensive guidance for studying abroad. We believe that global education transforms lives, and we strive to make this transformation accessible to everyone.</p>' !!}
+                    </div>
+                    
+                    <h2 class="text-3xl font-bold text-[#0b1b3d] mb-6 mt-8">Our Vision</h2>
+                    <div class="prose max-w-none text-gray-600 leading-relaxed">
+                        {!! $global_settings->where('key', 'about_vision')->first()->value ?? '<p>To be the most trusted educational consultancy globally, recognized for our commitment to student success and our extensive network of top-tier university partnerships.</p>' !!}
+                    </div>
                 </div>
                 <div class="relative">
                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team" class="rounded-xl shadow-2xl">
