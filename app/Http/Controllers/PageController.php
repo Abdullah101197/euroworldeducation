@@ -12,7 +12,13 @@ class PageController extends Controller
     public function destinations() { return view('pages.destinations'); }
     public function scholarships() { return view('pages.scholarships'); }
     public function successStories() { return view('pages.success-stories'); }
-    public function blog() { return view('pages.blog'); }
+    public function blog() 
+    { 
+        $posts = \App\Models\Post::with('category')->latest()->paginate(9);
+        $categories = \App\Models\Category::all();
+        $popularPosts = \App\Models\Post::latest()->take(3)->get(); // Dummy popular posts for now
+        return view('pages.blog', compact('posts', 'categories', 'popularPosts')); 
+    }
     public function contact() { return view('pages.contact'); }
 
     public function submitContact(Request $request)

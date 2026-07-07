@@ -34,7 +34,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('admin.settings.update') }}" method="POST">
+                    <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Global Tab -->
@@ -88,6 +88,15 @@
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Site Title / Slogan</label>
                                         <input type="text" name="site_title" value="{{ $settings['general']->where('key', 'site_title')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Site Logo</label>
+                                        @if(isset($settings['general']) && $settings['general']->where('key', 'site_logo')->first())
+                                            <div class="mb-2">
+                                                <img src="{{ asset($settings['general']->where('key', 'site_logo')->first()->value) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
+                                            </div>
+                                        @endif
+                                        <input type="file" name="site_logo" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
                                     </div>
                                 </div>
                             </div>

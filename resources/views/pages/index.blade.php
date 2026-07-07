@@ -7,67 +7,123 @@
 
 
     <!-- Hero Section (Section 2) -->
-    <section id="hero" class="relative min-h-screen flex flex-col justify-center pt-32 pb-16 bg-[#0b1b3d] font-sans overflow-hidden">
-        <!-- Optional faint grid background -->
-        <div class="absolute inset-0 bg-cover opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+    <!-- Hero Section (Redesigned) -->
+    <section id="hero" class="relative pt-32 pb-0 bg-white font-sans overflow-hidden">
+        <!-- Dotted background pattern -->
+        <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:pb-12">
                 <!-- Left Content -->
-                <div class="w-full lg:w-1/2 text-white reveal-up pt-12 lg:pt-0 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
-                        <i class="fa-solid fa-medal text-yellow-400"></i>
-                        <span class="text-xs font-bold uppercase tracking-wider text-gray-300">10+ Years of Excellence</span>
+                <div class="w-full lg:w-1/2 reveal-up pt-12 lg:pt-0 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                        <div class="h-0.5 w-8 bg-[#c6181b]"></div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
                     </div>
                     
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-                        {!! $global_settings->where('key', 'home_hero_title')->first()->value ?? 'Study in Europe &<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Shape Your Future</span>' !!}
+                    <h1 class="text-5xl md:text-6xl lg:text-[70px] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0b1b3d]">
+                        {!! $global_settings->where('key', 'home_hero_title')->first()->value ?? 'Your Journey to <br><span class="text-[#c6181b]">Global</span> Education' !!}
                     </h1>
                     
-                    <p class="text-base md:text-lg text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light whitespace-pre-line">
-                        {{ $global_settings->where('key', 'home_hero_subtitle')->first()->value ?? 'Expert guidance for university admissions, visa processing, and career counseling to help you achieve your dreams of studying abroad.' }}
+                    <p class="text-base md:text-lg text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                        {{ $global_settings->where('key', 'home_hero_subtitle')->first()->value ?? 'We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.' }}
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#c6181b] text-white px-8 py-3.5 rounded-sm font-bold hover:bg-red-800 transition-colors flex items-center justify-center gap-2 shadow-lg">
-                            Get Started Now <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#services" class="w-full sm:w-auto bg-transparent border border-white/30 text-white px-8 py-3.5 rounded-sm font-semibold hover:bg-white/10 transition-colors flex items-center justify-center">
-                            Explore Services
-                        </a>
+                    <!-- Feature Chips -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
+                        <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-graduation-cap text-xs"></i></div>
+                            <span class="text-xs font-bold text-[#0b1b3d] leading-tight">Top Ranked<br>Universities</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700"><i class="fa-solid fa-clipboard-check text-xs"></i></div>
+                            <span class="text-xs font-bold text-[#0b1b3d] leading-tight">End-to-End<br>Assistance</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-passport text-xs"></i></div>
+                            <span class="text-xs font-bold text-[#0b1b3d] leading-tight">High Visa<br>Success Rate</span>
+                        </div>
                     </div>
                     
-                    <!-- Small stats under buttons -->
-                    <div class="flex items-center justify-center lg:justify-start gap-6 mt-10 text-gray-400 text-xs font-bold uppercase tracking-wide">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400 text-sm"></i> Free Consultation</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400 text-sm"></i> High Visa Success</div>
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="{{ route('destinations') }}" class="w-full sm:w-auto bg-[#c6181b] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-red-800 transition-colors flex items-center justify-center gap-2 shadow-md">
+                            Explore Destinations <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-white border border-gray-200 text-[#0b1b3d] px-8 py-3.5 rounded-lg font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                            Book Free Consultation <i class="fa-regular fa-calendar-check"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Right Image -->
-                <div class="w-full lg:w-1/2 reveal-left relative">
-                    <!-- Clean, sharp edge image container -->
-                    <div class="relative bg-white p-2 md:p-4 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <div class="relative overflow-hidden border border-gray-100">
-                            <img src="{{ asset('assets/hero_corporate.png') }}" alt="Students studying abroad" class="w-full h-auto object-cover">
-                            <!-- Overlay badge -->
-                            <div class="absolute bottom-0 left-0 right-0 bg-[#0b1b3d]/90 backdrop-blur-sm p-4 flex justify-between items-center text-white">
-                                <div>
-                                    <div class="text-2xl font-black text-yellow-400">10k+</div>
-                                    <div class="text-[10px] uppercase font-bold tracking-widest">Students Placed</div>
-                                </div>
-                                <div class="flex -space-x-2">
-                                    <img src="https://i.pravatar.cc/100?img=1" class="w-8 h-8 rounded-full border-2 border-[#0b1b3d]">
-                                    <img src="https://i.pravatar.cc/100?img=2" class="w-8 h-8 rounded-full border-2 border-[#0b1b3d]">
-                                    <img src="https://i.pravatar.cc/100?img=3" class="w-8 h-8 rounded-full border-2 border-[#0b1b3d]">
-                                    <div class="w-8 h-8 rounded-full bg-red-600 border-2 border-[#0b1b3d] flex items-center justify-center text-[8px] font-bold">+</div>
-                                </div>
-                            </div>
+                <!-- Right Image Section (Creative Composition) -->
+                <div class="w-full lg:w-1/2 reveal-left relative h-[500px] lg:h-[600px] mt-12 lg:mt-0">
+                    <div class="absolute right-0 bottom-0 w-full h-[120%] bg-blue-50/50 rounded-tl-[200px] -z-10"></div>
+                    <!-- Central red circle accent -->
+                    <div class="absolute right-10 top-1/4 w-64 h-64 bg-[#c6181b] rounded-full mix-blend-multiply opacity-90 -z-10"></div>
+                    <!-- Hero Composite Image -->
+                    <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="absolute bottom-0 right-0 h-[110%] w-auto object-contain z-10 drop-shadow-2xl">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute top-20 right-0 bg-white rounded-xl shadow-xl p-4 flex items-center gap-4 z-20 animate-bounce-slow border border-gray-100">
+                        <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white"><i class="fa-solid fa-globe text-xl"></i></div>
+                        <div>
+                            <div class="text-[10px] text-gray-500 font-bold uppercase">Study in</div>
+                            <div class="text-sm font-extrabold text-[#0b1b3d]">50+ Countries</div>
+                            <div class="h-0.5 w-6 bg-[#0b1b3d] mt-1"></div>
                         </div>
                     </div>
-                    <!-- Decorative strict geometric elements -->
-                    <div class="absolute -z-10 top-10 -right-10 w-32 h-32 bg-red-600 opacity-20 hidden md:block"></div>
-                    <div class="absolute -z-10 -bottom-10 -left-10 w-48 h-48 border-4 border-yellow-400 opacity-30 hidden md:block"></div>
+                </div>
+            </div>
+            
+            <!-- Statistics Bar -->
+            <div class="relative z-20 mx-auto max-w-6xl -mt-8 mb-12">
+                <div class="bg-[#0b1b3d] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    
+                    <!-- Stat 1 -->
+                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
+                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-white">12,000+</div>
+                            <div class="text-xs font-medium text-gray-300">Successful Students</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
+                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-white">500+</div>
+                            <div class="text-xs font-medium text-gray-300">Partner Universities</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
+                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-white">50+</div>
+                            <div class="text-xs font-medium text-gray-300">Countries</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 4 -->
+                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
+                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-white">95%</div>
+                            <div class="text-xs font-medium text-gray-300">Visa Success Rate</div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -550,29 +606,22 @@
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="relative z-20 -mb-16 pointer-events-none font-sans">
-        <div class="container mx-auto px-6 pointer-events-auto">
-            <div class="bg-[#0b1b3d] rounded-2xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_10px_40px_rgb(0,0,0,0.3)] relative overflow-hidden border border-white/5">
-                <!-- Background Image Overlay Placeholder -->
-                <div class="absolute right-0 top-0 bottom-0 w-1/2 opacity-20 bg-cover bg-left pointer-events-none mix-blend-luminosity" style="background-image: url('https://www.transparenttextures.com/patterns/stardust.png');"></div>
-                
-                <div class="relative z-10 text-center lg:text-left">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Ready to Start Your Study Abroad Journey?</h2>
-                    <p class="text-gray-300 text-sm">Book your free consultation now and take the first step towards your future.</p>
-                </div>
-                
-                <div class="relative z-10 flex flex-col sm:flex-row gap-4 shrink-0">
-                    <button class="bg-[#ffc107] text-[#0b1b3d] font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition-colors shadow-lg text-sm">
-                        Book Free Consultation
-                    </button>
-                    <button class="bg-transparent border border-white/40 text-white font-medium py-3 px-8 rounded-full hover:bg-white/10 hover:border-white transition-colors flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
-                    </button>
+    <!-- Feedback / Mission Section -->
+    <section class="bg-[#0b1b3d] py-20 font-sans">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-1">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                        Help us improve <span class="text-[#c6181b]">Euroworld Education</span>
+                    </h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+                        Your feedback is incredibly valuable to us! We are constantly working to enhance our services and make your experience with Euroworld Education as smooth and rewarding as possible. Please take a moment to share your thoughts, suggestions, or any challenges you've faced. Whether it's about our counseling, visa process, or university selection, your input helps us serve you better.
+                    </p>
+                    <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 bg-[#c6181b] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-red-800 transition-colors shadow-lg">
+                        Share Your Feedback <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
-    
 @endsection

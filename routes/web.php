@@ -32,6 +32,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::post('/settings', [\App\Http\Controllers\SettingController::class, 'update'])->name('settings.update');
 
     Route::resource('/users', \App\Http\Controllers\Admin\UserController::class)->except(['show']);
+    Route::resource('/posts', \App\Http\Controllers\PostController::class)->except(['show']);
 });
 
 Route::middleware('auth')->group(function () {

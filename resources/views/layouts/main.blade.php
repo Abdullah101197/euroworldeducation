@@ -96,13 +96,17 @@
         <!-- Main Navigation Bar -->
         <div class="bg-white py-4 transition-all duration-300" id="main-nav">
             <div class="container mx-auto px-6 flex justify-between items-center">
-                <!-- Logo placeholder -->
-                <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
-                        <i class="fa-solid fa-earth-europe"></i>
-                    </div>
-                    <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">EuroWorld Education</h1>
-                </div>
+                <!-- Logo -->
+                <a href="{{ route('home') }}" class="flex items-center gap-2">
+                    @if(isset($global_settings) && $logo = $global_settings->where('key', 'site_logo')->first())
+                        <img src="{{ asset($logo->value) }}" alt="EuroWorld Education" class="h-16 object-contain">
+                    @else
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
+                            <i class="fa-solid fa-earth-europe"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">EuroWorld Education</h1>
+                    @endif
+                </a>
                 
                 <!-- Nav Links -->
                 <nav class="hidden lg:flex flex-1 justify-end mr-8 space-x-6 text-sm font-semibold text-[#0b1b3d]">
@@ -154,7 +158,40 @@
         @yield('content')
     </main>
 
-<!-- Footer (Last Section) -->
+    <!-- Pre-Footer CTA Banner -->
+    <section class="bg-[#c6181b] relative overflow-hidden font-sans">
+        <!-- Abstract background elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute -right-20 -top-40 w-96 h-96 bg-white rounded-full mix-blend-overlay blur-3xl"></div>
+            <div class="absolute left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 py-12 md:py-16 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <!-- Text Content -->
+                <div class="w-full lg:w-3/5 text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 tracking-tight">
+                        Ready to Start Your Study Abroad Journey?
+                    </h2>
+                    <p class="text-white/80 text-lg max-w-2xl font-medium">
+                        Join thousands of students who have trusted us with their global education dreams.
+                    </p>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="w-full lg:w-2/5 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4">
+                    <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-yellow-400 text-[#0b1b3d] px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                        Book Free Consultation <i class="fa-regular fa-calendar-check"></i>
+                    </a>
+                    <a href="#" class="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                        Chat on WhatsApp <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Last Section) -->
     <footer class="bg-[#0b1b3d] text-gray-300 pt-32 pb-8 border-t border-[#0b1b3d] font-sans">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">

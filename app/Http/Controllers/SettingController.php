@@ -16,6 +16,16 @@ class SettingController extends Controller
     {
         $data = $request->except(['_token', '_method']);
         
+        // Handle file uploads
+        if ($request->hasFile('site_logo')) {
+            $path = $request->file('site_logo')->store('logos', 'public');
+            \App\Models\Setting::updateOrCreate(
+                ['key' => 'site_logo'],
+                ['value' => 'storage/' . $path]
+            );
+            unset($data['site_logo']);
+        }
+
         foreach ($data as $key => $value) {
             \App\Models\Setting::updateOrCreate(
                 ['key' => $key],
