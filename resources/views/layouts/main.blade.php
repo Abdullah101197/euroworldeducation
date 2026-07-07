@@ -197,8 +197,15 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex flex-col items-start gap-1 mb-6">
-                        <i class="fa-solid fa-graduation-cap text-white text-3xl ml-6"></i>
-                        <h1 class="text-2xl font-black text-white tracking-widest">EURO<span class="text-white">WORLD</span></h1>
+                        @php
+                            $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first();
+                        @endphp
+                        @if($siteLogo && $siteLogo->value)
+                            <img src="{{ asset($siteLogo->value) }}" alt="Euroworld Education Logo" class="h-16 brightness-0 invert object-contain">
+                        @else
+                            <i class="fa-solid fa-graduation-cap text-white text-3xl ml-6"></i>
+                            <h1 class="text-2xl font-black text-white tracking-widest">EURO<span class="text-white">WORLD</span></h1>
+                        @endif
                     </div>
                     <p class="text-sm text-gray-400 mb-6 leading-relaxed">Empowering students to achieve global success through quality education in Europe.</p>
                     <div class="flex space-x-4">
