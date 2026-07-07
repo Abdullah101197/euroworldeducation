@@ -74,7 +74,7 @@
     </section>
 
     <!-- Countries We Cover (Section 3) -->
-    <section id="countries" class="pt-12 pb-24 bg-light relative font-sans">
+    <section id="countries" class="pt-12 pb-8 bg-light relative font-sans">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 reveal-up">
                 <div class="flex items-center justify-center gap-4 mb-2">
@@ -89,7 +89,7 @@
             <!-- 3 Popular Countries (Large Cards - Upper Design) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <!-- Italy Large Card -->
-                <div class="group relative h-[500px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up">
+                <div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up">
                     <img src="{{ asset('assets/dest_italy_1783324333447.png') }}" alt="Italy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-[#0b1b3d]/70 transition-opacity group-hover:bg-[#0b1b3d]/60"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -110,7 +110,7 @@
                 </div>
 
                 <!-- France Large Card -->
-                <div class="group relative h-[500px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up" style="transition-delay: 100ms;">
+                <div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up" style="transition-delay: 100ms;">
                     <img src="{{ asset('assets/dest_france_1783324344345.png') }}" alt="France" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-[#0b1b3d]/70 transition-opacity group-hover:bg-[#0b1b3d]/60"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -128,7 +128,7 @@
                 </div>
 
                 <!-- UK Large Card -->
-                <div class="group relative h-[500px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up" style="transition-delay: 200ms;">
+                <div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up" style="transition-delay: 200ms;">
                     <img src="{{ asset('assets/dest_uk_1783324356242.png') }}" alt="UK" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-[#0b1b3d]/70 transition-opacity group-hover:bg-[#0b1b3d]/60"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -216,7 +216,7 @@
     </section>
 
     <!-- Our Services (Section 4) -->
-    <section id="services" class="py-24 bg-white relative font-sans">
+    <section id="services" class="pt-12 pb-24 bg-white relative font-sans">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 reveal-up">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-[#0b1b3d]">Our Services</h2>
@@ -286,31 +286,31 @@
                 <!-- Left Side (Dark Blue) -->
                 <div class="lg:w-1/2 bg-[#0b1b3d] text-white p-12 lg:p-16 flex flex-col justify-center">
                     <h3 class="text-3xl font-semibold mb-1">Why Choose</h3>
-                    <h3 class="text-4xl font-extrabold text-yellow-400 mb-8 tracking-tight">Euroworld?</h3>
+                    <h3 class="text-4xl font-extrabold text-[#c6181b] mb-8 tracking-tight">Euroworld Education Consultants?</h3>
                     
                     <ul class="space-y-5">
                         <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
                             <span class="text-[15px] font-medium text-gray-200 tracking-wide">Personalized counselling for every student</span>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
                             <span class="text-[15px] font-medium text-gray-200 tracking-wide">Expert team with years of experience</span>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
                             <span class="text-[15px] font-medium text-gray-200 tracking-wide">High visa success rate</span>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
                             <span class="text-[15px] font-medium text-gray-200 tracking-wide">Transparent process & fair guidance</span>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
                             <span class="text-[15px] font-medium text-gray-200 tracking-wide">Admission to visa - complete support</span>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
                             <span class="text-[15px] font-medium text-gray-200 tracking-wide">Fast response on WhatsApp</span>
                         </li>
                     </ul>
@@ -320,7 +320,7 @@
                 <div class="lg:w-1/2 relative min-h-[400px]">
                     <img src="{{ asset('assets/why_choose_students.png') }}" alt="Happy students" class="absolute inset-0 w-full h-full object-cover">
                     <!-- Floating Badge -->
-                    <div class="absolute bottom-8 right-8 bg-yellow-400 text-[#0b1b3d] px-6 py-4 rounded-xl shadow-lg">
+                    <div class="absolute bottom-8 right-8 bg-[#c6181b] text-white px-6 py-4 rounded-xl shadow-lg">
                         <div class="text-3xl font-black">1000+</div>
                         <div class="text-[11px] font-bold uppercase tracking-wider mt-1 text-center">Successful Students</div>
                     </div>
