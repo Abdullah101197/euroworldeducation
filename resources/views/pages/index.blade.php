@@ -74,9 +74,9 @@
     </section>
 
     <!-- Countries We Cover (Section 3) -->
-    <section id="countries" class="py-24 bg-light relative font-sans">
+    <section id="countries" class="pt-12 pb-24 bg-light relative font-sans">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 reveal-up">
+            <div class="text-center mb-12 reveal-up">
                 <div class="flex items-center justify-center gap-4 mb-2">
                     <div class="h-px w-16 bg-[#c6181b]"></div>
                     <h3 class="text-[#c6181b] font-bold tracking-widest uppercase text-sm">Where We Can Take You</h3>
