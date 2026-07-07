@@ -62,7 +62,14 @@
                     <!-- Central red circle accent -->
                     <div class="absolute right-10 top-1/4 w-64 h-64 bg-[#c6181b] rounded-full mix-blend-multiply opacity-90 -z-10"></div>
                     <!-- Hero Composite Image -->
-                    <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="absolute bottom-0 right-0 h-[110%] w-auto object-contain z-10 drop-shadow-2xl">
+                    @php
+                        $heroImage = \App\Models\Setting::where('key', 'home_hero_image')->first();
+                    @endphp
+                    @if($heroImage && $heroImage->value)
+                        <img src="{{ asset($heroImage->value) }}" alt="Student Global Education" class="absolute bottom-0 right-0 h-[110%] w-auto object-contain z-10 drop-shadow-2xl">
+                    @else
+                        <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="absolute bottom-0 right-0 h-[110%] w-auto object-contain z-10 drop-shadow-2xl">
+                    @endif
                     
                     <!-- Floating Badge -->
                     <div class="absolute top-20 right-0 bg-white rounded-xl shadow-xl p-4 flex items-center gap-4 z-20 animate-bounce-slow border border-gray-100">
