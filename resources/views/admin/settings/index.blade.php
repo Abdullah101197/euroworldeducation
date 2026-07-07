@@ -10,32 +10,35 @@
     <div class="py-12" x-data="{ activeTab: 'global' }">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                
-                <!-- Tabs Navigation -->
-                <div class="border-b border-gray-200">
-                    <nav class="-mb-px flex space-x-8 px-6" aria-label="Tabs">
-                        <button @click="activeTab = 'global'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'global', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'global' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                            Global Settings
-                        </button>
-                        <button @click="activeTab = 'home'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'home', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'home' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                            Home Page
-                        </button>
-                        <button @click="activeTab = 'about'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'about', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'about' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                            About Page
-                        </button>
-                    </nav>
-                </div>
-
-                <div class="p-6 text-gray-900">
+                <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     
-                    @if(session('success'))
-                        <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                            <span class="block sm:inline">{{ session('success') }}</span>
-                        </div>
-                    @endif
+                    <!-- Tabs Navigation & Save Button -->
+                    <div class="border-b border-gray-200 flex justify-between items-center bg-gray-50 pr-6">
+                        <nav class="-mb-px flex space-x-8 px-6" aria-label="Tabs">
+                            <button type="button" @click="activeTab = 'global'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'global', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'global' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                Global Settings
+                            </button>
+                            <button type="button" @click="activeTab = 'home'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'home', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'home' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                Home Page
+                            </button>
+                            <button type="button" @click="activeTab = 'about'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'about', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'about' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                About Page
+                            </button>
+                        </nav>
+                        
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline shadow text-sm">
+                            Save All Changes
+                        </button>
+                    </div>
 
-                    <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+                    <div class="p-6 text-gray-900">
+                        
+                        @if(session('success'))
+                            <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                                <span class="block sm:inline">{{ session('success') }}</span>
+                            </div>
+                        @endif
 
                         <!-- Global Tab -->
                         <div x-show="activeTab === 'global'">
@@ -138,11 +141,6 @@
                             </div>
                         </div>
 
-                        <div class="flex justify-end pt-4 border-t border-gray-200">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline">
-                                Save All Changes
-                            </button>
-                        </div>
                     </form>
 
                 </div>
