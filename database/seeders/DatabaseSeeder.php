@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $this->call([
+            SettingsTableSeeder::class,
+        ]);
+
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@euroworldeducation.com',

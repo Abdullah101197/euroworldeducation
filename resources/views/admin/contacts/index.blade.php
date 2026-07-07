@@ -16,6 +16,18 @@
                         </div>
                     @endif
 
+                    <div class="mb-4 flex justify-between items-center">
+                        <form action="{{ route('admin.contacts.index') }}" method="GET" class="flex items-center">
+                            <input type="text" name="search" value="{{ request('search') }}" placeholder="Search leads..." class="shadow appearance-none border rounded w-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-2">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                Search
+                            </button>
+                            @if(request('search'))
+                                <a href="{{ route('admin.contacts.index') }}" class="ml-2 text-gray-500 hover:text-gray-800 text-sm">Clear</a>
+                            @endif
+                        </form>
+                    </div>
+
                     <table class="min-w-full leading-normal">
                         <thead>
                             <tr>
@@ -61,13 +73,25 @@
                                         @endif
                                     </td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <form action="{{ route('admin.contacts.toggle-status', $contact) }}" method="POST">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow">
-                                                {{ $contact->is_contacted ? 'Mark Pending' : 'Mark Contacted' }}
-                                            </button>
-                                        </form>
+                                        <div class="flex items-center space-x-2">
+                                            <a href="{{ route('admin.contacts.show', $contact) }}" class="text-sm bg-blue-100 hover:bg-blue-200 text-blue-800 font-semibold py-1 px-3 border border-blue-400 rounded shadow">
+                                                View
+                                            </a>
+                                            <form action="{{ route('admin.contacts.toggle-status', $contact) }}" method="POST">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button type="submit" class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow">
+                                                    {{ $contact->is_contacted ? 'Mark Pending' : 'Mark Contacted' }}
+                                                </button>
+                                            </form>
+                                            <form action="{{ route('admin.contacts.destroy', $contact) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this lead?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-sm bg-red-100 hover:bg-red-200 text-red-800 font-semibold py-1 px-3 border border-red-400 rounded shadow">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @empty

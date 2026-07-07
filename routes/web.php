@@ -15,12 +15,21 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $totalLeads = \App\Models\Contact::count();
+    $unreadLeads = \App\Models\Contact::where('is_contacted', false)->count();
+    $recentLeads = \App\Models\Contact::orderBy('created_at', 'desc')->take(5)->get();
+
+    return view('dashboard', compact('totalLeads', 'unreadLeads', 'recentLeads'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/contacts', [\App\Http\Controllers\Admin\ContactController::class, 'index'])->name('contacts.index');
+    Route::get('/contacts/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'show'])->name('contacts.show');
+    Route::delete('/contacts/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'destroy'])->name('contacts.destroy');
     Route::patch('/contacts/{contact}/toggle-status', [\App\Http\Controllers\Admin\ContactController::class, 'toggleStatus'])->name('contacts.toggle-status');
+
+    Route::get('/settings', [\App\Http\Controllers\SettingController::class, 'index'])->name('settings.index');
+    Route::post('/settings', [\App\Http\Controllers\SettingController::class, 'update'])->name('settings.update');
 });
 
 Route::middleware('auth')->group(function () {
