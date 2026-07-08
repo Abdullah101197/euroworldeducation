@@ -6,125 +6,146 @@
 @section('content')
 
 
-    <!-- Hero Section (Section 2) -->
-    <!-- Hero Section (Redesigned) -->
-    <section id="hero" class="relative pt-32 pb-0 bg-white font-sans overflow-hidden">
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-24 lg:pt-32 pb-0 bg-white font-sans overflow-hidden">
         <!-- Dotted background pattern -->
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:pb-12">
+        <!-- Large light blue curved shape behind the image -->
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-[#f0f4f8] rounded-tl-[300px] rounded-bl-[100px] -z-10 transform translate-x-10 -translate-y-10"></div>
+        
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                 <!-- Left Content -->
-                <div class="w-full lg:w-1/2 reveal-up pt-12 lg:pt-0 text-center lg:text-left">
+                <div class="w-full lg:w-1/2 reveal-up pt-12 lg:pt-0 text-center lg:text-left z-20 relative">
                     <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
-                        <div class="h-0.5 w-8 bg-[#c6181b]"></div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
+                        <div class="h-[2px] w-8 bg-[#c6181b]"></div>
+                        <span class="text-[13px] font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
                     </div>
                     
-                    <h1 class="text-5xl md:text-6xl lg:text-[70px] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0b1b3d]">
-                        {!! $global_settings->where('key', 'home_hero_title')->first()->value ?? 'Your Journey to <br><span class="text-[#c6181b]">Global</span> Education' !!}
+                    <h1 class="text-5xl md:text-6xl lg:text-[70px] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0b1b3d] relative inline-block">
+                        Your Journey to <br>
+                        <span class="text-[#c6181b]">Global</span> Education
+                        <!-- Blue line under Global -->
+                        <div class="absolute bottom-0 left-0 h-[3px] w-[180px] bg-[#3b82f6] -mb-2"></div>
                     </h1>
                     
-                    <p class="text-base md:text-lg text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        {{ $global_settings->where('key', 'home_hero_subtitle')->first()->value ?? 'We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.' }}
+                    <p class="text-base md:text-lg text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium mt-6">
+                        We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.
                     </p>
                     
-                    <!-- Feature Chips -->
+                    <!-- Feature Badges -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
-                        <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 shadow-sm">
-                            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-graduation-cap text-xs"></i></div>
-                            <span class="text-xs font-bold text-[#0b1b3d] leading-tight">Top Ranked<br>Universities</span>
+                        <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
+                            <div class="w-8 h-8 rounded-full bg-[#e2e8f0] flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-graduation-cap text-xs"></i></div>
+                            <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">Top Ranked<br>Universities</span>
                         </div>
-                        <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 shadow-sm">
-                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700"><i class="fa-solid fa-clipboard-check text-xs"></i></div>
-                            <span class="text-xs font-bold text-[#0b1b3d] leading-tight">End-to-End<br>Assistance</span>
+                        <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
+                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600"><i class="fa-solid fa-clipboard-check text-xs"></i></div>
+                            <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">End-to-End<br>Assistance</span>
                         </div>
-                        <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 shadow-sm">
-                            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-passport text-xs"></i></div>
-                            <span class="text-xs font-bold text-[#0b1b3d] leading-tight">High Visa<br>Success Rate</span>
+                        <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
+                            <div class="w-8 h-8 rounded-full bg-[#e2e8f0] flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-file-shield text-xs"></i></div>
+                            <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">High Visa<br>Success Rate</span>
                         </div>
                     </div>
                     
                     <!-- Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                         <a href="{{ route('destinations') }}" class="w-full sm:w-auto bg-[#c6181b] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-red-800 transition-colors flex items-center justify-center gap-2 shadow-md">
-                            Explore Destinations <i class="fa-solid fa-arrow-right"></i>
+                            Explore Destinations <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
-                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-white border border-gray-200 text-[#0b1b3d] px-8 py-3.5 rounded-lg font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm">
-                            Book Free Consultation <i class="fa-regular fa-calendar-check"></i>
+                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#f8fafc] border border-blue-200 text-[#0b1b3d] px-8 py-3.5 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                            Book Free Consultation <i class="fa-regular fa-calendar-check text-blue-600 text-lg"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Right Image Section (Creative Composition) -->
-                <div class="w-full lg:w-1/2 reveal-left relative h-[500px] lg:h-[600px] mt-12 lg:mt-0">
-                    <div class="absolute right-0 bottom-0 w-full h-[120%] bg-blue-50/50 rounded-tl-[200px] -z-10"></div>
-                    <!-- Central red circle accent -->
-                    <div class="absolute right-10 top-1/4 w-64 h-64 bg-[#c6181b] rounded-full mix-blend-multiply opacity-90 -z-10"></div>
-                    <!-- Hero Composite Image -->
-                    <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="absolute bottom-0 right-0 h-[110%] w-auto object-contain z-10 drop-shadow-2xl">
+                <!-- Right Image Section -->
+                <div class="w-full lg:w-1/2 relative h-[500px] lg:h-[700px] mt-12 lg:mt-0 flex justify-end items-end z-10">
+                    <!-- Dark blue curve that intersects the globe at the bottom right -->
+                    <div class="absolute right-0 bottom-0 w-full h-1/2 bg-[#0b1b3d] rounded-tl-[100%] -z-10 translate-y-24 translate-x-12"></div>
                     
-                    <!-- Floating Badge -->
-                    <div class="absolute top-20 right-0 bg-white rounded-xl shadow-xl p-4 flex items-center gap-4 z-20 animate-bounce-slow border border-gray-100">
+                    <!-- Red circle behind the girl -->
+                    <div class="absolute right-[20%] top-[30%] w-[300px] h-[300px] bg-[#c6181b] rounded-full -z-10"></div>
+                    
+                    <!-- Hero Image -->
+                    <!-- Note: For a 100% match, you MUST upload the transparent PNG graphic from your designer -->
+                    <!-- and set it in your admin panel under "home_hero_image". -->
+                    @php
+                        $heroImage = \App\Models\Setting::where('key', 'home_hero_image')->first();
+                    @endphp
+                    @if($heroImage && $heroImage->value)
+                        <img src="{{ asset($heroImage->value) }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl">
+                    @else
+                        <!-- Fallback using the generated image temporarily. Upload your transparent PNG for a perfect match. -->
+                        <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl" style="mix-blend-mode: multiply;">
+                    @endif
+                    
+                    <!-- Airplane graphic (if not included in the main image) -->
+                    <i class="fa-solid fa-plane absolute top-10 right-[20%] text-gray-500 text-3xl transform -rotate-45 opacity-50"></i>
+                    
+                    <!-- Floating Badge: Study in 50+ Countries -->
+                    <div class="absolute top-[30%] right-[-10px] lg:right-[10px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-4 pr-6 flex items-center gap-4 z-20 border border-gray-100">
                         <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white"><i class="fa-solid fa-globe text-xl"></i></div>
                         <div>
-                            <div class="text-[10px] text-gray-500 font-bold uppercase">Study in</div>
-                            <div class="text-sm font-extrabold text-[#0b1b3d]">50+ Countries</div>
-                            <div class="h-0.5 w-6 bg-[#0b1b3d] mt-1"></div>
+                            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Study in</div>
+                            <div class="text-[15px] font-extrabold text-[#0b1b3d] leading-none">50+ Countries</div>
+                            <div class="h-[2px] w-8 bg-[#3b82f6] mt-2"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Statistics Bar -->
-            <div class="relative z-20 mx-auto max-w-6xl -mt-8 mb-12">
-                <div class="bg-[#0b1b3d] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10">
-                    
-                    <!-- Stat 1 -->
-                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
-                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
-                            <i class="fa-solid fa-user-group"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-black text-white">12,000+</div>
-                            <div class="text-xs font-medium text-gray-300">Successful Students</div>
-                        </div>
+        </div>
+        
+        <!-- Statistics Bar -->
+        <div class="container mx-auto px-6 lg:px-12 relative z-30 -mt-12 lg:-mt-24 mb-16 translate-y-16">
+            <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
+                
+                <!-- Stat 1 -->
+                <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
+                        <i class="fa-solid fa-user-group"></i>
                     </div>
-                    
-                    <!-- Stat 2 -->
-                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
-                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-black text-white">500+</div>
-                            <div class="text-xs font-medium text-gray-300">Partner Universities</div>
-                        </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-1">12,000+</div>
+                        <div class="text-sm font-medium text-gray-400">Successful Students</div>
                     </div>
-                    
-                    <!-- Stat 3 -->
-                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
-                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
-                            <i class="fa-solid fa-earth-americas"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-black text-white">50+</div>
-                            <div class="text-xs font-medium text-gray-300">Countries</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Stat 4 -->
-                    <div class="flex-1 p-8 flex items-center justify-center gap-5 hover:bg-white/5 transition-colors">
-                        <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white text-xl">
-                            <i class="fa-solid fa-certificate"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-black text-white">95%</div>
-                            <div class="text-xs font-medium text-gray-300">Visa Success Rate</div>
-                        </div>
-                    </div>
-                    
                 </div>
+                
+                <!-- Stat 2 -->
+                <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-1">500+</div>
+                        <div class="text-sm font-medium text-gray-400">Partner Universities</div>
+                    </div>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-1">50+</div>
+                        <div class="text-sm font-medium text-gray-400">Countries</div>
+                    </div>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="flex-1 p-6 flex items-center justify-center gap-5">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-1">95%</div>
+                        <div class="text-sm font-medium text-gray-400">Visa Success Rate</div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
