@@ -397,12 +397,12 @@
             <!-- Carousel Container -->
             <div class="relative mb-12 reveal-up">
                 <!-- Left Arrow -->
-                <button class="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0b1b3d] hover:bg-[#c6181b] text-white rounded-full flex items-center justify-center z-20 shadow-lg transition-colors">
+                <button type="button" onclick="document.getElementById('admissions-carousel').scrollBy({ left: -310, behavior: 'smooth' })" class="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0b1b3d] hover:bg-[#c6181b] text-white rounded-full flex items-center justify-center z-20 shadow-lg transition-colors cursor-pointer">
                     <i class="fa-solid fa-chevron-left text-sm"></i>
                 </button>
 
                 <!-- Cards (Horizontal Scroll) -->
-                <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide px-4 xl:justify-center" style="scrollbar-width: none;">
+                <div id="admissions-carousel" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide px-4 xl:justify-center scroll-smooth" style="scrollbar-width: none;">
 
                     <!-- Card 1 -->
                     <div class="flex-none w-[280px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden snap-center relative flex flex-col">
@@ -641,7 +641,7 @@
                 </div>
 
                 <!-- Right Arrow -->
-                <button class="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0b1b3d] hover:bg-[#c6181b] text-white rounded-full flex items-center justify-center z-20 shadow-lg transition-colors">
+                <button type="button" onclick="document.getElementById('admissions-carousel').scrollBy({ left: 310, behavior: 'smooth' })" class="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0b1b3d] hover:bg-[#c6181b] text-white rounded-full flex items-center justify-center z-20 shadow-lg transition-colors cursor-pointer">
                     <i class="fa-solid fa-chevron-right text-sm"></i>
                 </button>
             </div>
