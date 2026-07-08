@@ -10,7 +10,7 @@
     <section id="hero" class="relative pt-20 lg:pt-28 pb-0 bg-[#f2f5f8] font-sans overflow-hidden">
         <!-- Dotted background pattern -->
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
-        
+
         <div class="max-w-[1150px] mx-auto px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row lg:items-start items-center justify-center gap-4 lg:gap-8">
                 <!-- Left Content -->
@@ -19,7 +19,7 @@
                         <div class="h-[2px] w-8 bg-[#c6181b]"></div>
                         <span class="text-[13px] font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
                     </div>
-                    
+
                     <h1 class="text-4xl md:text-5xl lg:text-[64px] font-extrabold leading-[1.12] mb-6 tracking-tight text-[#0b1b3d] relative inline-block">
                         Your Journey to <br>
                         <span class="text-[#c6181b] relative inline-block">
@@ -28,11 +28,11 @@
                             <span class="absolute left-0 -bottom-1 h-[3px] w-full bg-[#3b82f6]"></span>
                         </span> Education
                     </h1>
-                    
+
                     <p class="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                         We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.
                     </p>
-                    
+
                     <!-- Feature Badges -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-8">
                         <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
@@ -48,7 +48,7 @@
                             <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">High Visa<br>Success Rate</span>
                         </div>
                     </div>
-                    
+
                     <!-- Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                         <a href="{{ route('destinations') }}" class="w-full sm:w-auto bg-[#c6181b] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-red-800 transition-colors flex items-center justify-center gap-2 shadow-md">
@@ -59,7 +59,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Right Image Section -->
                 <div class="w-full lg:w-[46%] relative mt-8 lg:mt-0 flex justify-center lg:justify-center items-end z-10">
                     <!-- Hero Image (Exact 100% match from provided design) -->
@@ -67,11 +67,11 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Statistics Bar -->
-        <div class="w-full max-w-[1440px] mx-auto px-4 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16">
+        <div class="w-full m-0 max-w-[1440px] mx-auto px-4 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16">
             <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
-                
+
                 <!-- Stat 1 -->
                 <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
                     <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
@@ -82,7 +82,7 @@
                         <div class="text-sm font-medium text-gray-400">Successful Students</div>
                     </div>
                 </div>
-                
+
                 <!-- Stat 2 -->
                 <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
                     <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
@@ -93,7 +93,7 @@
                         <div class="text-sm font-medium text-gray-400">Partner Universities</div>
                     </div>
                 </div>
-                
+
                 <!-- Stat 3 -->
                 <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
                     <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
@@ -104,7 +104,7 @@
                         <div class="text-sm font-medium text-gray-400">Countries</div>
                     </div>
                 </div>
-                
+
                 <!-- Stat 4 -->
                 <div class="flex-1 p-6 flex items-center justify-center gap-5">
                     <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
@@ -115,7 +115,7 @@
                         <div class="text-sm font-medium text-gray-400">Visa Success Rate</div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -208,7 +208,7 @@
                         Explore <span class="text-red-600">&rarr;</span>
                     </button>
                 </div>
-                
+
                 <!-- Australia -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
                     <div class="w-full h-24 bg-gray-200 relative">
@@ -222,7 +222,7 @@
                         Explore <span class="text-red-600">&rarr;</span>
                     </button>
                 </div>
-                
+
                 <!-- Spain -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
                     <div class="w-full h-24 bg-gray-200 relative">
@@ -238,7 +238,7 @@
                         Explore <span class="text-red-600">&rarr;</span>
                     </button>
                 </div>
-                
+
                 <!-- USA -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
                     <div class="w-full h-24 bg-gray-200 relative">
@@ -253,7 +253,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <div class="flex justify-center mt-12 reveal-up">
                 <a href="{{ route('destinations') }}" class="inline-flex bg-[#0b1b3d] text-white px-8 py-3.5 rounded-lg font-semibold items-center gap-3 hover:bg-gray-900 transition-colors text-sm shadow-md">
                     <i class="fa-solid fa-globe"></i> Explore All Destinations <span class="text-red-600">&rarr;</span>
@@ -334,7 +334,7 @@
                 <div class="lg:w-1/2 bg-[#0b1b3d] text-white p-12 lg:p-16 flex flex-col justify-center">
                     <h3 class="text-3xl font-semibold mb-1">Why Choose</h3>
                     <h3 class="text-4xl font-extrabold text-[#c6181b] mb-8 tracking-tight">Euroworld Education Consultants?</h3>
-                    
+
                     <ul class="space-y-5">
                         <li class="flex items-center gap-4">
                             <i class="fa-solid fa-circle-check text-[#c6181b] text-xl"></i>
@@ -362,7 +362,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- Right Side (Image with badge) -->
                 <div class="lg:w-1/2 relative min-h-[400px]">
                     <img src="{{ asset('assets/why_choose_students.png') }}" alt="Happy students" class="absolute inset-0 w-full h-full object-cover">
@@ -381,7 +381,7 @@
         <!-- Dotted background pattern top-left and bottom-right -->
         <div class="absolute top-0 left-0 w-64 h-64 bg-[radial-gradient(#e5e7eb_2px,transparent_2px)] [background-size:16px_16px] opacity-50"></div>
         <div class="absolute bottom-0 right-0 w-64 h-64 bg-[radial-gradient(#e5e7eb_2px,transparent_2px)] [background-size:16px_16px] opacity-50"></div>
-        
+
         <div class="container mx-auto px-6 relative z-10">
             <!-- Header -->
             <div class="text-center mb-12 reveal-up">
@@ -400,10 +400,10 @@
                 <button class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-[#0b1b3d] text-white rounded-full flex items-center justify-center z-20 shadow-md">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
-                
+
                 <!-- Cards (Horizontal Scroll) -->
                 <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide px-4 xl:justify-center" style="scrollbar-width: none;">
-                    
+
                     <!-- Card 1 -->
                     <div class="flex-none w-[280px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden snap-center relative flex flex-col">
                         <div class="p-4 flex items-center gap-3 border-b border-gray-50">
@@ -470,7 +470,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Card 3 -->
                     <div class="flex-none w-[280px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden snap-center relative flex flex-col">
                         <div class="p-4 flex items-center gap-3 border-b border-gray-50">
@@ -563,7 +563,7 @@
                         <p class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Successful Admissions</p>
                     </div>
                 </div>
-                
+
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white text-xl">
                         <i class="fa-solid fa-globe"></i>
