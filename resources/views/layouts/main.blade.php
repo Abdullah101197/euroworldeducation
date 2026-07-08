@@ -98,13 +98,10 @@
             <div class="container mx-auto px-6 flex justify-between items-center">
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
-                    @if(isset($global_settings) && $logo = $global_settings->where('key', 'site_logo')->first())
-                        <img src="{{ asset($logo->value) }}" alt="EuroWorld Education" class="h-16 object-contain">
+                    @if(isset($global_settings) && $logo = $global_settings->where('key', 'site_logo')->first() && $logo->value && file_exists(public_path($logo->value)) && $logo->value !== 'images/logo.png')
+                        <img src="{{ asset($logo->value) }}" alt="EuroWorld Consultants" class="h-16 object-contain">
                     @else
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
-                            <i class="fa-solid fa-earth-europe"></i>
-                        </div>
-                        <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">EuroWorld Education</h1>
+                        <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-16 object-contain">
                     @endif
                 </a>
                 
@@ -200,11 +197,10 @@
                         @php
                             $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first();
                         @endphp
-                        @if($siteLogo && $siteLogo->value)
-                            <img src="{{ asset($siteLogo->value) }}" alt="Euroworld Education Logo" class="h-16 brightness-0 invert object-contain">
+                        @if($siteLogo && $siteLogo->value && file_exists(public_path($siteLogo->value)) && $siteLogo->value !== 'images/logo.png')
+                            <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" class="h-16 object-contain bg-white rounded-full p-1.5 shadow-md">
                         @else
-                            <i class="fa-solid fa-graduation-cap text-white text-3xl ml-6"></i>
-                            <h1 class="text-2xl font-black text-white tracking-widest">EURO<span class="text-white">WORLD</span></h1>
+                            <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-16 object-contain bg-white rounded-full p-1.5 shadow-md">
                         @endif
                     </div>
                     <p class="text-sm text-gray-400 mb-6 leading-relaxed">Empowering students to achieve global success through quality education in Europe.</p>

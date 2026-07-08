@@ -2,11 +2,8 @@
     $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first();
 @endphp
 
-@if($siteLogo && $siteLogo->value)
-    <img src="{{ asset($siteLogo->value) }}" alt="Euroworld Education Logo" {{ $attributes->merge(['class' => 'object-contain']) }}>
+@if($siteLogo && $siteLogo->value && file_exists(public_path($siteLogo->value)) && $siteLogo->value !== 'images/logo.png')
+    <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" {{ $attributes->merge(['class' => 'object-contain']) }}>
 @else
-    <div {{ $attributes->merge(['class' => 'font-bold text-2xl tracking-tighter flex items-center gap-2']) }}>
-        <span><span class="text-brand-red">EURO</span><span class="text-brand-gold">WORLD</span></span>
-        <span class="text-sm uppercase tracking-widest opacity-80 mt-1">Education</span>
-    </div>
+    <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" {{ $attributes->merge(['class' => 'object-contain']) }}>
 @endif

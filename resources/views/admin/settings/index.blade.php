@@ -94,11 +94,13 @@
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Site Logo</label>
-                                        @if(isset($settings['general']) && $settings['general']->where('key', 'site_logo')->first())
-                                            <div class="mb-2">
-                                                <img src="{{ asset($settings['general']->where('key', 'site_logo')->first()->value) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
-                                            </div>
-                                        @endif
+                                        <div class="mb-2">
+                                            @if(isset($settings['general']) && $logo = $settings['general']->where('key', 'site_logo')->first() && $logo->value && file_exists(public_path($logo->value)))
+                                                <img src="{{ asset($logo->value) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
+                                            @else
+                                                <img src="{{ asset('images/logo.png') }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
+                                            @endif
+                                        </div>
                                         <input type="file" name="site_logo" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
                                     </div>
                                 </div>
