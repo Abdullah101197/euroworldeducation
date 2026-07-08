@@ -11,10 +11,10 @@
         <!-- Dotted background pattern -->
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
         
-        <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        <div class="max-w-[1150px] mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
                 <!-- Left Content -->
-                <div class="w-full lg:w-1/2 reveal-up pt-8 lg:pt-0 text-center lg:text-left z-20 relative">
+                <div class="w-full lg:w-[54%] reveal-up pt-8 lg:pt-0 text-center lg:text-left z-20 relative">
                     <div class="flex items-center justify-center lg:justify-start gap-3 mb-5">
                         <div class="h-[2px] w-8 bg-[#c6181b]"></div>
                         <span class="text-[13px] font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
@@ -61,7 +61,7 @@
                 </div>
                 
                 <!-- Right Image Section -->
-                <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0 flex justify-center lg:justify-end items-end z-10">
+                <div class="w-full lg:w-[46%] relative mt-8 lg:mt-0 flex justify-center lg:justify-center items-end z-10">
                     <!-- Hero Image (Exact 100% match from provided design) -->
                     <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-w-[550px] object-contain object-bottom">
                 </div>
@@ -69,7 +69,7 @@
         </div>
         
         <!-- Statistics Bar -->
-        <div class="container mx-auto px-6 lg:px-12 relative z-30 -mt-6 lg:-mt-8 mb-16">
+        <div class="max-w-[1300px] mx-auto px-4 lg:px-6 relative z-30 -mt-6 lg:-mt-8 mb-16">
             <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
                 
                 <!-- Stat 1 -->
