@@ -155,41 +155,43 @@
         @yield('content')
     </main>
 
-    <!-- Pre-Footer CTA Banner -->
-    <section class="bg-[#c6181b] relative overflow-hidden font-sans">
-        <!-- Abstract background elements -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute -right-20 -top-40 w-96 h-96 bg-white rounded-full mix-blend-overlay blur-3xl"></div>
-            <div class="absolute left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 py-12 md:py-16 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                <!-- Text Content -->
-                <div class="w-full lg:w-3/5 text-center lg:text-left">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 tracking-tight">
-                        Ready to Start Your Study Abroad Journey?
-                    </h2>
-                    <p class="text-white/80 text-lg max-w-2xl font-medium">
-                        Join thousands of students who have trusted us with their global education dreams.
-                    </p>
+    <!-- Pre-Footer CTA Banner (Last Section) -->
+    <section class="bg-transparent font-sans relative z-20 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-r from-[#0b1b3d] via-[#0f2557] to-[#0b1b3d] rounded-[28px] p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
+                <!-- Abstract architecture/spire background elements -->
+                <div class="absolute inset-0 opacity-15 pointer-events-none">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent blur-2xl"></div>
+                    <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-red-600 rounded-full mix-blend-overlay blur-3xl opacity-30"></div>
                 </div>
                 
-                <!-- Action Buttons -->
-                <div class="w-full lg:w-2/5 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4">
-                    <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-yellow-400 text-[#0b1b3d] px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                        Book Free Consultation <i class="fa-regular fa-calendar-check"></i>
-                    </a>
-                    <a href="#" class="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                        Chat on WhatsApp <i class="fa-brands fa-whatsapp text-xl"></i>
-                    </a>
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+                    <!-- Text Content -->
+                    <div class="w-full lg:w-3/5 text-center lg:text-left">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-3 tracking-tight">
+                            Ready to Start Your Study Abroad Journey?
+                        </h2>
+                        <p class="text-gray-200 text-sm sm:text-base font-normal max-w-2xl leading-relaxed">
+                            Book your free consultation now and take the first step towards your future.
+                        </p>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="w-full lg:w-2/5 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-3.5 shrink-0">
+                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#ffb703] hover:bg-[#f59e0b] text-[#0b1b3d] px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            Book Free Consultation
+                        </a>
+                        <a href="https://wa.me/923000000000" target="_blank" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#1ebe5d] text-white px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1 border border-white/20">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer (Last Section) -->
-    <footer class="bg-[#0b1b3d] text-gray-300 pt-32 pb-8 border-t border-[#0b1b3d] font-sans">
+    <footer class="bg-[#0b1b3d] text-gray-300 pt-16 pb-8 border-t border-white/10 font-sans">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
                 <div class="col-span-1 md:col-span-1">

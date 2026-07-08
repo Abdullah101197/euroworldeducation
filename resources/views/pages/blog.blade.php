@@ -340,35 +340,4 @@
 
             </div>
         </div>
-    </section>
-
-    <!-- Full-Width Bottom Newsletter Banner -->
-    <section class="bg-[#0b1b3d] py-10 border-t border-white/10 font-sans relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-white/5 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-white/10 shadow-xl">
-                <!-- Left Icon & Text -->
-                <div class="flex items-center gap-5">
-                    <div class="w-14 h-14 bg-[#c6181b] rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shrink-0">
-                        <i class="fa-solid fa-envelope-open-text"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl md:text-2xl font-black text-white tracking-tight leading-tight">
-                            Subscribe to Our Newsletter
-                        </h3>
-                        <p class="text-sm md:text-base text-gray-300 mt-1 font-normal">
-                            Get the latest news, updates and offers straight to your inbox.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Right Form -->
-                <form class="flex gap-2.5 w-full md:w-auto max-w-md">
-                    <input type="email" placeholder="Enter your email address" class="flex-1 md:w-64 px-4 py-3 rounded-xl text-sm text-gray-800 border-0 shadow-inner focus:outline-none focus:ring-2 focus:ring-[#c6181b]">
-                    <button type="submit" class="bg-[#c6181b] hover:bg-red-800 text-white font-bold px-6 py-3 rounded-xl transition-colors shadow-md text-sm shrink-0">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 @endsection
