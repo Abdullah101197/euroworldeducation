@@ -63,11 +63,6 @@
                 
                 <!-- Right Image Section -->
                 <div class="w-full lg:w-1/2 relative h-[500px] lg:h-[700px] mt-12 lg:mt-0 flex justify-end items-end z-10">
-                    <!-- Dark blue curve that intersects the globe at the bottom right -->
-                    <div class="absolute right-0 bottom-0 w-full h-1/2 bg-[#0b1b3d] rounded-tl-[100%] -z-10 translate-y-24 translate-x-12"></div>
-                    
-                    <!-- Red circle behind the girl -->
-                    <div class="absolute right-[20%] top-[30%] w-[300px] h-[300px] bg-[#c6181b] rounded-full -z-10"></div>
                     
                     <!-- Hero Image -->
                     <!-- Note: For a 100% match, you MUST upload the transparent PNG graphic from your designer -->
@@ -78,8 +73,8 @@
                     @if($heroImage && $heroImage->value)
                         <img src="{{ asset($heroImage->value) }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl">
                     @else
-                        <!-- Fallback using the generated image temporarily. Upload your transparent PNG for a perfect match. -->
-                        <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl" style="mix-blend-mode: multiply;">
+                        <!-- Fallback using the generated image temporarily. Upload your original graphic for a perfect match. -->
+                        <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl">
                     @endif
                     
                     <!-- Airplane graphic (if not included in the main image) -->
