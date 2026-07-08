@@ -116,7 +116,7 @@
                     <a href="{{ route('services') }}" class="hover:text-red-600 transition-colors flex items-center gap-1">Services <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
                     <a href="{{ route('scholarships') }}" class="hover:text-red-600 transition-colors">Scholarships</a>
                     <a href="{{ route('success-stories') }}" class="hover:text-red-600 transition-colors">Success Stories</a>
-                    <a href="{{ route('blog') }}" class="hover:text-red-600 transition-colors">Blog</a>
+                    <a href="{{ route('blog') }}" class="hover:text-red-600 transition-colors">News & Updates</a>
                     <a href="{{ route('contact') }}" class="hover:text-red-600 transition-colors">Contact Us</a>
                 </nav>
 
@@ -140,7 +140,7 @@
                 <a href="{{ route('services') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center">Services <i class="fa-solid fa-chevron-down text-xs"></i></a>
                 <a href="{{ route('scholarships') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Scholarships</a>
                 <a href="{{ route('success-stories') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Success Stories</a>
-                <a href="{{ route('blog') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Blog</a>
+                <a href="{{ route('blog') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">News & Updates</a>
                 <a href="{{ route('contact') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Contact Us</a>
                 <div class="p-6">
                     <a href="{{ route('contact') }}" class="mobile-link flex items-center justify-center gap-2 w-full bg-[#c6181b] text-white py-3 rounded-full font-semibold hover:bg-red-800 transition-colors">

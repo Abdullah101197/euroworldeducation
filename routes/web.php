@@ -11,6 +11,8 @@ Route::get('/destinations', [PageController::class, 'destinations'])->name('dest
 Route::get('/scholarships', [PageController::class, 'scholarships'])->name('scholarships');
 Route::get('/success-stories', [PageController::class, 'successStories'])->name('success-stories');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
+Route::get('/news', [PageController::class, 'blog'])->name('news');
+Route::get('/news-and-updates', [PageController::class, 'blog'])->name('news-and-updates');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
 
