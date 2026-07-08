@@ -62,33 +62,9 @@
                 </div>
                 
                 <!-- Right Image Section -->
-                <div class="w-full lg:w-1/2 relative h-[500px] lg:h-[700px] mt-12 lg:mt-0 flex justify-end items-end z-10">
-                    
-                    <!-- Hero Image -->
-                    <!-- Note: For a 100% match, you MUST upload the transparent PNG graphic from your designer -->
-                    <!-- and set it in your admin panel under "home_hero_image". -->
-                    @php
-                        $heroImage = \App\Models\Setting::where('key', 'home_hero_image')->first();
-                    @endphp
-                    @if($heroImage && $heroImage->value)
-                        <img src="{{ asset($heroImage->value) }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl">
-                    @else
-                        <!-- Fallback using the generated image temporarily. Upload your original graphic for a perfect match. -->
-                        <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 h-[100%] w-auto object-contain object-bottom drop-shadow-2xl">
-                    @endif
-                    
-                    <!-- Airplane graphic (if not included in the main image) -->
-                    <i class="fa-solid fa-plane absolute top-10 right-[20%] text-gray-500 text-3xl transform -rotate-45 opacity-50"></i>
-                    
-                    <!-- Floating Badge: Study in 50+ Countries -->
-                    <div class="absolute top-[30%] right-[-10px] lg:right-[10px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-4 pr-6 flex items-center gap-4 z-20 border border-gray-100">
-                        <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white"><i class="fa-solid fa-globe text-xl"></i></div>
-                        <div>
-                            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Study in</div>
-                            <div class="text-[15px] font-extrabold text-[#0b1b3d] leading-none">50+ Countries</div>
-                            <div class="h-[2px] w-8 bg-[#3b82f6] mt-2"></div>
-                        </div>
-                    </div>
+                <div class="w-full lg:w-1/2 relative h-[500px] lg:h-[650px] mt-12 lg:mt-0 flex justify-end items-end z-10">
+                    <!-- Hero Image (Exact 100% match from provided design) -->
+                    <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-h-[650px] object-contain object-bottom">
                 </div>
             </div>
         </div>
