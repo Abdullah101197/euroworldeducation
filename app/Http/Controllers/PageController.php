@@ -14,9 +14,29 @@ class PageController extends Controller
     public function successStories() { return view('pages.success-stories'); }
     public function blog() 
     { 
-        $posts = \App\Models\Post::with('category')->latest()->paginate(9);
-        $categories = \App\Models\Category::all();
-        $popularPosts = \App\Models\Post::latest()->take(3)->get(); // Dummy popular posts for now
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('posts')) {
+                $posts = \App\Models\Post::with('category')->latest()->paginate(9);
+                $popularPosts = \App\Models\Post::latest()->take(3)->get();
+            } else {
+                $posts = new \Illuminate\Pagination\LengthAwarePaginator([], 0, 9);
+                $popularPosts = collect([]);
+            }
+        } catch (\Exception $e) {
+            $posts = new \Illuminate\Pagination\LengthAwarePaginator([], 0, 9);
+            $popularPosts = collect([]);
+        }
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('categories')) {
+                $categories = \App\Models\Category::all();
+            } else {
+                $categories = collect([]);
+            }
+        } catch (\Exception $e) {
+            $categories = collect([]);
+        }
+
         return view('pages.blog', compact('posts', 'categories', 'popularPosts')); 
     }
     public function contact() { return view('pages.contact'); }

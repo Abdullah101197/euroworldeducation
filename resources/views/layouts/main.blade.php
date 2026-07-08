@@ -195,7 +195,12 @@
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex flex-col items-start gap-1 mb-6">
                         @php
-                            $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first();
+                            $siteLogo = null;
+                            try {
+                                $siteLogo = isset($global_settings) && is_object($global_settings) && method_exists($global_settings, 'where') ? $global_settings->where('key', 'site_logo')->first() : \App\Models\Setting::where('key', 'site_logo')->first();
+                            } catch (\Exception $e) {
+                                $siteLogo = null;
+                            }
                         @endphp
                         @if($siteLogo && $siteLogo->value && file_exists(public_path($siteLogo->value)) && $siteLogo->value !== 'images/logo.png')
                             <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">

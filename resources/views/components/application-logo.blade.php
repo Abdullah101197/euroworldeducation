@@ -1,5 +1,6 @@
 @php
-    $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first();
+    $siteLogo = null;
+    try { $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first(); } catch (\Exception $e) { $siteLogo = null; }
 @endphp
 
 @if($siteLogo && $siteLogo->value && file_exists(public_path($siteLogo->value)) && $siteLogo->value !== 'images/logo.png')
