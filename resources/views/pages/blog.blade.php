@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- News & Updates Top Hero Banner -->
-    <section class="relative pt-16 pb-16 bg-[#0b1b3d] font-sans overflow-hidden text-left border-b border-white/10">
+    <section class="relative pt-40 pb-20 bg-[#0b1b3d] font-sans overflow-hidden text-left border-b border-white/10">
         <!-- Abstract world map grid / background pattern -->
         <div class="absolute inset-0 opacity-10 pointer-events-none">
             <div class="absolute -right-20 -top-40 w-96 h-96 bg-white rounded-full mix-blend-overlay blur-3xl"></div>

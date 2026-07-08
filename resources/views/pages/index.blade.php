@@ -7,7 +7,7 @@
 
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-20 lg:pt-28 pb-0 bg-[#f2f5f8] font-sans overflow-hidden">
+    <section id="hero" class="relative pt-36 lg:pt-44 pb-0 bg-[#f2f5f8] font-sans overflow-hidden">
         <!-- Dotted background pattern -->
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
 
