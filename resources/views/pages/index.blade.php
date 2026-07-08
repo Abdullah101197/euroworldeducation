@@ -69,7 +69,7 @@
         </div>
 
         <!-- Statistics Bar -->
-        <div class="w-full m-0 max-w-[1440px] mx-auto px-4 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16">
+        <div class="w-full max-w-[1440px] mx-auto px-4 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16" style="margin:0% auto;">
             <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
 
                 <!-- Stat 1 -->
