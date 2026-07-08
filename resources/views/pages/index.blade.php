@@ -397,8 +397,8 @@
             <!-- Carousel Container -->
             <div class="relative mb-12 reveal-up">
                 <!-- Left Arrow -->
-                <button class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-[#0b1b3d] text-white rounded-full flex items-center justify-center z-20 shadow-md">
-                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                <button class="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0b1b3d] hover:bg-[#c6181b] text-white rounded-full flex items-center justify-center z-20 shadow-lg transition-colors">
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
                 </button>
 
                 <!-- Cards (Horizontal Scroll) -->
@@ -501,7 +501,67 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
+                    <!-- Card 4 (Pavia) -->
+                    <div class="flex-none w-[280px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden snap-center relative flex flex-col">
+                        <div class="p-4 flex items-center gap-3 border-b border-gray-50">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <h5 class="font-bold text-[#0b1b3d] text-xs leading-tight">UNIVERSITÀ<br>DI PAVIA</h5>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 flex items-center gap-2 text-[10px] font-bold">
+                            <span class="w-4 h-3 bg-green-600 flex"><span class="w-1/3 bg-green-600"></span><span class="w-1/3 bg-white"></span><span class="w-1/3 bg-red-600"></span></span> ITALY
+                        </div>
+                        <div class="relative h-32 bg-gray-200 w-full">
+                            <img src="{{ asset('assets/dest_italy_1783324333447.png') }}" class="w-full h-full object-cover">
+                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#0b1b3d] text-white text-[10px] font-bold px-4 py-1 rounded-full flex items-center gap-1 shadow-md z-10 w-max">
+                                <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
+                            </div>
+                        </div>
+                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70"></div>
+                            <img src="https://i.pravatar.cc/150?img=60" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                            <h4 class="font-bold text-[#0b1b3d] text-sm">Ahmed Khan</h4>
+                            <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
+                                <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Bioinformatics
+                            </div>
+                            <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
+                                <i class="fa-solid fa-location-dot text-red-600"></i> University of Pavia, Italy
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 (Rome) -->
+                    <div class="flex-none w-[280px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden snap-center relative flex flex-col">
+                        <div class="p-4 flex items-center gap-3 border-b border-gray-50">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <h5 class="font-bold text-[#0b1b3d] text-xs leading-tight">LA SAPIENZA<br>UNIVERSITÀ DI ROMA</h5>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 flex items-center gap-2 text-[10px] font-bold">
+                            <span class="w-4 h-3 bg-green-600 flex"><span class="w-1/3 bg-green-600"></span><span class="w-1/3 bg-white"></span><span class="w-1/3 bg-red-600"></span></span> ITALY
+                        </div>
+                        <div class="relative h-32 bg-gray-200 w-full">
+                            <img src="{{ asset('assets/dest_italy_1783324333447.png') }}" class="w-full h-full object-cover">
+                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#0b1b3d] text-white text-[10px] font-bold px-4 py-1 rounded-full flex items-center gap-1 shadow-md z-10 w-max">
+                                <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
+                            </div>
+                        </div>
+                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70"></div>
+                            <img src="https://i.pravatar.cc/150?img=47" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                            <h4 class="font-bold text-[#0b1b3d] text-sm">Zainab Fatima</h4>
+                            <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
+                                <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Psychology
+                            </div>
+                            <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
+                                <i class="fa-solid fa-location-dot text-red-600"></i> Sapienza University, Italy
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 (Bucharest) -->
                     <div class="flex-none w-[280px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden snap-center relative flex flex-col">
                         <div class="p-4 flex items-center gap-3 border-b border-gray-50">
                             <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-building-columns"></i></div>
@@ -534,8 +594,8 @@
                 </div>
 
                 <!-- Right Arrow -->
-                <button class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-[#0b1b3d] text-white rounded-full flex items-center justify-center z-20 shadow-md">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                <button class="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0b1b3d] hover:bg-[#c6181b] text-white rounded-full flex items-center justify-center z-20 shadow-lg transition-colors">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
                 </button>
             </div>
 
