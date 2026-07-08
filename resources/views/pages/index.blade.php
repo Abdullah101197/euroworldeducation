@@ -12,7 +12,7 @@
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
         
         <div class="max-w-[1150px] mx-auto px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
+            <div class="flex flex-col lg:flex-row lg:items-start items-center justify-center gap-4 lg:gap-8">
                 <!-- Left Content -->
                 <div class="w-full lg:w-[54%] reveal-up pt-8 lg:pt-0 text-center lg:text-left z-20 relative">
                     <div class="flex items-center justify-center lg:justify-start gap-3 mb-5">
@@ -69,7 +69,7 @@
         </div>
         
         <!-- Statistics Bar -->
-        <div class="max-w-[1300px] mx-auto px-4 lg:px-6 relative z-30 -mt-6 lg:-mt-8 mb-16">
+        <div class="w-full max-w-[1440px] mx-auto px-4 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16">
             <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
                 
                 <!-- Stat 1 -->
