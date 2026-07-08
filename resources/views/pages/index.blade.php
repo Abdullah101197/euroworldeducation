@@ -276,7 +276,7 @@
                 <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] p-6 text-center border border-gray-100 hover:shadow-lg transition-shadow">
                     <div class="w-12 h-12 mx-auto mb-4 text-[#0b1b3d] text-4xl flex items-center justify-center relative">
                         <i class="fa-solid fa-building-columns"></i>
-                        <i class="fa-solid fa-circle-check text-yellow-400 text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
+                        <i class="fa-solid fa-circle-check text-[#c6181b] text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
                     </div>
                     <h4 class="text-sm font-bold text-[#0b1b3d] mb-3 leading-snug">University Admission Assistance</h4>
                     <p class="text-[10px] text-gray-500 leading-relaxed">We help you choose the right university and program and secure your admission.</p>
@@ -285,7 +285,7 @@
                 <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] p-6 text-center border border-gray-100 hover:shadow-lg transition-shadow">
                     <div class="w-12 h-12 mx-auto mb-4 text-[#0b1b3d] text-4xl flex items-center justify-center relative">
                         <i class="fa-solid fa-file-contract"></i>
-                        <i class="fa-solid fa-circle-check text-yellow-400 text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
+                        <i class="fa-solid fa-circle-check text-[#c6181b] text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
                     </div>
                     <h4 class="text-sm font-bold text-[#0b1b3d] mb-3 leading-snug">Student Visa Preparation</h4>
                     <p class="text-[10px] text-gray-500 leading-relaxed">Complete visa file preparation and guidance for a smooth visa process.</p>
@@ -294,7 +294,7 @@
                 <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] p-6 text-center border border-gray-100 hover:shadow-lg transition-shadow">
                     <div class="w-12 h-12 mx-auto mb-4 text-[#0b1b3d] text-4xl flex items-center justify-center relative">
                         <i class="fa-solid fa-award"></i>
-                        <i class="fa-solid fa-circle-check text-yellow-400 text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
+                        <i class="fa-solid fa-circle-check text-[#c6181b] text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
                     </div>
                     <h4 class="text-sm font-bold text-[#0b1b3d] mb-3 leading-snug">Scholarship Guidance</h4>
                     <p class="text-[10px] text-gray-500 leading-relaxed">Find and apply for the best scholarships to reduce your education cost.</p>
@@ -303,7 +303,7 @@
                 <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] p-6 text-center border border-gray-100 hover:shadow-lg transition-shadow">
                     <div class="w-12 h-12 mx-auto mb-4 text-[#0b1b3d] text-4xl flex items-center justify-center relative">
                         <i class="fa-regular fa-file-lines"></i>
-                        <i class="fa-solid fa-circle-check text-yellow-400 text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
+                        <i class="fa-solid fa-circle-check text-[#c6181b] text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
                     </div>
                     <h4 class="text-sm font-bold text-[#0b1b3d] mb-3 leading-snug">SOP / CV / Motivation Letter Support</h4>
                     <p class="text-[10px] text-gray-500 leading-relaxed">Professional SOP, CV and motivation letter writing assistance.</p>
@@ -312,7 +312,7 @@
                 <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] p-6 text-center border border-gray-100 hover:shadow-lg transition-shadow">
                     <div class="w-12 h-12 mx-auto mb-4 text-[#0b1b3d] text-4xl flex items-center justify-center relative">
                         <i class="fa-solid fa-file-signature"></i>
-                        <i class="fa-solid fa-circle-check text-yellow-400 text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
+                        <i class="fa-solid fa-circle-check text-[#c6181b] text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
                     </div>
                     <h4 class="text-sm font-bold text-[#0b1b3d] mb-3 leading-snug">Document Attestation Guidance</h4>
                     <p class="text-[10px] text-gray-500 leading-relaxed">Complete support for document attestation and legalization process.</p>
@@ -321,7 +321,7 @@
                 <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] p-6 text-center border border-gray-100 hover:shadow-lg transition-shadow">
                     <div class="w-12 h-12 mx-auto mb-4 text-[#0b1b3d] text-4xl flex items-center justify-center relative">
                         <i class="fa-solid fa-suitcase-rolling"></i>
-                        <i class="fa-solid fa-circle-check text-yellow-400 text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
+                        <i class="fa-solid fa-circle-check text-[#c6181b] text-sm absolute bottom-0 right-0 border-2 border-white rounded-full bg-white"></i>
                     </div>
                     <h4 class="text-sm font-bold text-[#0b1b3d] mb-3 leading-snug">Pre-Departure Counselling</h4>
                     <p class="text-[10px] text-gray-500 leading-relaxed">We prepare you for your journey and stay with you every step of the way.</p>
