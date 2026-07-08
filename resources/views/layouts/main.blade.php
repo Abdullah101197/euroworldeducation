@@ -99,9 +99,9 @@
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
                     @if(isset($global_settings) && $logo = $global_settings->where('key', 'site_logo')->first() && $logo->value && file_exists(public_path($logo->value)) && $logo->value !== 'images/logo.png')
-                        <img src="{{ asset($logo->value) }}" alt="EuroWorld Consultants" class="h-20 md:h-24 object-contain transition-all duration-300">
+                        <img src="{{ asset($logo->value) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @else
-                        <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-20 md:h-24 object-contain transition-all duration-300">
+                        <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @endif
                 </a>
                 
@@ -198,9 +198,9 @@
                             $siteLogo = \App\Models\Setting::where('key', 'site_logo')->first();
                         @endphp
                         @if($siteLogo && $siteLogo->value && file_exists(public_path($siteLogo->value)) && $siteLogo->value !== 'images/logo.png')
-                            <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" class="h-20 md:h-24 object-contain bg-white rounded-full p-2 shadow-md">
+                            <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @else
-                            <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-20 md:h-24 object-contain bg-white rounded-full p-2 shadow-md">
+                            <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @endif
                     </div>
                     <p class="text-sm text-gray-400 mb-6 leading-relaxed">Empowering students to achieve global success through quality education in Europe.</p>
