@@ -156,7 +156,7 @@
     </main>
 
     <!-- Pre-Footer CTA Banner (Last Section) -->
-    <section class="bg-transparent font-sans relative z-20 pb-12">
+    <section class="bg-[#f2f5f8] font-sans relative z-20 py-16 md:py-20 border-t border-gray-200">
         <div class="container mx-auto px-6">
             <div class="bg-gradient-to-r from-[#0b1b3d] via-[#0f2557] to-[#0b1b3d] rounded-[28px] p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
                 <!-- Abstract architecture/spire background elements -->
@@ -178,8 +178,8 @@
                     
                     <!-- Action Buttons -->
                     <div class="w-full lg:w-2/5 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-3.5 shrink-0">
-                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#ffb703] hover:bg-[#f59e0b] text-[#0b1b3d] px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                            Book Free Consultation
+                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#c6181b] hover:bg-red-800 text-white px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            Book Free Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                         <a href="https://wa.me/923000000000" target="_blank" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#1ebe5d] text-white px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1 border border-white/20">
                             <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
