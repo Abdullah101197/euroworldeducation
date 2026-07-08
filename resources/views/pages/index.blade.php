@@ -421,13 +421,18 @@
                                 <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
                             </div>
                         </div>
-                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
-                            <!-- Mock Document -->
-                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70">
-                                <div class="w-full h-1 bg-gray-200 mt-2"></div>
-                                <div class="w-2/3 h-1 bg-gray-200 mt-1"></div>
+                        <div class="relative pt-4 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <!-- Authentic Admission Letter Background (Card 1) -->
+                            <div class="w-full bg-white border border-gray-200/80 rounded-lg shadow-sm pt-3 pb-8 px-3 text-left relative z-0 mb-[-32px]">
+                                <div class="flex items-center gap-1.5 border-b border-gray-100 pb-1.5 mb-1.5">
+                                    <div class="w-5 h-5 rounded-full bg-[#0b1b3d]/10 flex items-center justify-center text-[#0b1b3d] text-[9px]"><i class="fa-solid fa-building-columns"></i></div>
+                                    <span class="text-[8.5px] font-extrabold text-[#0b1b3d] uppercase tracking-wider leading-none">UNIVERSITÀ DI PISA</span>
+                                </div>
+                                <div class="text-[8.5px] font-bold text-gray-700 leading-tight">Pre-enrolment summary</div>
+                                <div class="text-[8.5px] font-black text-[#0b1b3d] mb-1 leading-tight">Congratulations!</div>
+                                <p class="text-[6.5px] text-gray-400 leading-[1.3] line-clamp-3">Department: Computer Science & Engineering • Eligibility: Approved. Your academic evaluation has completed successfully and you are invited to proceed with enrolment.</p>
                             </div>
-                            <img src="https://i.pravatar.cc/150?img=11" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                            <img src="https://i.pravatar.cc/150?img=11" class="w-16 h-16 rounded-full border-4 border-white shadow-lg relative z-10 mb-2 object-cover">
                             <h4 class="font-bold text-[#0b1b3d] text-sm">Hassan Raza</h4>
                             <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
                                 <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Computer Science
@@ -455,12 +460,18 @@
                                 <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
                             </div>
                         </div>
-                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
-                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70">
-                                <div class="w-full h-1 bg-gray-200 mt-2"></div>
-                                <div class="w-2/3 h-1 bg-gray-200 mt-1"></div>
+                        <div class="relative pt-4 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <!-- Authentic Admission Letter Background (Card 2) -->
+                            <div class="w-full bg-white border border-gray-200/80 rounded-lg shadow-sm pt-3 pb-8 px-3 text-left relative z-0 mb-[-32px]">
+                                <div class="flex items-center gap-1.5 border-b border-gray-100 pb-1.5 mb-1.5">
+                                    <div class="w-5 h-5 rounded-full bg-[#0b1b3d]/10 flex items-center justify-center text-[#0b1b3d] text-[9px]"><i class="fa-solid fa-building-columns"></i></div>
+                                    <span class="text-[8.5px] font-extrabold text-[#0b1b3d] uppercase tracking-wider leading-none">POLITECNICO DI MILANO</span>
+                                </div>
+                                <div class="text-[8.5px] font-bold text-gray-700 leading-tight">Pre-enrolment summary</div>
+                                <div class="text-[8.5px] font-black text-[#0b1b3d] mb-1 leading-tight">Congratulations!</div>
+                                <p class="text-[6.5px] text-gray-400 leading-[1.3] line-clamp-3">Department: Data Science & Analytics • Eligibility: Approved. Your qualifications have met all institutional criteria for the Master of Science degree program.</p>
                             </div>
-                            <img src="https://i.pravatar.cc/150?img=12" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                            <img src="https://i.pravatar.cc/150?img=12" class="w-16 h-16 rounded-full border-4 border-white shadow-lg relative z-10 mb-2 object-cover">
                             <h4 class="font-bold text-[#0b1b3d] text-sm">Muhammad Usman</h4>
                             <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
                                 <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Data Science
@@ -476,7 +487,7 @@
                         <div class="p-4 flex items-center gap-3 border-b border-gray-50">
                             <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-building-columns"></i></div>
                             <div>
-                                <h5 class="font-bold text-[#0b1b3d] text-xs leading-tight">UNIVERSITÃƒâ‚¬<br>DEGLI STUDI DI MILANO</h5>
+                                <h5 class="font-bold text-[#0b1b3d] text-xs leading-tight">UNIVERSITÀ<br>DEGLI STUDI DI MILANO</h5>
                             </div>
                         </div>
                         <div class="px-4 py-2 flex items-center gap-2 text-[10px] font-bold">
@@ -488,9 +499,18 @@
                                 <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
                             </div>
                         </div>
-                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
-                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70"></div>
-                            <img src="https://i.pravatar.cc/150?img=5" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                        <div class="relative pt-4 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <!-- Authentic Admission Letter Background (Card 3) -->
+                            <div class="w-full bg-white border border-gray-200/80 rounded-lg shadow-sm pt-3 pb-8 px-3 text-left relative z-0 mb-[-32px]">
+                                <div class="flex items-center gap-1.5 border-b border-gray-100 pb-1.5 mb-1.5">
+                                    <div class="w-5 h-5 rounded-full bg-[#0b1b3d]/10 flex items-center justify-center text-[#0b1b3d] text-[9px]"><i class="fa-solid fa-building-columns"></i></div>
+                                    <span class="text-[8.5px] font-extrabold text-[#0b1b3d] uppercase tracking-wider leading-none">UNIVERSITÀ DI MILANO</span>
+                                </div>
+                                <div class="text-[8.5px] font-bold text-gray-700 leading-tight">Pre-enrolment summary</div>
+                                <div class="text-[8.5px] font-black text-[#0b1b3d] mb-1 leading-tight">Congratulations!</div>
+                                <p class="text-[6.5px] text-gray-400 leading-[1.3] line-clamp-3">Department: Business & Management • Eligibility: Approved. Your pre-enrolment summary verifies compliance with international student admission criteria.</p>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=5" class="w-16 h-16 rounded-full border-4 border-white shadow-lg relative z-10 mb-2 object-cover">
                             <h4 class="font-bold text-[#0b1b3d] text-sm">Ayesha Malik</h4>
                             <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
                                 <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Business Management
@@ -518,9 +538,18 @@
                                 <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
                             </div>
                         </div>
-                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
-                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70"></div>
-                            <img src="https://i.pravatar.cc/150?img=60" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                        <div class="relative pt-4 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <!-- Authentic Admission Letter Background (Card 4 - Ahmed Khan) -->
+                            <div class="w-full bg-white border border-gray-200/80 rounded-lg shadow-sm pt-3 pb-8 px-3 text-left relative z-0 mb-[-32px]">
+                                <div class="flex items-center gap-1.5 border-b border-gray-100 pb-1.5 mb-1.5">
+                                    <div class="w-5 h-5 rounded-full bg-[#0b1b3d]/10 flex items-center justify-center text-[#0b1b3d] text-[9px]"><i class="fa-solid fa-building-columns"></i></div>
+                                    <span class="text-[8.5px] font-extrabold text-[#0b1b3d] uppercase tracking-wider leading-none">UNIVERSITÀ DI PAVIA</span>
+                                </div>
+                                <div class="text-[8.5px] font-bold text-gray-700 leading-tight">Pre-enrolment summary</div>
+                                <div class="text-[8.5px] font-black text-[#0b1b3d] mb-1 leading-tight">Congratulations!</div>
+                                <p class="text-[6.5px] text-gray-400 leading-[1.3] line-clamp-3">Department: Bioinformatics & Life Sciences • Eligibility: Approved. Your pre-enrolment documentation has been verified and you are authorized for visa application.</p>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=60" class="w-16 h-16 rounded-full border-4 border-white shadow-lg relative z-10 mb-2 object-cover">
                             <h4 class="font-bold text-[#0b1b3d] text-sm">Ahmed Khan</h4>
                             <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
                                 <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Bioinformatics
@@ -548,9 +577,18 @@
                                 <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
                             </div>
                         </div>
-                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
-                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70"></div>
-                            <img src="https://i.pravatar.cc/150?img=47" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                        <div class="relative pt-4 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <!-- Authentic Admission Letter Background (Card 5) -->
+                            <div class="w-full bg-white border border-gray-200/80 rounded-lg shadow-sm pt-3 pb-8 px-3 text-left relative z-0 mb-[-32px]">
+                                <div class="flex items-center gap-1.5 border-b border-gray-100 pb-1.5 mb-1.5">
+                                    <div class="w-5 h-5 rounded-full bg-[#0b1b3d]/10 flex items-center justify-center text-[#0b1b3d] text-[9px]"><i class="fa-solid fa-building-columns"></i></div>
+                                    <span class="text-[8.5px] font-extrabold text-[#0b1b3d] uppercase tracking-wider leading-none">SAPIENZA ROMA</span>
+                                </div>
+                                <div class="text-[8.5px] font-bold text-gray-700 leading-tight">Pre-enrolment summary</div>
+                                <div class="text-[8.5px] font-black text-[#0b1b3d] mb-1 leading-tight">Congratulations!</div>
+                                <p class="text-[6.5px] text-gray-400 leading-[1.3] line-clamp-3">Department: Psychology & Cognitive Science • Eligibility: Approved. Your formal admission letter has been issued by the international registry.</p>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=47" class="w-16 h-16 rounded-full border-4 border-white shadow-lg relative z-10 mb-2 object-cover">
                             <h4 class="font-bold text-[#0b1b3d] text-sm">Zainab Fatima</h4>
                             <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
                                 <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Psychology
@@ -578,9 +616,18 @@
                                 <i class="fa-solid fa-circle-check text-green-400"></i> Admitted
                             </div>
                         </div>
-                        <div class="relative pt-8 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
-                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-white shadow-sm border border-gray-100 rounded opacity-70"></div>
-                            <img src="https://i.pravatar.cc/150?img=13" class="w-16 h-16 rounded-full border-4 border-white shadow-md relative z-10 mb-3 object-cover">
+                        <div class="relative pt-4 pb-6 px-4 flex-grow flex flex-col items-center text-center bg-gray-50/50">
+                            <!-- Authentic Admission Letter Background (Card 6) -->
+                            <div class="w-full bg-white border border-gray-200/80 rounded-lg shadow-sm pt-3 pb-8 px-3 text-left relative z-0 mb-[-32px]">
+                                <div class="flex items-center gap-1.5 border-b border-gray-100 pb-1.5 mb-1.5">
+                                    <div class="w-5 h-5 rounded-full bg-[#0b1b3d]/10 flex items-center justify-center text-[#0b1b3d] text-[9px]"><i class="fa-solid fa-building-columns"></i></div>
+                                    <span class="text-[8.5px] font-extrabold text-[#0b1b3d] uppercase tracking-wider leading-none">UNI OF BUCHAREST</span>
+                                </div>
+                                <div class="text-[8.5px] font-bold text-gray-700 leading-tight">Pre-enrolment summary</div>
+                                <div class="text-[8.5px] font-black text-[#0b1b3d] mb-1 leading-tight">Congratulations!</div>
+                                <p class="text-[6.5px] text-gray-400 leading-[1.3] line-clamp-3">Department: Business Administration • Eligibility: Approved. Your official acceptance letter and visa support documentation have been completed.</p>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=13" class="w-16 h-16 rounded-full border-4 border-white shadow-lg relative z-10 mb-2 object-cover">
                             <h4 class="font-bold text-[#0b1b3d] text-sm">Bilal Ahmed</h4>
                             <div class="flex items-center justify-center gap-1 text-[10px] text-gray-500 mt-1">
                                 <i class="fa-solid fa-graduation-cap text-[#0b1b3d]"></i> MSc Business Administration
