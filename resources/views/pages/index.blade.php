@@ -12,7 +12,7 @@
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
         
         <!-- Large light blue curved shape behind the image -->
-        <div class="absolute right-0 top-0 w-1/2 h-full bg-[#f0f4f8] rounded-tl-[300px] rounded-bl-[100px] -z-10 transform translate-x-10 -translate-y-10"></div>
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-[#f2f5f8] rounded-tl-[300px] rounded-bl-[100px] -z-10 transform translate-x-10 -translate-y-10"></div>
         
         <div class="container mx-auto px-6 lg:px-12 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
