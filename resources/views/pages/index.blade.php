@@ -7,32 +7,34 @@
 
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-24 lg:pt-32 pb-0 bg-[#f2f5f8] font-sans overflow-hidden">
+    <section id="hero" class="relative pt-20 lg:pt-28 pb-0 bg-[#f2f5f8] font-sans overflow-hidden">
         <!-- Dotted background pattern -->
         <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
         
         <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
                 <!-- Left Content -->
-                <div class="w-full lg:w-1/2 reveal-up pt-12 lg:pt-0 text-center lg:text-left z-20 relative">
-                    <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                <div class="w-full lg:w-1/2 reveal-up pt-8 lg:pt-0 text-center lg:text-left z-20 relative">
+                    <div class="flex items-center justify-center lg:justify-start gap-3 mb-5">
                         <div class="h-[2px] w-8 bg-[#c6181b]"></div>
                         <span class="text-[13px] font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
                     </div>
                     
-                    <h1 class="text-5xl md:text-6xl lg:text-[70px] font-extrabold leading-[1.1] mb-6 tracking-tight text-[#0b1b3d] relative inline-block">
+                    <h1 class="text-4xl md:text-5xl lg:text-[64px] font-extrabold leading-[1.12] mb-6 tracking-tight text-[#0b1b3d] relative inline-block">
                         Your Journey to <br>
-                        <span class="text-[#c6181b]">Global</span> Education
-                        <!-- Blue line under Global -->
-                        <div class="absolute bottom-0 left-0 h-[3px] w-[180px] bg-[#3b82f6] -mb-2"></div>
+                        <span class="text-[#c6181b] relative inline-block">
+                            Global
+                            <!-- Blue line under Global -->
+                            <span class="absolute left-0 -bottom-1 h-[3px] w-full bg-[#3b82f6]"></span>
+                        </span> Education
                     </h1>
                     
-                    <p class="text-base md:text-lg text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium mt-6">
+                    <p class="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                         We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.
                     </p>
                     
                     <!-- Feature Badges -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-8">
                         <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
                             <div class="w-8 h-8 rounded-full bg-[#e2e8f0] flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-graduation-cap text-xs"></i></div>
                             <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">Top Ranked<br>Universities</span>
@@ -59,15 +61,15 @@
                 </div>
                 
                 <!-- Right Image Section -->
-                <div class="w-full lg:w-1/2 relative h-[500px] lg:h-[650px] mt-12 lg:mt-0 flex justify-end items-end z-10">
+                <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0 flex justify-center lg:justify-end items-end z-10">
                     <!-- Hero Image (Exact 100% match from provided design) -->
-                    <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-h-[650px] object-contain object-bottom">
+                    <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-w-[550px] object-contain object-bottom">
                 </div>
             </div>
         </div>
         
         <!-- Statistics Bar -->
-        <div class="container mx-auto px-6 lg:px-12 relative z-30 -mt-12 lg:-mt-24 mb-16 translate-y-16">
+        <div class="container mx-auto px-6 lg:px-12 relative z-30 -mt-6 lg:-mt-8 mb-16">
             <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
                 
                 <!-- Stat 1 -->
