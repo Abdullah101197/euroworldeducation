@@ -6,6 +6,15 @@
 @section('content')
 
 
+    <style>
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-gentle-float {
+            animation: gentle-float 6s ease-in-out infinite;
+        }
+    </style>
     <!-- Hero Section -->
     <section id="hero" class="relative pt-36 lg:pt-44 pb-12 bg-white font-sans overflow-hidden">
         <!-- Subtle modern geometric grid pattern -->
@@ -66,7 +75,7 @@
                     <div class="absolute right-6 top-1/4 w-48 h-48 bg-[#c6181b]/15 rounded-full blur-2xl -z-10 animate-pulse"></div>
 
                     <!-- Ultra-HD 1024x1024 Hero Image Showcase -->
-                    <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-w-[560px] object-contain drop-shadow-[0_25px_35px_rgba(11,27,61,0.22)] transform hover:scale-[1.01] transition-transform duration-500">
+                    <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="animate-gentle-float relative z-10 w-full h-auto max-w-[560px] object-contain drop-shadow-[0_25px_35px_rgba(11,27,61,0.22)]">
 
                     <!-- Floating Glass Badge 1 (Top Right) -->
                     <div class="absolute top-8 right-2 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 animate-bounce-slow transform hover:scale-105 transition-all">
