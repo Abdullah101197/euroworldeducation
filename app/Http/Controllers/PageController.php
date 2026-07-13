@@ -59,6 +59,30 @@ class PageController extends Controller
 
     public function submitContact(Request $request)
     {
+        // Check if this is a WhatsApp Assessment submission
+        if ($request->has('wa_full_name') || $request->input('lead_type') === 'whatsapp') {
+            $name = trim($request->input('wa_full_name', 'Student Lead'));
+            $dob = trim($request->input('wa_dob', 'N/A'));
+            $qual = trim($request->input('wa_qualification_marks', 'N/A'));
+            $interest = trim($request->input('wa_interest', 'General Study Advice'));
+            $intake = trim($request->input('wa_intake', 'Earliest Possible Available'));
+
+            \App\Models\Contact::create([
+                'name' => $name,
+                'email' => $request->input('email', 'whatsapp_lead@euroworldeducation.com'),
+                'phone' => $request->input('phone', null),
+                'subject' => 'WhatsApp Evaluation: ' . $interest,
+                'message' => "📅 Date of Birth: {$dob}\n🎓 Qualification & Marks: {$qual}\n🌍 Target Destination: {$interest}\n🎯 Preferred Intake: {$intake}",
+                'is_contacted' => false,
+            ]);
+
+            if ($request->wantsJson() || $request->ajax()) {
+                return response()->json(['status' => 'success', 'message' => 'WhatsApp lead saved to admin!']);
+            }
+            return back()->with('success', 'Thank you, ' . $name . '! Your profile has been recorded.');
+        }
+
+        // Standard Email Form submission
         $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -68,10 +92,11 @@ class PageController extends Controller
         ]);
 
         \App\Models\Contact::create([
-            'name' => $validated['first_name'] . ' ' . $validated['last_name'],
+            'name' => trim($validated['first_name'] . ' ' . $validated['last_name']),
             'email' => $validated['email'],
             'subject' => $validated['subject'],
             'message' => $validated['message'],
+            'is_contacted' => false,
         ]);
 
         return back()->with('success', 'Thank you, ' . $validated['first_name'] . '! Your message has been received.');

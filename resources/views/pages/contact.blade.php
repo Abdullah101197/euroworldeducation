@@ -168,6 +168,24 @@
                                     return;
                                 }
 
+                                // Save contact lead directly to Admin Leads table right before opening WhatsApp
+                                fetch("{{ route('contact.submit') }}", {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                        'Accept': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        wa_full_name: fullName,
+                                        wa_dob: dob,
+                                        wa_qualification_marks: qualMarks,
+                                        wa_interest: interest,
+                                        wa_intake: intake,
+                                        lead_type: 'whatsapp'
+                                    })
+                                }).catch(err => console.log('Lead recording status:', err));
+
                                 let message = `*🌟 New Student Profile Assessment 🌟*\n\n` +
                                               `*👤 Full Name:* ${fullName}\n` +
                                               `*🎂 Date of Birth:* ${dob}\n` +
