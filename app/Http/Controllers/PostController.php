@@ -37,9 +37,11 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->category_id = $request->category_id;
 
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('posts', 'public');
-            $post->image = 'storage/' . $path;
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $file = $request->file('image');
+            $filename = 'post_' . time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/posts'), $filename);
+            $post->image = 'uploads/posts/' . $filename;
         }
 
         $post->save();
@@ -67,12 +69,14 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->category_id = $request->category_id;
 
-        if ($request->hasFile('image')) {
-            if ($post->image) {
-                Storage::disk('public')->delete(str_replace('storage/', '', $post->image));
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            if ($post->image && file_exists(public_path($post->image))) {
+                @unlink(public_path($post->image));
             }
-            $path = $request->file('image')->store('posts', 'public');
-            $post->image = 'storage/' . $path;
+            $file = $request->file('image');
+            $filename = 'post_' . time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/posts'), $filename);
+            $post->image = 'uploads/posts/' . $filename;
         }
 
         $post->save();
