@@ -16,15 +16,20 @@ class SettingController extends Controller
     {
         $data = $request->except(['_token', '_method']);
         
-        // Handle file uploads
+        // Handle file uploads safely without symlink dependencies
         if ($request->hasFile('site_logo')) {
-            $path = $request->file('site_logo')->store('logos', 'public');
-            \App\Models\Setting::updateOrCreate(
-                ['key' => 'site_logo'],
-                ['value' => 'storage/' . $path]
-            );
-            unset($data['site_logo']);
+            $file = $request->file('site_logo');
+            if ($file->isValid()) {
+                $filename = 'logo_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/logos'), $filename);
+                \App\Models\Setting::updateOrCreate(
+                    ['key' => 'site_logo'],
+                    ['value' => 'uploads/logos/' . $filename]
+                );
+            }
         }
+        // Always unset site_logo from $data so it doesn't get overwritten to null when saving other settings
+        unset($data['site_logo']);
 
         foreach ($data as $key => $value) {
             \App\Models\Setting::updateOrCreate(
