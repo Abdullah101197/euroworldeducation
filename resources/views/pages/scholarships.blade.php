@@ -15,12 +15,24 @@
             <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-yellow-400 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md shadow-inner">
                 <i class="fa-solid fa-sparkles animate-spin text-yellow-300"></i> Global Financial Aid & Awards
             </span>
+            @php
+                $rawHeroTitle = $global_settings['scholarships_hero_title'] ?? 'Global Scholarships';
+                // Remove any raw or html-escaped span tags if pasted into admin input
+                $cleanTitle = preg_replace('/&lt;span.*?&gt;(.*?)&lt;\/span&gt;|<span.*?>(.*?)<\/span>/i', '$1', $rawHeroTitle);
+                $cleanTitle = trim($cleanTitle);
+                $highlightWord = trim($global_settings['scholarships_hero_highlight'] ?? 'Scholarships');
+
+                // If cleanTitle ends with highlightWord, strip it off so we don't say "Scholarships Scholarships"
+                if (!empty($highlightWord) && str_ends_with(strtolower($cleanTitle), strtolower($highlightWord))) {
+                    $cleanTitle = trim(substr($cleanTitle, 0, -strlen($highlightWord)));
+                }
+                if (empty($cleanTitle) && empty($highlightWord)) {
+                    $cleanTitle = 'Global';
+                    $highlightWord = 'Scholarships';
+                }
+            @endphp
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-                @if(isset($global_settings['scholarships_hero_highlight']) && !empty(trim($global_settings['scholarships_hero_highlight'])))
-                    {{ $global_settings['scholarships_hero_title'] ?? 'Global' }} <span class="text-[#ffc107]">{{ $global_settings['scholarships_hero_highlight'] }}</span>
-                @else
-                    {!! $global_settings['scholarships_hero_title'] ?? 'Global <span class="text-[#ffc107]">Scholarships</span>' !!}
-                @endif
+                {{ $cleanTitle }} @if($highlightWord)<span class="text-[#ffc107]">{{ $highlightWord }}</span>@endif
             </h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">{{ $global_settings['scholarships_hero_subtitle'] ?? 'Unlock financial aid opportunities and fully-funded programs at the world\'s best universities.' }}</p>
         </div>

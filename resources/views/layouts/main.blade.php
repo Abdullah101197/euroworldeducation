@@ -158,8 +158,8 @@
         @yield('content')
     </main>
 
-    <!-- Pre-Footer CTA Banner (Hidden on Contact Page to avoid visual repetition) -->
-    @if(!request()->is('contact*'))
+    <!-- Pre-Footer CTA Banner (Hidden on Contact & Scholarships Pages to avoid visual repetition) -->
+    @if(!request()->is('contact*') && !request()->is('scholarships*'))
     <section class="bg-[#f2f5f8] font-sans relative z-20 py-16 md:py-20 border-t border-gray-200">
         <div class="container mx-auto px-6">
             <div class="bg-gradient-to-r from-[#0b1b3d] via-[#0f2557] to-[#0b1b3d] rounded-[28px] p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
