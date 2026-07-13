@@ -102,7 +102,7 @@
                         $headerLogoPath = $global_settings['site_logo'] ?? null;
                     @endphp
                     @if($headerLogoPath && $headerLogoPath !== 'images/logo.png')
-                        <img src="{{ asset($headerLogoPath) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
+                        <img src="{{ asset($headerLogoPath) }}" onerror="this.onerror=null; this.src='{{ asset('images/logo.png') }}';" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @else
                         <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @endif
@@ -203,7 +203,7 @@
                             $footerLogoPath = $global_settings['site_logo'] ?? null;
                         @endphp
                         @if($footerLogoPath && $footerLogoPath !== 'images/logo.png')
-                            <img src="{{ asset($footerLogoPath) }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
+                            <img src="{{ asset($footerLogoPath) }}" onerror="this.onerror=null; this.src='{{ asset('images/logo.png') }}';" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @else
                             <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @endif

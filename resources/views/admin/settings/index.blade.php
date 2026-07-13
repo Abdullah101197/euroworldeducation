@@ -26,7 +26,7 @@
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                     Preview Live Site
                 </a>
-                <button type="submit" form="settings-form" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer">
+                <button type="submit" form="settings-form" style="background-color: #2563eb !important; color: #ffffff !important;" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-xl shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer">
                     <i class="fa-solid fa-cloud-arrow-up"></i>
                     Save All Changes
                 </button>
@@ -64,8 +64,9 @@
                     
                     <nav class="space-y-2" aria-label="Tabs">
                         <button type="button" @click="activeTab = 'global'" 
-                                :class="{ 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'global', 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium': activeTab !== 'global' }" 
-                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group">
+                                :style="activeTab === 'global' ? 'background-color: #2563eb !important; color: #ffffff !important;' : ''"
+                                :class="{ 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'global', 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold bg-white': activeTab !== 'global' }" 
+                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group border border-slate-200/60">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" :class="{ 'bg-white/20 text-white': activeTab === 'global', 'bg-blue-50 text-blue-600 group-hover:bg-blue-100': activeTab !== 'global' }">
                                     <i class="fa-solid fa-globe text-sm"></i>
@@ -76,8 +77,9 @@
                         </button>
 
                         <button type="button" @click="activeTab = 'home'" 
-                                :class="{ 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'home', 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium': activeTab !== 'home' }" 
-                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group">
+                                :style="activeTab === 'home' ? 'background-color: #2563eb !important; color: #ffffff !important;' : ''"
+                                :class="{ 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'home', 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold bg-white': activeTab !== 'home' }" 
+                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group border border-slate-200/60">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" :class="{ 'bg-white/20 text-white': activeTab === 'home', 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100': activeTab !== 'home' }">
                                     <i class="fa-solid fa-house text-sm"></i>
@@ -88,8 +90,9 @@
                         </button>
 
                         <button type="button" @click="activeTab = 'about'" 
-                                :class="{ 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'about', 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium': activeTab !== 'about' }" 
-                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group">
+                                :style="activeTab === 'about' ? 'background-color: #2563eb !important; color: #ffffff !important;' : ''"
+                                :class="{ 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'about', 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold bg-white': activeTab !== 'about' }" 
+                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group border border-slate-200/60">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" :class="{ 'bg-white/20 text-white': activeTab === 'about', 'bg-purple-50 text-purple-600 group-hover:bg-purple-100': activeTab !== 'about' }">
                                     <i class="fa-solid fa-building text-sm"></i>
@@ -100,8 +103,9 @@
                         </button>
 
                         <button type="button" @click="activeTab = 'scholarships'" 
-                                :class="{ 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'scholarships', 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium': activeTab !== 'scholarships' }" 
-                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group">
+                                :style="activeTab === 'scholarships' ? 'background-color: #2563eb !important; color: #ffffff !important;' : ''"
+                                :class="{ 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'scholarships', 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold bg-white': activeTab !== 'scholarships' }" 
+                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group border border-slate-200/60">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" :class="{ 'bg-white/20 text-white': activeTab === 'scholarships', 'bg-amber-50 text-amber-600 group-hover:bg-amber-100': activeTab !== 'scholarships' }">
                                     <i class="fa-solid fa-graduation-cap text-sm"></i>
@@ -113,7 +117,7 @@
                     </nav>
 
                     <div class="mt-6 pt-4 border-t border-slate-100 bg-slate-50/80 -mx-4 -mb-4 p-4 rounded-b-2xl">
-                        <button type="submit" form="settings-form" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-blue-500/25 hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg transition-all cursor-pointer">
+                        <button type="submit" form="settings-form" style="background-color: #2563eb !important; color: #ffffff !important;" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-blue-500/25 transition-all cursor-pointer">
                             <i class="fa-solid fa-cloud-arrow-up"></i>
                             Save All Changes
                         </button>
@@ -142,8 +146,7 @@
                             
                             <div class="space-y-8">
                                 <!-- Contact Details Group -->
-                                <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm">
-                                    <h4 class="text-sm font-extrabold text-slate-800 uppercase tracking-wider mb-5 flex items-center gap-2.5">
+                                <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-s                                     <h4 class="text-sm font-extrabold text-slate-800 uppercase tracking-wider mb-5 flex items-center gap-2.5">
                                         <span class="w-7 h-7 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-xs"><i class="fa-solid fa-address-book"></i></span>
                                         Contact Information
                                     </h4>
@@ -154,7 +157,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none">
                                                     <i class="fa-solid fa-phone text-xs"></i>
                                                 </span>
-                                                <input type="text" name="site_phone" value="{{ $flatSettings['site_phone'] ?? '' }}" placeholder="+1 (234) 567-8900" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="text" name="site_phone" value="{{ $flatSettings['site_phone'] ?? '' }}" placeholder="+1 (234) 567-8900" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
@@ -163,7 +166,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none">
                                                     <i class="fa-solid fa-envelope text-xs"></i>
                                                 </span>
-                                                <input type="email" name="site_email" value="{{ $flatSettings['site_email'] ?? '' }}" placeholder="info@euroworldeducation.com" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="email" name="site_email" value="{{ $flatSettings['site_email'] ?? '' }}" placeholder="info@euroworldeducation.com" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div class="md:col-span-2">
@@ -186,7 +189,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none w-11">
                                                     <i class="fa-brands fa-facebook text-base"></i>
                                                 </span>
-                                                <input type="url" name="social_facebook" value="{{ $flatSettings['social_facebook'] ?? '' }}" placeholder="https://facebook.com/yourpage" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="url" name="social_facebook" value="{{ $flatSettings['social_facebook'] ?? '' }}" placeholder="https://facebook.com/yourpage" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
@@ -195,7 +198,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-slate-900 shrink-0 select-none w-11">
                                                     <i class="fa-brands fa-x-twitter text-base"></i>
                                                 </span>
-                                                <input type="url" name="social_twitter" value="{{ $flatSettings['social_twitter'] ?? '' }}" placeholder="https://x.com/yourhandle" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="url" name="social_twitter" value="{{ $flatSettings['social_twitter'] ?? '' }}" placeholder="https://x.com/yourhandle" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
@@ -204,7 +207,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-pink-600 shrink-0 select-none w-11">
                                                     <i class="fa-brands fa-instagram text-base"></i>
                                                 </span>
-                                                <input type="url" name="social_instagram" value="{{ $flatSettings['social_instagram'] ?? '' }}" placeholder="https://instagram.com/yourhandle" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="url" name="social_instagram" value="{{ $flatSettings['social_instagram'] ?? '' }}" placeholder="https://instagram.com/yourhandle" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
@@ -213,7 +216,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-700 shrink-0 select-none w-11">
                                                     <i class="fa-brands fa-linkedin text-base"></i>
                                                 </span>
-                                                <input type="url" name="social_linkedin" value="{{ $flatSettings['social_linkedin'] ?? '' }}" placeholder="https://linkedin.com/company/yourpage" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="url" name="social_linkedin" value="{{ $flatSettings['social_linkedin'] ?? '' }}" placeholder="https://linkedin.com/company/yourpage" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
@@ -222,7 +225,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-red-600 shrink-0 select-none w-11">
                                                     <i class="fa-brands fa-youtube text-base"></i>
                                                 </span>
-                                                <input type="url" name="social_youtube" value="{{ $flatSettings['social_youtube'] ?? '' }}" placeholder="https://youtube.com/@yourchannel" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="url" name="social_youtube" value="{{ $flatSettings['social_youtube'] ?? '' }}" placeholder="https://youtube.com/@yourchannel" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
@@ -231,7 +234,7 @@
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-slate-900 shrink-0 select-none w-11">
                                                     <i class="fa-brands fa-tiktok text-base"></i>
                                                 </span>
-                                                <input type="url" name="social_tiktok" value="{{ $flatSettings['social_tiktok'] ?? '' }}" placeholder="https://tiktok.com/@yourhandle" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
+                                                <input type="url" name="social_tiktok" value="{{ $flatSettings['social_tiktok'] ?? '' }}" placeholder="https://tiktok.com/@yourhandle" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                     </div>
@@ -443,7 +446,7 @@
 
                         <!-- Bottom Sticky Save Bar on Mobile -->
                         <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-end lg:hidden">
-                            <button type="submit" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-xl shadow-blue-500/30 hover:from-blue-700 hover:to-indigo-700 transition-all cursor-pointer">
+                            <button type="submit" style="background-color: #2563eb !important; color: #ffffff !important;" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-xl shadow-blue-500/30 transition-all cursor-pointer">
                                 <i class="fa-solid fa-check"></i>
                                 Save All Changes
                             </button>
