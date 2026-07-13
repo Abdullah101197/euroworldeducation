@@ -81,6 +81,14 @@
                                         <label class="block text-sm font-medium text-gray-700">LinkedIn URL</label>
                                         <input type="url" name="social_linkedin" value="{{ $settings['social']->where('key', 'social_linkedin')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">YouTube URL</label>
+                                        <input type="url" name="social_youtube" value="{{ $settings['social']->where('key', 'social_youtube')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">TikTok URL</label>
+                                        <input type="url" name="social_tiktok" value="{{ $settings['social']->where('key', 'social_tiktok')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
                                 </div>
                             </div>
 
