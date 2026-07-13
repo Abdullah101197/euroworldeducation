@@ -150,21 +150,25 @@
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-blue-500"><i class="fa-solid fa-phone text-xs"></i></span>
-                                                <input type="text" name="site_phone" value="{{ $flatSettings['site_phone'] ?? '' }}" placeholder="+1 (234) 567-8900" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none">
+                                                    <i class="fa-solid fa-phone text-xs"></i>
+                                                </span>
+                                                <input type="text" name="site_phone" value="{{ $flatSettings['site_phone'] ?? '' }}" placeholder="+1 (234) 567-8900" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Email Address</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-blue-500"><i class="fa-solid fa-envelope text-xs"></i></span>
-                                                <input type="email" name="site_email" value="{{ $flatSettings['site_email'] ?? '' }}" placeholder="info@euroworldeducation.com" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none">
+                                                    <i class="fa-solid fa-envelope text-xs"></i>
+                                                </span>
+                                                <input type="email" name="site_email" value="{{ $flatSettings['site_email'] ?? '' }}" placeholder="info@euroworldeducation.com" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div class="md:col-span-2">
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Physical Office Address</label>
-                                            <textarea name="site_address" rows="3" placeholder="123 Education Boulevard..." class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all">{{ $flatSettings['site_address'] ?? '' }}</textarea>
+                                            <textarea name="site_address" rows="3" placeholder="123 Education Boulevard..." class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all text-slate-800">{{ $flatSettings['site_address'] ?? '' }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -178,44 +182,56 @@
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Facebook URL</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-blue-600"><i class="fa-brands fa-facebook text-base"></i></span>
-                                                <input type="url" name="social_facebook" value="{{ $flatSettings['social_facebook'] ?? '' }}" placeholder="https://facebook.com/yourpage" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none w-11">
+                                                    <i class="fa-brands fa-facebook text-base"></i>
+                                                </span>
+                                                <input type="url" name="social_facebook" value="{{ $flatSettings['social_facebook'] ?? '' }}" placeholder="https://facebook.com/yourpage" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Twitter / X URL</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-900"><i class="fa-brands fa-x-twitter text-base"></i></span>
-                                                <input type="url" name="social_twitter" value="{{ $flatSettings['social_twitter'] ?? '' }}" placeholder="https://x.com/yourhandle" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-slate-900 shrink-0 select-none w-11">
+                                                    <i class="fa-brands fa-x-twitter text-base"></i>
+                                                </span>
+                                                <input type="url" name="social_twitter" value="{{ $flatSettings['social_twitter'] ?? '' }}" placeholder="https://x.com/yourhandle" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Instagram URL</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-pink-600"><i class="fa-brands fa-instagram text-base"></i></span>
-                                                <input type="url" name="social_instagram" value="{{ $flatSettings['social_instagram'] ?? '' }}" placeholder="https://instagram.com/yourhandle" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-pink-600 shrink-0 select-none w-11">
+                                                    <i class="fa-brands fa-instagram text-base"></i>
+                                                </span>
+                                                <input type="url" name="social_instagram" value="{{ $flatSettings['social_instagram'] ?? '' }}" placeholder="https://instagram.com/yourhandle" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">LinkedIn URL</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-blue-700"><i class="fa-brands fa-linkedin text-base"></i></span>
-                                                <input type="url" name="social_linkedin" value="{{ $flatSettings['social_linkedin'] ?? '' }}" placeholder="https://linkedin.com/company/yourpage" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-700 shrink-0 select-none w-11">
+                                                    <i class="fa-brands fa-linkedin text-base"></i>
+                                                </span>
+                                                <input type="url" name="social_linkedin" value="{{ $flatSettings['social_linkedin'] ?? '' }}" placeholder="https://linkedin.com/company/yourpage" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">YouTube URL</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-red-600"><i class="fa-brands fa-youtube text-base"></i></span>
-                                                <input type="url" name="social_youtube" value="{{ $flatSettings['social_youtube'] ?? '' }}" placeholder="https://youtube.com/@yourchannel" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-red-600 shrink-0 select-none w-11">
+                                                    <i class="fa-brands fa-youtube text-base"></i>
+                                                </span>
+                                                <input type="url" name="social_youtube" value="{{ $flatSettings['social_youtube'] ?? '' }}" placeholder="https://youtube.com/@yourchannel" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">TikTok URL</label>
-                                            <div class="relative">
-                                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-900"><i class="fa-brands fa-tiktok text-base"></i></span>
-                                                <input type="url" name="social_tiktok" value="{{ $flatSettings['social_tiktok'] ?? '' }}" placeholder="https://tiktok.com/@yourhandle" class="pl-10 w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                                <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-slate-900 shrink-0 select-none w-11">
+                                                    <i class="fa-brands fa-tiktok text-base"></i>
+                                                </span>
+                                                <input type="url" name="social_tiktok" value="{{ $flatSettings['social_tiktok'] ?? '' }}" placeholder="https://tiktok.com/@yourhandle" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-medium bg-transparent text-slate-800">
                                             </div>
                                         </div>
                                     </div>
@@ -230,27 +246,29 @@
                                     <div class="grid grid-cols-1 gap-6">
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Site Title / Slogan</label>
-                                            <input type="text" name="site_title" value="{{ $flatSettings['site_title'] ?? '' }}" placeholder="EuroWorld Education" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <input type="text" name="site_title" value="{{ $flatSettings['site_title'] ?? '' }}" placeholder="EuroWorld Education" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Active Logo Preview & Replacement</label>
-                                            <div class="flex flex-col sm:flex-row items-center gap-6 bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-2xl border border-slate-700 shadow-md text-white">
-                                                <div class="h-20 w-48 flex flex-col items-center justify-center bg-white/95 rounded-xl p-3 shrink-0 shadow-inner">
+                                            <div class="flex flex-col sm:flex-row items-center gap-6 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-lg text-white">
+                                                <div class="h-20 w-48 flex flex-col items-center justify-center bg-white rounded-xl p-3 shrink-0 shadow-md">
                                                     @php
                                                         $logoPath = $flatSettings['site_logo'] ?? null;
                                                     @endphp
                                                     @if($logoPath && $logoPath !== 'images/logo.png')
-                                                        <img src="{{ asset($logoPath) }}" alt="Site Logo" class="max-h-12 max-w-full object-contain">
+                                                        <img src="{{ asset($logoPath) }}" onerror="this.onerror=null; this.src='{{ asset('images/logo.png') }}';" alt="Site Logo" class="max-h-12 max-w-full object-contain">
                                                     @else
                                                         <img src="{{ asset('images/logo.png') }}" alt="Site Logo" class="max-h-12 max-w-full object-contain">
                                                     @endif
-                                                    <span class="text-[9px] font-bold text-slate-400 mt-1 uppercase tracking-tighter">Current Live Logo</span>
+                                                    <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase tracking-tighter">Current Live Logo</span>
                                                 </div>
                                                 <div class="flex-1 w-full">
                                                     <label class="block text-xs font-bold text-blue-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
-                                                        <i class="fa-solid fa-cloud-arrow-up"></i> Upload New Replacement Logo (PNG / JPG / SVG)
+                                                        <i class="fa-solid fa-cloud-arrow-up text-sm"></i> Upload Replacement Logo (PNG / JPG / SVG)
                                                     </label>
-                                                    <input type="file" name="site_logo" accept="image/*" class="block w-full text-xs text-slate-300 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-500 cursor-pointer bg-white/5 rounded-xl border border-white/10 p-1">
+                                                    <div class="relative border-2 border-dashed border-slate-700 hover:border-blue-500 bg-slate-800/80 rounded-xl p-3 transition-all">
+                                                        <input type="file" name="site_logo" accept="image/*" class="block w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-500 cursor-pointer">
+                                                    </div>
                                                     <p class="text-[11px] text-slate-400 mt-2 flex items-center gap-1.5">
                                                         <i class="fa-solid fa-circle-info text-blue-400"></i> Recommended: 250x60px Transparent PNG. Changes apply instantly after saving.
                                                     </p>
@@ -287,23 +305,25 @@
 
                                 <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm">
                                     <label class="block text-sm font-extrabold text-slate-800 mb-2">Hero Section Subtitle / Introduction Text</label>
-                                    <textarea name="home_hero_subtitle" rows="3" placeholder="Expert guidance for university admissions..." class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all">{{ $flatSettings['home_hero_subtitle'] ?? '' }}</textarea>
+                                    <textarea name="home_hero_subtitle" rows="3" placeholder="Expert guidance for university admissions..." class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all text-slate-800">{{ $flatSettings['home_hero_subtitle'] ?? '' }}</textarea>
                                 </div>
 
                                 <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm">
                                     <label class="block text-sm font-extrabold text-slate-800 mb-3">Hero Banner Graphic / Illustration</label>
-                                    <div class="flex flex-col sm:flex-row items-center gap-6 bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-2xl border border-slate-700 shadow-md text-white">
+                                    <div class="flex flex-col sm:flex-row items-center gap-6 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-lg text-white">
                                         @if(isset($flatSettings['home_hero_image']) && $flatSettings['home_hero_image'])
-                                            <div class="h-24 w-40 flex flex-col items-center justify-center bg-white/95 rounded-xl p-2 shrink-0 shadow-inner">
-                                                <img src="{{ asset($flatSettings['home_hero_image']) }}" alt="Hero Image" class="max-h-16 max-w-full object-contain">
+                                            <div class="h-24 w-40 flex flex-col items-center justify-center bg-white rounded-xl p-2 shrink-0 shadow-md">
+                                                <img src="{{ asset($flatSettings['home_hero_image']) }}" onerror="this.onerror=null; this.src='{{ asset('images/hero.png') }}';" alt="Hero Image" class="max-h-16 max-w-full object-contain">
                                                 <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase tracking-tighter">Current Graphic</span>
                                             </div>
                                         @endif
                                         <div class="flex-1 w-full">
                                             <label class="block text-xs font-bold text-indigo-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
-                                                <i class="fa-solid fa-cloud-arrow-up"></i> Upload New Hero Illustration (PNG / WebP / SVG)
+                                                <i class="fa-solid fa-cloud-arrow-up text-sm"></i> Upload Hero Illustration (PNG / WebP / SVG)
                                             </label>
-                                            <input type="file" name="home_hero_image" accept="image/*" class="block w-full text-xs text-slate-300 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer bg-white/5 rounded-xl border border-white/10 p-1">
+                                            <div class="relative border-2 border-dashed border-slate-700 hover:border-indigo-500 bg-slate-800/80 rounded-xl p-3 transition-all">
+                                                <input type="file" name="home_hero_image" accept="image/*" class="block w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
+                                            </div>
                                             <p class="text-[11px] text-slate-400 mt-2">Upload a high-resolution transparent PNG graphic to elevate your home page presentation.</p>
                                         </div>
                                     </div>
@@ -367,14 +387,14 @@
                                     <div class="grid grid-cols-1 gap-5">
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Hero Section Headline</label>
-                                            <input type="text" name="scholarships_hero_title" value="{{ $flatSettings['scholarships_hero_title'] ?? 'Global <span class=\"text-[#ffc107]\">Scholarships</span>' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <input type="text" name="scholarships_hero_title" value="{{ $flatSettings['scholarships_hero_title'] ?? 'Global <span class=\"text-[#ffc107]\">Scholarships</span>' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
                                             <p class="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1">
                                                 <i class="fa-solid fa-lightbulb text-amber-500"></i> Tip: Use HTML span tag <code class="bg-slate-200 px-1.5 py-0.5 rounded text-slate-700 font-mono">&lt;span class="text-[#ffc107]"&gt;Scholarships&lt;/span&gt;</code> to highlight words in bright yellow.
                                             </p>
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Hero Subtitle</label>
-                                            <textarea name="scholarships_hero_subtitle" rows="2" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all">{{ $flatSettings['scholarships_hero_subtitle'] ?? 'Unlock financial aid opportunities and fully-funded programs at the world\'s best universities.' }}</textarea>
+                                            <textarea name="scholarships_hero_subtitle" rows="2" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all text-slate-800">{{ $flatSettings['scholarships_hero_subtitle'] ?? 'Unlock financial aid opportunities and fully-funded programs at the world\'s best universities.' }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -387,7 +407,7 @@
                                     <div class="grid grid-cols-1 gap-5">
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Box 1 Title</label>
-                                            <input type="text" name="scholarships_card1_title" value="{{ $flatSettings['scholarships_card1_title'] ?? 'Merit-Based Excellence Awards' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <input type="text" name="scholarships_card1_title" value="{{ $flatSettings['scholarships_card1_title'] ?? 'Merit-Based Excellence Awards' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2 flex items-center justify-between">
@@ -407,7 +427,7 @@
                                     <div class="grid grid-cols-1 gap-5">
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Box 2 Title</label>
-                                            <input type="text" name="scholarships_card2_title" value="{{ $flatSettings['scholarships_card2_title'] ?? 'Government & Regional Scholarships' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all">
+                                            <input type="text" name="scholarships_card2_title" value="{{ $flatSettings['scholarships_card2_title'] ?? 'Government & Regional Scholarships' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2 flex items-center justify-between">
