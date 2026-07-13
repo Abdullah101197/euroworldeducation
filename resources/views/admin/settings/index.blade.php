@@ -103,7 +103,10 @@
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Site Logo</label>
                                         <div class="mb-2">
-                                            @if(isset($settings['general']) && $logo = $settings['general']->where('key', 'site_logo')->first() && $logo->value && file_exists(public_path($logo->value)))
+                                            @php
+                                                $logo = isset($settings['general']) ? $settings['general']->where('key', 'site_logo')->first() : null;
+                                            @endphp
+                                            @if($logo && $logo->value && file_exists(public_path($logo->value)))
                                                 <img src="{{ asset($logo->value) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
                                             @else
                                                 <img src="{{ asset('images/logo.png') }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
