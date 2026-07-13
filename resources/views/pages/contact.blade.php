@@ -227,11 +227,4 @@
             </div>
         </div>
     </section>
-@endsection      </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
 @endsection
