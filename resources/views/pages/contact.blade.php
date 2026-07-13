@@ -26,7 +26,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-[#0b1b3d] mb-1">Head Office</h4>
-                                <p class="text-gray-500 text-sm">123 Education Boulevard,<br>City Center, Karachi 10001</p>
+                                <p class="text-gray-500 text-sm">{!! nl2br(e($global_settings['site_address'] ?? '123 Education Boulevard, City Center, Karachi 10001')) !!}</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -35,7 +35,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-[#0b1b3d] mb-1">Phone</h4>
-                                <p class="text-gray-500 text-sm">+1 234 567 8900</p>
+                                <p class="text-gray-500 text-sm">{{ $global_settings['site_phone'] ?? '+1 234 567 8900' }}</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -44,7 +44,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-[#0b1b3d] mb-1">Email</h4>
-                                <p class="text-gray-500 text-sm">info@euroworld.edu</p>
+                                <p class="text-gray-500 text-sm">{{ $global_settings['site_email'] ?? 'info@euroworld.edu' }}</p>
                             </div>
                         </div>
                     </div>
