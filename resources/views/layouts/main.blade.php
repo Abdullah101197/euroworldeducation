@@ -98,8 +98,11 @@
             <div class="container mx-auto px-6 flex justify-between items-center">
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
-                    @if(isset($global_settings) && $logo = $global_settings->where('key', 'site_logo')->first() && $logo->value && file_exists(public_path($logo->value)) && $logo->value !== 'images/logo.png')
-                        <img src="{{ asset($logo->value) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
+                    @php
+                        $headerLogo = isset($global_settings) ? $global_settings->where('key', 'site_logo')->first() : null;
+                    @endphp
+                    @if($headerLogo && $headerLogo->value && file_exists(public_path($headerLogo->value)) && $headerLogo->value !== 'images/logo.png')
+                        <img src="{{ asset($headerLogo->value) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @else
                         <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @endif
