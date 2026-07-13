@@ -27,7 +27,7 @@
                             </button>
                         </nav>
                         
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline shadow text-sm">
+                        <button type="submit" class="font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline shadow text-sm transition-colors" style="background-color: #2563eb; color: white; border: 1px solid #1d4ed8;">
                             Save All Changes
                         </button>
                     </div>
