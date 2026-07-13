@@ -101,7 +101,7 @@
                     @php
                         $headerLogo = isset($global_settings) ? $global_settings->where('key', 'site_logo')->first() : null;
                     @endphp
-                    @if($headerLogo && $headerLogo->value && file_exists(public_path($headerLogo->value)) && $headerLogo->value !== 'images/logo.png')
+                    @if($headerLogo && $headerLogo->value && $headerLogo->value !== 'images/logo.png')
                         <img src="{{ asset($headerLogo->value) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @else
                         <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
@@ -207,7 +207,7 @@
                                 $siteLogo = null;
                             }
                         @endphp
-                        @if($siteLogo && $siteLogo->value && file_exists(public_path($siteLogo->value)) && $siteLogo->value !== 'images/logo.png')
+                        @if($siteLogo && $siteLogo->value && $siteLogo->value !== 'images/logo.png')
                             <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @else
                             <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">

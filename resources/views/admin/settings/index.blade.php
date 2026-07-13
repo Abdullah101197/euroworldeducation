@@ -106,7 +106,7 @@
                                             @php
                                                 $logo = isset($settings['general']) ? $settings['general']->where('key', 'site_logo')->first() : null;
                                             @endphp
-                                            @if($logo && $logo->value && file_exists(public_path($logo->value)))
+                                            @if($logo && $logo->value && $logo->value !== 'images/logo.png')
                                                 <img src="{{ asset($logo->value) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
                                             @else
                                                 <img src="{{ asset('images/logo.png') }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
