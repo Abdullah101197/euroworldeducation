@@ -19,12 +19,12 @@
                 <div>
                     <h2 class="text-3xl font-bold text-[#0b1b3d] mb-6">Our Mission</h2>
                     <div class="prose max-w-none text-gray-600 leading-relaxed mb-6">
-                        {!! $global_settings->where('key', 'about_mission')->first()->value ?? '<p>At Euro World Education, our mission is to empower students by providing transparent, ethical, and comprehensive guidance for studying abroad. We believe that global education transforms lives, and we strive to make this transformation accessible to everyone.</p>' !!}
+                        {!! $global_settings['about_mission'] ?? '<p>At Euro World Education, our mission is to empower students by providing transparent, ethical, and comprehensive guidance for studying abroad. We believe that global education transforms lives, and we strive to make this transformation accessible to everyone.</p>' !!}
                     </div>
                     
                     <h2 class="text-3xl font-bold text-[#0b1b3d] mb-6 mt-8">Our Vision</h2>
                     <div class="prose max-w-none text-gray-600 leading-relaxed">
-                        {!! $global_settings->where('key', 'about_vision')->first()->value ?? '<p>To be the most trusted educational consultancy globally, recognized for our commitment to student success and our extensive network of top-tier university partnerships.</p>' !!}
+                        {!! $global_settings['about_vision'] ?? '<p>To be the most trusted educational consultancy globally, recognized for our commitment to student success and our extensive network of top-tier university partnerships.</p>' !!}
                     </div>
                 </div>
                 <div class="relative">

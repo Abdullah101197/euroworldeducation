@@ -99,10 +99,10 @@
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
                     @php
-                        $headerLogo = isset($global_settings) ? $global_settings->where('key', 'site_logo')->first() : null;
+                        $headerLogoPath = $global_settings['site_logo'] ?? null;
                     @endphp
-                    @if($headerLogo && $headerLogo->value && $headerLogo->value !== 'images/logo.png')
-                        <img src="{{ asset($headerLogo->value) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
+                    @if($headerLogoPath && $headerLogoPath !== 'images/logo.png')
+                        <img src="{{ asset($headerLogoPath) }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @else
                         <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @endif
@@ -200,15 +200,10 @@
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex flex-col items-start gap-1 mb-6">
                         @php
-                            $siteLogo = null;
-                            try {
-                                $siteLogo = isset($global_settings) && is_object($global_settings) && method_exists($global_settings, 'where') ? $global_settings->where('key', 'site_logo')->first() : \App\Models\Setting::where('key', 'site_logo')->first();
-                            } catch (\Exception $e) {
-                                $siteLogo = null;
-                            }
+                            $footerLogoPath = $global_settings['site_logo'] ?? null;
                         @endphp
-                        @if($siteLogo && $siteLogo->value && $siteLogo->value !== 'images/logo.png')
-                            <img src="{{ asset($siteLogo->value) }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
+                        @if($footerLogoPath && $footerLogoPath !== 'images/logo.png')
+                            <img src="{{ asset($footerLogoPath) }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @else
                             <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @endif
