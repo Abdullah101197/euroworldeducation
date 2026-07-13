@@ -25,6 +25,9 @@
                             <button type="button" @click="activeTab = 'about'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'about', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'about' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                                 About Page
                             </button>
+                            <button type="button" @click="activeTab = 'scholarships'" :class="{ 'border-indigo-500 text-indigo-600': activeTab === 'scholarships', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'scholarships' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                Scholarships Page
+                            </button>
                         </nav>
                         
                         <button type="submit" class="font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline shadow text-sm transition-colors" style="background-color: #2563eb; color: white; border: 1px solid #1d4ed8;">
@@ -48,15 +51,15 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Phone Number</label>
-                                        <input type="text" name="site_phone" value="{{ $settings['contact']->where('key', 'site_phone')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="text" name="site_phone" value="{{ $flatSettings['site_phone'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Email Address</label>
-                                        <input type="email" name="site_email" value="{{ $settings['contact']->where('key', 'site_email')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="email" name="site_email" value="{{ $flatSettings['site_email'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="md:col-span-2">
                                         <label class="block text-sm font-medium text-gray-700">Physical Address</label>
-                                        <textarea name="site_address" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $settings['contact']->where('key', 'site_address')->first()->value ?? '' }}</textarea>
+                                        <textarea name="site_address" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['site_address'] ?? '' }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -67,27 +70,27 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Facebook URL</label>
-                                        <input type="url" name="social_facebook" value="{{ $settings['social']->where('key', 'social_facebook')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="url" name="social_facebook" value="{{ $flatSettings['social_facebook'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Twitter/X URL</label>
-                                        <input type="url" name="social_twitter" value="{{ $settings['social']->where('key', 'social_twitter')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="url" name="social_twitter" value="{{ $flatSettings['social_twitter'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Instagram URL</label>
-                                        <input type="url" name="social_instagram" value="{{ $settings['social']->where('key', 'social_instagram')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="url" name="social_instagram" value="{{ $flatSettings['social_instagram'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">LinkedIn URL</label>
-                                        <input type="url" name="social_linkedin" value="{{ $settings['social']->where('key', 'social_linkedin')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="url" name="social_linkedin" value="{{ $flatSettings['social_linkedin'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">YouTube URL</label>
-                                        <input type="url" name="social_youtube" value="{{ $settings['social']->where('key', 'social_youtube')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="url" name="social_youtube" value="{{ $flatSettings['social_youtube'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">TikTok URL</label>
-                                        <input type="url" name="social_tiktok" value="{{ $settings['social']->where('key', 'social_tiktok')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="url" name="social_tiktok" value="{{ $flatSettings['social_tiktok'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                 </div>
                             </div>
@@ -98,16 +101,16 @@
                                 <div class="grid grid-cols-1 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Site Title / Slogan</label>
-                                        <input type="text" name="site_title" value="{{ $settings['general']->where('key', 'site_title')->first()->value ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="text" name="site_title" value="{{ $flatSettings['site_title'] ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Site Logo</label>
                                         <div class="mb-2">
                                             @php
-                                                $logo = isset($settings['general']) ? $settings['general']->where('key', 'site_logo')->first() : null;
+                                                $logoPath = $flatSettings['site_logo'] ?? null;
                                             @endphp
-                                            @if($logo && $logo->value && $logo->value !== 'images/logo.png')
-                                                <img src="{{ asset($logo->value) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
+                                            @if($logoPath && $logoPath !== 'images/logo.png')
+                                                <img src="{{ asset($logoPath) }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
                                             @else
                                                 <img src="{{ asset('images/logo.png') }}" alt="Site Logo" class="h-12 object-contain bg-gray-100 p-2 rounded">
                                             @endif
@@ -126,17 +129,17 @@
                                 <div class="grid grid-cols-1 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 mb-2">Hero Section Title</label>
-                                        <textarea name="home_hero_title" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ isset($settings['home_page']) ? ($settings['home_page']->where('key', 'home_hero_title')->first()->value ?? '') : '' }}</textarea>
+                                        <textarea name="home_hero_title" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['home_hero_title'] ?? '' }}</textarea>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Hero Section Subtitle</label>
-                                        <textarea name="home_hero_subtitle" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ isset($settings['home_page']) ? ($settings['home_page']->where('key', 'home_hero_subtitle')->first()->value ?? '') : '' }}</textarea>
+                                        <textarea name="home_hero_subtitle" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['home_hero_subtitle'] ?? '' }}</textarea>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Hero Section Image</label>
-                                        @if(isset($settings['home_page']) && $settings['home_page']->where('key', 'home_hero_image')->first())
+                                        @if(isset($flatSettings['home_hero_image']) && $flatSettings['home_hero_image'])
                                             <div class="mb-2 mt-2">
-                                                <img src="{{ asset($settings['home_page']->where('key', 'home_hero_image')->first()->value) }}" alt="Hero Image" class="h-32 object-contain bg-gray-100 p-2 rounded border">
+                                                <img src="{{ asset($flatSettings['home_hero_image']) }}" alt="Hero Image" class="h-32 object-contain bg-gray-100 p-2 rounded border">
                                             </div>
                                         @endif
                                         <input type="file" name="home_hero_image" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
@@ -153,11 +156,53 @@
                                 <div class="grid grid-cols-1 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 mb-2">Our Mission</label>
-                                        <textarea name="about_mission" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ isset($settings['about_page']) ? ($settings['about_page']->where('key', 'about_mission')->first()->value ?? '') : '' }}</textarea>
+                                        <textarea name="about_mission" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['about_mission'] ?? '' }}</textarea>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 mb-2">Our Vision</label>
-                                        <textarea name="about_vision" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ isset($settings['about_page']) ? ($settings['about_page']->where('key', 'about_vision')->first()->value ?? '') : '' }}</textarea>
+                                        <textarea name="about_vision" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['about_vision'] ?? '' }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scholarships Page Tab -->
+                        <div x-show="activeTab === 'scholarships'" style="display: none;">
+                            <div class="mb-8">
+                                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b pb-2 mb-4">Scholarships Page Header & Hero</h3>
+                                <div class="grid grid-cols-1 gap-6 mb-8">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Hero Title</label>
+                                        <input type="text" name="scholarships_hero_title" value="{{ $flatSettings['scholarships_hero_title'] ?? 'Global <span class=\"text-[#ffc107]\">Scholarships</span>' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <p class="text-xs text-gray-400 mt-1">You can use HTML tags like &lt;span class="text-[#ffc107]"&gt;Scholarships&lt;/span&gt;</p>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Hero Subtitle</label>
+                                        <textarea name="scholarships_hero_subtitle" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['scholarships_hero_subtitle'] ?? 'Unlock financial aid opportunities and fully-funded programs at the world\'s best universities.' }}</textarea>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b pb-2 mb-4">Scholarship Box 1: Merit-Based Awards</h3>
+                                <div class="grid grid-cols-1 gap-6 mb-8">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Box 1 Title</label>
+                                        <input type="text" name="scholarships_card1_title" value="{{ $flatSettings['scholarships_card1_title'] ?? 'Merit-Based Excellence Awards' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Box 1 Description</label>
+                                        <textarea name="scholarships_card1_desc" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['scholarships_card1_desc'] ?? '<p>Many of our partner universities in the UK and Australia offer significant tuition fee discounts (up to 50%) for students with outstanding academic records.</p>' }}</textarea>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b pb-2 mb-4">Scholarship Box 2: Government & Regional Scholarships</h3>
+                                <div class="grid grid-cols-1 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Box 2 Title</label>
+                                        <input type="text" name="scholarships_card2_title" value="{{ $flatSettings['scholarships_card2_title'] ?? 'Government & Regional Scholarships' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Box 2 Description</label>
+                                        <textarea name="scholarships_card2_desc" class="richtext mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ $flatSettings['scholarships_card2_desc'] ?? '<p>We specialize in helping students apply for regional government scholarships (such as DSU in Italy or DAAD in Germany) which can cover full tuition and provide living stipends.</p>' }}</textarea>
                                     </div>
                                 </div>
                             </div>

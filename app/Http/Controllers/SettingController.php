@@ -9,7 +9,8 @@ class SettingController extends Controller
     public function index()
     {
         $settings = \App\Models\Setting::all()->groupBy('group');
-        return view('admin.settings.index', compact('settings'));
+        $flatSettings = \App\Models\Setting::all()->pluck('value', 'key');
+        return view('admin.settings.index', compact('settings', 'flatSettings'));
     }
 
     public function update(Request $request)
@@ -24,22 +25,41 @@ class SettingController extends Controller
                 $file->move(public_path('uploads/logos'), $filename);
                 \App\Models\Setting::updateOrCreate(
                     ['key' => 'site_logo'],
-                    ['value' => 'uploads/logos/' . $filename]
+                    ['value' => 'uploads/logos/' . $filename, 'group' => 'general']
                 );
             }
         }
         // Always unset site_logo from $data so it doesn't get overwritten to null when saving other settings
         unset($data['site_logo']);
 
+        if ($request->hasFile('home_hero_image')) {
+            $file = $request->file('home_hero_image');
+            if ($file->isValid()) {
+                $filename = 'hero_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/hero'), $filename);
+                \App\Models\Setting::updateOrCreate(
+                    ['key' => 'home_hero_image'],
+                    ['value' => 'uploads/hero/' . $filename, 'group' => 'home_page']
+                );
+            }
+        }
+        unset($data['home_hero_image']);
+
         foreach ($data as $key => $value) {
+            $group = 'general';
+            if (str_starts_with($key, 'home_')) $group = 'home_page';
+            elseif (str_starts_with($key, 'about_')) $group = 'about_page';
+            elseif (str_starts_with($key, 'scholarships_')) $group = 'scholarships_page';
+            elseif (str_starts_with($key, 'services_')) $group = 'services_page';
+            elseif (str_starts_with($key, 'destinations_')) $group = 'destinations_page';
+            elseif (str_starts_with($key, 'social_')) $group = 'social';
+            elseif (in_array($key, ['site_phone', 'site_email', 'site_address'])) $group = 'contact';
+
             \App\Models\Setting::updateOrCreate(
                 ['key' => $key],
-                ['value' => $value]
+                ['value' => $value, 'group' => $group]
             );
         }
-
-        // Clear cache if we implement caching later
-        // cache()->forget('settings');
 
         return back()->with('success', 'Settings updated successfully!');
     }

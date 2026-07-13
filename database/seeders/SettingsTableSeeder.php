@@ -29,6 +29,14 @@ class SettingsTableSeeder extends Seeder
             // About Page
             ['key' => 'about_mission', 'value' => '<p>At Euro World Education, our mission is to empower students by providing transparent, ethical, and comprehensive guidance for studying abroad. We believe that global education transforms lives, and we strive to make this transformation accessible to everyone.</p>', 'type' => 'richtext', 'group' => 'about_page'],
             ['key' => 'about_vision', 'value' => '<p>To be the most trusted educational consultancy globally, recognized for our commitment to student success and our extensive network of top-tier university partnerships.</p>', 'type' => 'richtext', 'group' => 'about_page'],
+
+            // Scholarships Page
+            ['key' => 'scholarships_hero_title', 'value' => 'Global <span class="text-[#ffc107]">Scholarships</span>', 'type' => 'text', 'group' => 'scholarships_page'],
+            ['key' => 'scholarships_hero_subtitle', 'value' => 'Unlock financial aid opportunities and fully-funded programs at the world\'s best universities.', 'type' => 'textarea', 'group' => 'scholarships_page'],
+            ['key' => 'scholarships_card1_title', 'value' => 'Merit-Based Excellence Awards', 'type' => 'text', 'group' => 'scholarships_page'],
+            ['key' => 'scholarships_card1_desc', 'value' => '<p>Many of our partner universities in the UK and Australia offer significant tuition fee discounts (up to 50%) for students with outstanding academic records.</p>', 'type' => 'richtext', 'group' => 'scholarships_page'],
+            ['key' => 'scholarships_card2_title', 'value' => 'Government & Regional Scholarships', 'type' => 'text', 'group' => 'scholarships_page'],
+            ['key' => 'scholarships_card2_desc', 'value' => '<p>We specialize in helping students apply for regional government scholarships (such as DSU in Italy or DAAD in Germany) which can cover full tuition and provide living stipends.</p>', 'type' => 'richtext', 'group' => 'scholarships_page'],
         ];
 
         foreach ($settings as $setting) {
