@@ -21,16 +21,11 @@
                     </div>
 
                     <h1 class="text-4xl md:text-5xl lg:text-[64px] font-extrabold leading-[1.12] mb-6 tracking-tight text-[#0b1b3d] relative inline-block">
-                        Your Journey to <br>
-                        <span class="text-[#c6181b] relative inline-block">
-                            Global
-                            <!-- Blue line under Global -->
-                            <span class="absolute left-0 -bottom-1 h-[3px] w-full bg-[#3b82f6]"></span>
-                        </span> Education
+                        {!! $global_settings['home_hero_title'] ?? 'Your Journey to <br><span class="text-[#c6181b] relative inline-block">Global<span class="absolute left-0 -bottom-1 h-[3px] w-full bg-[#3b82f6]"></span></span> Education' !!}
                     </h1>
 
                     <p class="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.
+                        {{ $global_settings['home_hero_subtitle'] ?? 'We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.' }}
                     </p>
 
                     <!-- Feature Badges -->
