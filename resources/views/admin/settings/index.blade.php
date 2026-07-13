@@ -41,11 +41,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             @if(session('success'))
-                <div class="mb-8 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-4 rounded-2xl shadow-lg shadow-emerald-500/20 flex items-center justify-between transition-all duration-300 animate-fade-in" role="alert">
+                <div style="background-color: #059669 !important; color: #ffffff !important;" class="mb-8 bg-emerald-600 text-white px-6 py-4 rounded-2xl shadow-lg shadow-emerald-500/20 flex items-center justify-between transition-all duration-300 animate-fade-in" role="alert">
                     <div class="flex items-center gap-3.5">
-                        <span class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center font-extrabold text-lg shadow-inner">✓</span>
+                        <span class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center font-extrabold text-lg shadow-inner text-white">✓</span>
                         <div>
-                            <p class="font-bold text-base">{{ session('success') }}</p>
+                            <p class="font-bold text-base text-white">{{ session('success') }}</p>
                             <p class="text-xs text-emerald-100 mt-0.5">Your updates have been published to the live database.</p>
                         </div>
                     </div>
