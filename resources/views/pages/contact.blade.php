@@ -13,7 +13,7 @@
     </section>
 
     <!-- Contact Form & Details -->
-    <section class="py-20 bg-light font-sans">
+    <section class="py-20 bg-slate-50 font-sans">
         <div class="container mx-auto px-6">
             @php
                 $rawWaContact = $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '923000000000');
@@ -23,170 +23,179 @@
                 }
             @endphp
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <!-- Left Column: Contact Details & Info -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-[#c6181b] bg-red-50 px-3 py-1.5 rounded-full border border-red-100 inline-block mb-3">Direct Support</span>
-                        <h2 class="text-3xl md:text-4xl font-black text-[#0b1b3d] tracking-tight">Get In Touch With Our Counselors</h2>
-                        <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed">Whether you want quick guidance via WhatsApp or a formal email inquiry, our team is ready 24/7 to help you secure your future in Europe.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch max-w-6xl mx-auto">
+                <!-- Left Column: Premium Dark Advisory Card -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-[#0b1b3d] via-[#0f2452] to-[#142e6b] text-white p-8 sm:p-10 rounded-[32px] shadow-xl relative overflow-hidden flex flex-col justify-between border border-white/10">
+                    <!-- Decorative background blur -->
+                    <div class="absolute -right-16 -top-16 w-64 h-64 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-emerald-400 text-xs font-bold backdrop-blur-md">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Admissions Team Online
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+                            Start Your European Journey Today.
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed font-normal">
+                            Skip the waiting room! Use our 30-second eligibility check on the right to get evaluated by a senior counselor instantly via WhatsApp.
+                        </p>
                     </div>
 
-                    <div class="space-y-5">
-                        <!-- WhatsApp Direct Card (New & Featured) -->
-                        <div class="flex items-start gap-4 p-5 bg-emerald-50/80 border border-emerald-200/80 rounded-2xl shadow-sm hover:shadow-md transition-all">
-                            <div class="w-12 h-12 bg-[#25D366] text-white rounded-xl flex items-center justify-center shrink-0 shadow-md">
-                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <!-- Contact Details Info Below -->
+                    <div class="relative z-10 space-y-5 pt-10 border-t border-white/10 mt-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center text-emerald-400 shrink-0 backdrop-blur-sm border border-white/10">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
                             </div>
-                            <div class="grow">
-                                <div class="flex items-center justify-between">
-                                    <h4 class="font-extrabold text-emerald-950 text-base">WhatsApp Live Chat</h4>
-                                    <span class="text-[10px] font-black bg-emerald-600 text-white px-2 py-0.5 rounded-full uppercase">Fastest Response</span>
-                                </div>
-                                <p class="text-emerald-800 text-sm font-semibold mt-0.5">{{ $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '+92 300 000 0000') }}</p>
-                                <p class="text-emerald-700/80 text-xs mt-1">Fill out the assessment form on the right for instant eligibility screening via WhatsApp.</p>
+                            <div>
+                                <span class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Direct WhatsApp</span>
+                                <span class="text-sm font-bold text-white">{{ $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '+92 300 000 0000') }}</span>
                             </div>
                         </div>
 
-                        <!-- Head Office -->
-                        <div class="flex items-start gap-4 p-5 bg-white border border-slate-200/70 rounded-2xl shadow-sm">
-                            <div class="w-12 h-12 bg-red-50 text-[#c6181b] rounded-xl flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-location-dot text-lg"></i>
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center text-blue-300 shrink-0 backdrop-blur-sm border border-white/10">
+                                <i class="fa-solid fa-phone text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-[#0b1b3d] text-base mb-1">Head Office</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">{!! nl2br(e($global_settings['site_address'] ?? '123 Education Boulevard, City Center, Karachi 10001')) !!}</p>
+                                <span class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Phone Hotline</span>
+                                <span class="text-sm font-bold text-white">{{ $global_settings['site_phone'] ?? '+1 234 567 8900' }}</span>
                             </div>
                         </div>
 
-                        <!-- Phone Number -->
-                        <div class="flex items-start gap-4 p-5 bg-white border border-slate-200/70 rounded-2xl shadow-sm">
-                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-phone text-lg"></i>
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center text-amber-300 shrink-0 backdrop-blur-sm border border-white/10">
+                                <i class="fa-solid fa-envelope text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-[#0b1b3d] text-base mb-1">Phone Number</h4>
-                                <p class="text-slate-500 text-sm font-medium">{{ $global_settings['site_phone'] ?? '+1 234 567 8900' }}</p>
+                                <span class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Email Support</span>
+                                <span class="text-sm font-bold text-white">{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}</span>
                             </div>
                         </div>
 
-                        <!-- Email Address -->
-                        <div class="flex items-start gap-4 p-5 bg-white border border-slate-200/70 rounded-2xl shadow-sm">
-                            <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-envelope text-lg"></i>
+                        <div class="flex items-start gap-4 pt-1">
+                            <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center text-red-400 shrink-0 backdrop-blur-sm border border-white/10 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-[#0b1b3d] text-base mb-1">Email Address</h4>
-                                <p class="text-slate-500 text-sm font-medium">{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}</p>
+                                <span class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Office Location</span>
+                                <span class="text-xs font-medium text-slate-300 leading-snug block mt-0.5">{!! nl2br(e($global_settings['site_address'] ?? '123 Education Boulevard, City Center, Karachi 10001')) !!}</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Interactive Assessment & Contact Forms -->
-                <div class="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl shadow-2xl border border-slate-200/80 relative" x-data="{ activeForm: 'whatsapp' }">
-                    <!-- Form Switcher Tabs -->
-                    <div class="flex p-1.5 bg-slate-100 rounded-2xl mb-8 border border-slate-200/60">
-                        <button type="button" @click="activeForm = 'whatsapp'" :class="activeForm === 'whatsapp' ? 'bg-[#25D366] text-white shadow-md font-extrabold' : 'text-slate-600 hover:text-slate-900 font-bold'" class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Assessment Form
-                            <span class="hidden sm:inline text-[10px] bg-white/20 px-2 py-0.5 rounded-full uppercase">Instant</span>
-                        </button>
-                        <button type="button" @click="activeForm = 'email'" :class="activeForm === 'email' ? 'bg-[#0b1b3d] text-white shadow-md font-extrabold' : 'text-slate-600 hover:text-slate-900 font-bold'" class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
-                            <i class="fa-regular fa-envelope text-base"></i> Standard Email Inquiry
-                        </button>
-                    </div>
-
-                    <!-- TAB 1: WhatsApp Instant Eligibility Form -->
-                    <div x-show="activeForm === 'whatsapp'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="mb-6 pb-5 border-b border-slate-100">
-                            <div class="flex items-center gap-2.5 text-emerald-600 font-extrabold text-sm mb-1">
-                                <i class="fa-brands fa-whatsapp text-xl"></i> Quick Student Assessment via WhatsApp
+                <!-- Right Column: Ultra-Clean & Simple 30-Sec Assessment Form -->
+                <div class="lg:col-span-7 bg-white p-8 sm:p-12 rounded-[32px] shadow-xl border border-slate-200/70 relative" x-data="{ mode: 'whatsapp' }">
+                    
+                    <!-- MODE 1: SIMPLE WHATSAPP ASSESSMENT -->
+                    <div x-show="mode === 'whatsapp'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+                        <!-- Friendly Form Header -->
+                        <div class="flex items-start justify-between gap-4 mb-8">
+                            <div>
+                                <div class="inline-flex items-center gap-2 text-[#25D366] font-extrabold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full mb-2">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i> Quick Eligibility Check
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-black text-[#0b1b3d] tracking-tight">Tell us about your profile</h3>
+                                <p class="text-slate-500 text-xs sm:text-sm mt-1 font-normal">We’ll format your details automatically and open WhatsApp ready to send.</p>
                             </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Fill in your academic details below. When you click send, it will automatically format your profile and open a direct WhatsApp chat with our admissions team!</p>
                         </div>
 
-                        <form id="whatsapp-assessment-form" onsubmit="submitWhatsAppAssessment(event, '{{ $cleanWaContact }}')" class="space-y-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <!-- Full Name -->
+                        <form id="whatsapp-assessment-form" onsubmit="submitWhatsAppAssessment(event, '{{ $cleanWaContact }}')" class="space-y-4 sm:space-y-5">
+                            
+                            <!-- Row 1: Full Name & DOB -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none"><i class="fa-regular fa-user text-sm"></i></span>
-                                        <input type="text" id="wa_full_name" required placeholder="e.g. Abdullah Khan" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800">
-                                    </div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                        <i class="fa-regular fa-user text-slate-400"></i> Full Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="wa_full_name" required placeholder="e.g. Abdullah Khan" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800 placeholder:text-slate-400">
                                 </div>
 
-                                <!-- Date of Birth -->
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Date of Birth <span class="text-red-500">*</span></label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none"><i class="fa-regular fa-calendar text-sm"></i></span>
-                                        <input type="date" id="wa_dob" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800">
-                                    </div>
-                                </div>
-
-                                <!-- Last Qualification -->
-                                <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Last Qualification / Degree <span class="text-red-500">*</span></label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none"><i class="fa-solid fa-graduation-cap text-sm"></i></span>
-                                        <input type="text" id="wa_qualification" required placeholder="e.g. FSC / Bachelor of CS / A-Levels" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800">
-                                    </div>
-                                </div>
-
-                                <!-- CGPA or Marks -->
-                                <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">CGPA / Percentage Marks <span class="text-red-500">*</span></label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none"><i class="fa-solid fa-chart-line text-sm"></i></span>
-                                        <input type="text" id="wa_cgpa" required placeholder="e.g. 3.56 / 4.00 or 84%" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800">
-                                    </div>
-                                </div>
-
-                                <!-- Interest to Apply (Destination / Program) -->
-                                <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Interested Country / Course <span class="text-red-500">*</span></label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none"><i class="fa-solid fa-globe text-sm"></i></span>
-                                        <select id="wa_interest" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800">
-                                            <option value="">Select Destination / Interest</option>
-                                            <option value="Italy (Fully Funded DSU / Merit Scholarships)">Italy (Fully Funded DSU / Merit Scholarships)</option>
-                                            <option value="France (Public / Private Universities)">France (Public / Private Universities)</option>
-                                            <option value="Germany (Tuition-Free Public Universities)">Germany (Tuition-Free Public Universities)</option>
-                                            <option value="United Kingdom (Russell Group & Partner Universities)">United Kingdom (Russell Group & Partner Universities)</option>
-                                            <option value="Hungary / Stipendium Hungaricum">Hungary / Stipendium Hungaricum</option>
-                                            <option value="Australia / Canada Study Permit">Australia / Canada Study Permit</option>
-                                            <option value="General Study Abroad Inquiry">General Study Abroad Inquiry</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- Intake -->
-                                <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Preferred Intake / Year <span class="text-red-500">*</span></label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none"><i class="fa-regular fa-clock text-sm"></i></span>
-                                        <select id="wa_intake" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800">
-                                            <option value="">Select Target Intake</option>
-                                            <option value="September / Fall Intake 2026">September / Fall Intake 2026</option>
-                                            <option value="January / February Spring Intake 2027">January / February Spring Intake 2027</option>
-                                            <option value="September / Fall Intake 2027">September / Fall Intake 2027</option>
-                                            <option value="Immediate / Earliest Available">Immediate / Earliest Available</option>
-                                        </select>
-                                    </div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                        <i class="fa-regular fa-calendar text-slate-400"></i> Date of Birth <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="date" id="wa_dob" required class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800">
                                 </div>
                             </div>
 
-                            <!-- Additional Notes / Questions -->
-                            <div class="pt-2">
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Additional Notes or Questions (Optional)</label>
-                                <textarea id="wa_notes" rows="3" placeholder="Mention any specific degree (e.g. Master in Data Science, MBBS) or English test score (IELTS/PTE/Duolingo if any)..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-slate-800"></textarea>
+                            <!-- Row 2: Qualification & CGPA/Marks -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-graduation-cap text-slate-400"></i> Last Qualification / Degree <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="wa_qualification" required placeholder="e.g. BSCS / FSC Pre-Engineering" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800 placeholder:text-slate-400">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-chart-pie text-slate-400"></i> CGPA / Percentage Marks <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="wa_cgpa" required placeholder="e.g. 3.4 / 4.0 or 85%" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800 placeholder:text-slate-400">
+                                </div>
                             </div>
 
-                            <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black py-4 px-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 text-base transform hover:-translate-y-0.5 border border-white/20">
-                                <i class="fa-brands fa-whatsapp text-2xl"></i> Send Assessment Request to WhatsApp
-                            </button>
+                            <!-- Row 3: Interested Country & Intake -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-globe text-slate-400"></i> Interested Country <span class="text-red-500">*</span>
+                                    </label>
+                                    <select id="wa_interest" required class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800">
+                                        <option value="">Select Destination</option>
+                                        <option value="Italy 🇮🇹 (DSU / Merit Scholarships)">Italy 🇮🇹 (DSU / Merit Scholarships)</option>
+                                        <option value="Germany 🇩🇪 (Tuition-Free Public Univ.)">Germany 🇩🇪 (Tuition-Free Public Univ.)</option>
+                                        <option value="United Kingdom 🇬🇧 (Russell Group)">United Kingdom 🇬🇧 (Russell Group)</option>
+                                        <option value="France 🇫🇷 (Public & Private Univ.)">France 🇫🇷 (Public & Private Univ.)</option>
+                                        <option value="Hungary 🇭🇺 (Stipendium Hungaricum)">Hungary 🇭🇺 (Stipendium Hungaricum)</option>
+                                        <option value="Other / General Study Advice ✨">Other / General Study Advice ✨</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                        <i class="fa-regular fa-clock text-slate-400"></i> Target Intake <span class="text-red-500">*</span>
+                                    </label>
+                                    <select id="wa_intake" required class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800">
+                                        <option value="">Select Target Year/Intake</option>
+                                        <option value="Fall 2026 (September / October)">Fall 2026 (September / October)</option>
+                                        <option value="Spring 2027 (January / February)">Spring 2027 (January / February)</option>
+                                        <option value="Fall 2027 (September / October)">Fall 2027 (September / October)</option>
+                                        <option value="As soon as possible 🚀">As soon as possible 🚀</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Row 4: Any Specific Note / IELTS (Optional, clean single/two line) -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1.5 flex items-center gap-1.5">
+                                    <i class="fa-regular fa-message text-slate-400"></i> Any questions or IELTS/PTE score? <span class="text-slate-400 font-normal">(Optional)</span>
+                                </label>
+                                <input type="text" id="wa_notes" placeholder="e.g. IELTS 6.5, interested in Master in Data Science..." class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/10 transition-all text-slate-800 placeholder:text-slate-400">
+                            </div>
+
+                            <!-- Big Vibrant Submit Button -->
+                            <div class="pt-3">
+                                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black py-4 px-6 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#25D366]/30 transition-all duration-300 flex items-center justify-center gap-3 text-base sm:text-lg transform hover:-translate-y-0.5 group">
+                                    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                                    <span>Send Details to WhatsApp</span>
+                                </button>
+                                <p class="text-center text-[11px] text-slate-400 mt-2.5 font-medium">
+                                    🔒 Your profile opens directly in your WhatsApp app or browser. No spam.
+                                </p>
+                            </div>
                         </form>
+
+                        <!-- Switch to Email link -->
+                        <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+                            <button type="button" @click="mode = 'email'" class="text-xs font-bold text-slate-500 hover:text-[#0b1b3d] transition-colors inline-flex items-center gap-1.5">
+                                <i class="fa-regular fa-envelope"></i> Prefer sending an email message instead? <span class="underline">Click here</span>
+                            </button>
+                        </div>
 
                         <!-- JavaScript for WhatsApp Auto-Form Submitting -->
                         <script>
@@ -207,16 +216,16 @@
                                 }
 
                                 // Construct formatted WhatsApp message with neat emojis and line breaks
-                                let message = `*🌟 New Student Assessment Request 🌟*\n\n` +
+                                let message = `*🌟 New Student Profile Assessment 🌟*\n\n` +
                                               `*👤 Full Name:* ${fullName}\n` +
-                                              `*🎓 Last Qualification:* ${qualification}\n` +
+                                              `*🎓 Last Degree:* ${qualification}\n` +
                                               `*🎂 Date of Birth:* ${dob}\n` +
                                               `*📊 CGPA / Marks:* ${cgpa}\n` +
-                                              `*🌍 Interested To Apply:* ${interest}\n` +
+                                              `*🌍 Interested Country:* ${interest}\n` +
                                               `*📅 Preferred Intake:* ${intake}\n`;
 
                                 if (notes) {
-                                    message += `*💬 Additional Notes:* ${notes}\n`;
+                                    message += `*💬 Notes / IELTS:* ${notes}\n`;
                                 }
 
                                 message += `\n_Sent via Euro World Education Website_`;
@@ -228,15 +237,21 @@
                         </script>
                     </div>
 
-                    <!-- TAB 2: Standard Email Form -->
-                    <div x-show="activeForm === 'email'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="mb-6 pb-5 border-b border-slate-100">
-                            <h3 class="text-xl font-bold text-[#0b1b3d] mb-1">Send Formal Email Message</h3>
-                            <p class="text-xs text-slate-500">Send an inquiry directly to our official head office email queue.</p>
+                    <!-- MODE 2: STANDARD EMAIL FORM -->
+                    <div x-show="mode === 'email'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+                        <!-- Header with back button -->
+                        <div class="flex items-center justify-between gap-4 mb-6 pb-5 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-2xl font-black text-[#0b1b3d] tracking-tight">Send Email Message</h3>
+                                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">We typically reply to email inquiries within 24 hours.</p>
+                            </div>
+                            <button type="button" @click="mode = 'whatsapp'" class="px-3 py-1.5 bg-emerald-50 text-[#25D366] hover:bg-emerald-100 font-bold text-xs rounded-xl transition-all shrink-0 flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp"></i> Switch to WhatsApp
+                            </button>
                         </div>
 
                         @if (session('success'))
-                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl relative mb-6 font-medium text-sm" role="alert">
+                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-2xl relative mb-6 font-medium text-sm" role="alert">
                                 <strong class="font-bold">Success!</strong>
                                 <span class="block sm:inline">{{ session('success') }}</span>
                             </div>
@@ -244,29 +259,29 @@
 
                         <form action="{{ route('contact.submit') }}" method="POST" class="space-y-4">
                             @csrf
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">First Name <span class="text-red-500">*</span></label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">First Name <span class="text-red-500">*</span></label>
                                     <input type="text" name="first_name" required placeholder="First Name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Last Name <span class="text-red-500">*</span></label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Last Name <span class="text-red-500">*</span></label>
                                     <input type="text" name="last_name" required placeholder="Last Name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Email Address <span class="text-red-500">*</span></label>
                                 <input type="email" name="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Subject <span class="text-red-500">*</span></label>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Subject <span class="text-red-500">*</span></label>
                                 <input type="text" name="subject" required placeholder="Inquiry Subject" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Message <span class="text-red-500">*</span></label>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Message <span class="text-red-500">*</span></label>
                                 <textarea name="message" required placeholder="Write your message here..." rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-[#0b1b3d] hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all">Send Email Message</button>
+                            <button type="submit" class="w-full bg-[#0b1b3d] hover:bg-blue-900 text-white font-bold py-3.5 rounded-2xl shadow-lg hover:shadow-xl transition-all">Send Email Message</button>
                         </form>
                     </div>
                 </div>
