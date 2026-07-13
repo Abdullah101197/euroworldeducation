@@ -35,6 +35,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     Route::resource('/users', \App\Http\Controllers\Admin\UserController::class)->except(['show']);
     Route::resource('/posts', \App\Http\Controllers\PostController::class)->except(['show']);
+
+    Route::get('/run-migrations', function () {
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        return redirect()->route('admin.posts.index')->with('success', 'Database tables created successfully!');
+    })->name('run-migrations');
 });
 
 Route::middleware('auth')->group(function () {
