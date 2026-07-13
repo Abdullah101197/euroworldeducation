@@ -489,7 +489,7 @@
                     <!-- Standalone Delete Forms for Scholarship Boxes -->
                     @if(isset($scholarships))
                         @foreach($scholarships as $item)
-                            <form id="delete-scholarship-form-{{ $item->id }}" method="POST" action="{{ route('scholarships.destroy', $item->id) }}" style="display: none;">
+                            <form id="delete-scholarship-form-{{ $item->id }}" method="POST" action="{{ route('admin.scholarships.destroy', $item->id) }}" style="display: none;">
                                 @csrf
                                 @method('DELETE')
                             </form>
@@ -510,7 +510,7 @@
                                 <button type="button" @click="showAddModal = false" class="text-white/70 hover:text-white text-2xl font-bold">&times;</button>
                             </div>
 
-                            <form method="POST" action="{{ route('scholarships.store') }}" class="p-6 space-y-5 overflow-y-auto grow">
+                            <form method="POST" action="{{ route('admin.scholarships.store') }}" class="p-6 space-y-5 overflow-y-auto grow">
                                 @csrf
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
