@@ -161,6 +161,19 @@
                                             </div>
                                         </div>
                                         <div>
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5 flex items-center justify-between">
+                                                <span>WhatsApp Chat Number</span>
+                                                <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-extrabold">Auto-Redirect</span>
+                                            </label>
+                                            <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/20 transition-all">
+                                                <span class="bg-emerald-50 px-3.5 py-2.5 border-r border-emerald-100 flex items-center justify-center text-emerald-600 shrink-0 select-none">
+                                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                                </span>
+                                                <input type="text" name="site_whatsapp" value="{{ $flatSettings['site_whatsapp'] ?? ($flatSettings['site_phone'] ?? '') }}" placeholder="923001234567 (Country code + digits)" style="border: none !important; box-shadow: none !important; outline: none !important; background: transparent !important; width: 100% !important;" class="flex-1 w-full border-0 focus:ring-0 focus:outline-none text-sm py-2.5 px-3.5 font-bold bg-transparent text-emerald-900">
+                                            </div>
+                                            <p class="text-[11px] text-slate-400 mt-1">Enter country code + number (e.g. 923001234567). Clicking any WhatsApp button across the website will directly open chat with this number!</p>
+                                        </div>
+                                        <div class="md:col-span-2">
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Email Address</label>
                                             <div class="flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
                                                 <span class="bg-slate-100/80 px-3.5 py-2.5 border-r border-slate-200/80 flex items-center justify-center text-blue-600 shrink-0 select-none">

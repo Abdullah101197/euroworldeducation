@@ -62,7 +62,7 @@ class SettingController extends Controller
             elseif (str_starts_with($key, 'services_')) $group = 'services_page';
             elseif (str_starts_with($key, 'destinations_')) $group = 'destinations_page';
             elseif (str_starts_with($key, 'social_')) $group = 'social';
-            elseif (in_array($key, ['site_phone', 'site_email', 'site_address'])) $group = 'contact';
+            elseif (in_array($key, ['site_phone', 'site_whatsapp', 'site_email', 'site_address'])) $group = 'contact';
 
             \App\Models\Setting::updateOrCreate(
                 ['key' => $key],

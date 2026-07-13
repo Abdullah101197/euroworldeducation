@@ -184,7 +184,15 @@
                         <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#c6181b] hover:bg-red-800 text-white px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
                             Book Free Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="https://wa.me/923000000000" target="_blank" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#1ebe5d] text-white px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1 border border-white/20">
+                        @php
+                            $rawWa = $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '923000000000');
+                            $cleanWa = preg_replace('/[^0-9]/', '', $rawWa);
+                            if (empty($cleanWa)) {
+                                $cleanWa = '923000000000';
+                            }
+                            $waUrl = 'https://wa.me/' . $cleanWa . '?text=' . urlencode('Hello Euro World Education, I would like to inquire about study abroad opportunities.');
+                        @endphp
+                        <a href="{{ $waUrl }}" target="_blank" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#1ebe5d] text-white px-7 py-3.5 rounded-full font-black text-sm transition-all shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1 border border-white/20">
                             <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
                         </a>
                     </div>
@@ -265,6 +273,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Live Chat Button -->
+    @php
+        $rawWaFloat = $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '923000000000');
+        $cleanWaFloat = preg_replace('/[^0-9]/', '', $rawWaFloat);
+        if (empty($cleanWaFloat)) {
+            $cleanWaFloat = '923000000000';
+        }
+        $waUrlFloat = 'https://wa.me/' . $cleanWaFloat . '?text=' . urlencode('Hello Euro World Education, I am interested in studying abroad and would like more information.');
+    @endphp
+    <a href="{{ $waUrlFloat }}" target="_blank" aria-label="Chat with us on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebe5d] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transform hover:scale-110 transition-all duration-300 group border-2 border-white/40">
+        <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500 border border-white"></span>
+        </span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-full mr-3 px-3 py-1.5 bg-slate-900/90 text-white text-xs font-bold rounded-lg whitespace-nowrap shadow-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Chat on WhatsApp
+        </span>
+    </a>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
