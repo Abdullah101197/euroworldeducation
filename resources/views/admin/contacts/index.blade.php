@@ -19,8 +19,8 @@
                     <div class="mb-4 flex justify-between items-center">
                         <form action="{{ route('admin.contacts.index') }}" method="GET" class="flex items-center">
                             <input type="text" name="search" value="{{ request('search') }}" placeholder="Search leads..." class="shadow appearance-none border rounded w-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-2">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                Search
+                            <button type="submit" style="background-color: #0b1b3d !important; color: #ffffff !important; padding: 0.5rem 1.25rem !important; border-radius: 0.5rem !important; font-weight: 800 !important;" class="bg-[#0b1b3d] hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                <i class="fa-solid fa-magnifying-glass mr-1"></i> Search
                             </button>
                             @if(request('search'))
                                 <a href="{{ route('admin.contacts.index') }}" class="ml-2 text-gray-500 hover:text-gray-800 text-sm">Clear</a>

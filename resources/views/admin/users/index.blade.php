@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl leading-tight">
+            <h2 class="font-extrabold text-2xl text-[#0b1b3d] leading-tight">
                 {{ __('Admin Users') }}
             </h2>
-            <a href="{{ route('admin.users.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                Add New Admin
+            <a href="{{ route('admin.users.create') }}" style="background-color: #0b1b3d !important; color: #ffffff !important; padding: 0.65rem 1.35rem !important; border-radius: 0.75rem !important; font-weight: 800 !important; font-size: 0.875rem !important; display: inline-flex !important; align-items: center !important; gap: 0.5rem !important; box-shadow: 0 4px 6px -1px rgba(11, 27, 61, 0.2) !important; text-decoration: none !important;" class="bg-[#0b1b3d] text-white hover:bg-blue-900 transition-all transform hover:-translate-y-0.5">
+                <i class="fa-solid fa-user-plus"></i> Add New Admin
             </a>
         </div>
     </x-slot>
