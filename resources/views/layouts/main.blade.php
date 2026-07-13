@@ -80,15 +80,15 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <i class="fa-regular fa-envelope"></i>
-                        <span>info@euroworld.education.com</span>
+                        <span>{{ $global_settings['site_email'] ?? 'info@euroworld.education.com' }}</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="mr-2">Follow Us:</span>
-                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-facebook-f text-[10px]"></i></a>
-                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-instagram text-[10px]"></i></a>
-                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-youtube text-[10px]"></i></a>
-                    <a href="#" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-tiktok text-[10px]"></i></a>
+                    <a href="{{ $global_settings['social_facebook'] ?? '#' }}" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-facebook-f text-[10px]"></i></a>
+                    <a href="{{ $global_settings['social_instagram'] ?? '#' }}" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-instagram text-[10px]"></i></a>
+                    <a href="{{ $global_settings['social_youtube'] ?? '#' }}" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-youtube text-[10px]"></i></a>
+                    <a href="{{ $global_settings['social_tiktok'] ?? '#' }}" class="w-6 h-6 rounded-full bg-white text-[#0b1b3d] flex items-center justify-center hover:bg-gray-200"><i class="fa-brands fa-tiktok text-[10px]"></i></a>
                 </div>
             </div>
         </div>
@@ -212,10 +212,10 @@
                     </div>
                     <p class="text-sm text-gray-400 mb-6 leading-relaxed">Empowering students to achieve global success through quality education in Europe.</p>
                     <div class="flex space-x-4">
-                        <a href="https://facebook.com/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://instagram.com/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/euroworld" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="{{ $global_settings['social_facebook'] ?? 'https://facebook.com/euroworld' }}" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="{{ $global_settings['social_twitter'] ?? 'https://twitter.com/euroworld' }}" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="{{ $global_settings['social_instagram'] ?? 'https://instagram.com/euroworld' }}" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="{{ $global_settings['social_linkedin'] ?? 'https://linkedin.com/company/euroworld' }}" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-yellow-400 hover:text-[#0b1b3d] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
@@ -244,15 +244,15 @@
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot mt-1 text-red-600"></i>
-                            <span class="text-gray-400">123 Education Boulevard,<br>City Center, 10001</span>
+                            <span class="text-gray-400">{!! $global_settings['site_address'] ?? '123 Education Boulevard,<br>City Center, 10001' !!}</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-phone text-red-600"></i>
-                            <span class="text-gray-400">+1 234 567 8900</span>
+                            <span class="text-gray-400">{{ $global_settings['site_phone'] ?? '+1 234 567 8900' }}</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-envelope text-red-600"></i>
-                            <span class="text-gray-400">info@euroworld.edu</span>
+                            <span class="text-gray-400">{{ $global_settings['site_email'] ?? 'info@euroworld.edu' }}</span>
                         </li>
                     </ul>
                 </div>

@@ -24,6 +24,9 @@
             <x-sidebar-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.*')">
                 {{ __('Settings') }}
             </x-sidebar-link>
+            <x-sidebar-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.posts.*')">
+                {{ __('Blog / News') }}
+            </x-sidebar-link>
         </div>
     </div>
 

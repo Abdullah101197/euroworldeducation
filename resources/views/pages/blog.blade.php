@@ -218,14 +218,20 @@
                         @endforeach
                     </div>
 
-                    <!-- Clean Numbered Pagination -->
-                    <div class="flex items-center justify-center gap-2 mt-12">
-                        <span class="bg-[#0b1b3d] text-white px-4 py-2 rounded-xl font-bold text-sm shadow-sm cursor-pointer">1</span>
-                        <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm">2</a>
-                        <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm">3</a>
-                        <span class="text-gray-400 px-2 font-bold">...</span>
-                        <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm">10</a>
-                        <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm flex items-center gap-1">Next <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    <!-- Pagination -->
+                    <div class="mt-12">
+                        @if($posts->count() > 0)
+                            {{ $posts->links() }}
+                        @else
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="bg-[#0b1b3d] text-white px-4 py-2 rounded-xl font-bold text-sm shadow-sm cursor-pointer">1</span>
+                                <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm">2</a>
+                                <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm">3</a>
+                                <span class="text-gray-400 px-2 font-bold">...</span>
+                                <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm">10</a>
+                                <a href="#" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-xl font-semibold text-sm transition-colors shadow-sm flex items-center gap-1">Next <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
