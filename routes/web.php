@@ -33,6 +33,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/settings', [\App\Http\Controllers\SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [\App\Http\Controllers\SettingController::class, 'update'])->name('settings.update');
 
+    Route::post('/scholarships', [\App\Http\Controllers\Admin\ScholarshipController::class, 'store'])->name('scholarships.store');
+    Route::put('/scholarships/{scholarship}', [\App\Http\Controllers\Admin\ScholarshipController::class, 'update'])->name('scholarships.update');
+    Route::delete('/scholarships/{scholarship}', [\App\Http\Controllers\Admin\ScholarshipController::class, 'destroy'])->name('scholarships.destroy');
+
     Route::resource('/users', \App\Http\Controllers\Admin\UserController::class)->except(['show']);
     Route::resource('/posts', \App\Http\Controllers\PostController::class)->except(['show']);
 

@@ -6,11 +6,27 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index() { return view('pages.index'); }
+    public function index() 
+    { 
+        try {
+            $scholarships = \App\Models\Scholarship::where('is_active', true)->orderBy('sort_order')->orderBy('id', 'asc')->get();
+        } catch (\Exception $e) {
+            $scholarships = collect();
+        }
+        return view('pages.index', compact('scholarships')); 
+    }
     public function about() { return view('pages.about'); }
     public function services() { return view('pages.services'); }
     public function destinations() { return view('pages.destinations'); }
-    public function scholarships() { return view('pages.scholarships'); }
+    public function scholarships() 
+    { 
+        try {
+            $scholarships = \App\Models\Scholarship::where('is_active', true)->orderBy('sort_order')->orderBy('id', 'asc')->get();
+        } catch (\Exception $e) {
+            $scholarships = collect();
+        }
+        return view('pages.scholarships', compact('scholarships')); 
+    }
     public function successStories() { return view('pages.success-stories'); }
     public function blog() 
     { 

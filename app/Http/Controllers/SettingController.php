@@ -6,11 +6,20 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $settings = \App\Models\Setting::all()->groupBy('group');
         $flatSettings = \App\Models\Setting::all()->pluck('value', 'key');
-        return view('admin.settings.index', compact('settings', 'flatSettings'));
+        
+        try {
+            $scholarships = \App\Models\Scholarship::orderBy('sort_order')->orderBy('id', 'asc')->get();
+        } catch (\Exception $e) {
+            $scholarships = collect();
+        }
+
+        $defaultTab = $request->get('tab', 'global');
+
+        return view('admin.settings.index', compact('settings', 'flatSettings', 'scholarships', 'defaultTab'));
     }
 
     public function update(Request $request)

@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </x-slot>
 
-    <div class="py-10 bg-slate-100/60 min-h-screen" x-data="{ activeTab: 'global' }">
+    <div class="py-10 bg-slate-100/60 min-h-screen" x-data="{ activeTab: {{ json_encode($defaultTab ?? 'global') }}, showAddModal: false, showEditModal: false, editItem: { id: '', title: '', badge: '', highlight: '', icon: 'fa-award', color_theme: 'yellow', description: '', button_text: 'Check Your Eligibility', button_link: '/contact' } }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             @if(session('success'))
@@ -371,75 +371,107 @@
                         <div x-show="activeTab === 'scholarships'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter-end="opacity-100 translate-y-0">
                             <div class="mb-8 pb-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 <div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Scholarships Page Content</h3>
-                                    <p class="text-sm text-slate-500 mt-1">Customize scholarship awards, eligibility notes, and regional funding opportunities.</p>
+                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Scholarships Page & Box Manager</h3>
+                                    <p class="text-sm text-slate-500 mt-1">Easily manage your top header and add, edit, or delete dynamic scholarship boxes.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <a href="{{ url('/scholarships') }}" target="_blank" class="text-xs font-bold text-amber-600 bg-amber-50 border border-amber-100 hover:bg-amber-100 px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors">
-                                        <i class="fa-solid fa-external-link-alt text-[10px]"></i> View Live Scholarships
+                                    <button type="button" @click="showAddModal = true" style="background-color: #059669 !important; color: #ffffff !important;" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-emerald-500/20 transition-all">
+                                        <i class="fa-solid fa-plus"></i> + Add New Scholarship Box
+                                    </button>
+                                    <a href="{{ url('/scholarships') }}" target="_blank" class="text-xs font-bold text-amber-600 bg-amber-50 border border-amber-100 hover:bg-amber-100 px-3 py-2 rounded-xl flex items-center gap-1.5 transition-colors">
+                                        <i class="fa-solid fa-external-link-alt text-[10px]"></i> View Live Page
                                     </a>
                                 </div>
                             </div>
                             
                             <div class="space-y-8">
+                                <!-- Easy Hero Setup (No HTML Required) -->
                                 <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm space-y-4">
                                     <h4 class="text-sm font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200/70 pb-3">
                                         <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs"><i class="fa-solid fa-bookmark"></i></span>
-                                        Page Hero Title & Subtitle
+                                        Page Top Header Banner Setup (Simple Text)
                                     </h4>
-                                    <div class="grid grid-cols-1 gap-5">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                         <div>
-                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Hero Section Headline</label>
-                                            <input type="text" name="scholarships_hero_title" value="{{ $flatSettings['scholarships_hero_title'] ?? 'Global <span class=\"text-[#ffc107]\">Scholarships</span>' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
-                                            <p class="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1">
-                                                <i class="fa-solid fa-lightbulb text-amber-500"></i> Tip: Use HTML span tag <code class="bg-slate-200 px-1.5 py-0.5 rounded text-slate-700 font-mono">&lt;span class="text-[#ffc107]"&gt;Scholarships&lt;/span&gt;</code> to highlight words in bright yellow.
-                                            </p>
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Main Title Text</label>
+                                            <input type="text" name="scholarships_hero_title" value="{{ $flatSettings['scholarships_hero_title'] ?? 'Global' }}" placeholder="e.g. Global" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
+                                            <p class="text-[11px] text-slate-400 mt-1">Normal text before the highlighted word.</p>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Hero Subtitle</label>
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Highlighted Word (Auto-Colored Yellow)</label>
+                                            <input type="text" name="scholarships_hero_highlight" value="{{ $flatSettings['scholarships_hero_highlight'] ?? 'Scholarships' }}" placeholder="e.g. Scholarships" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-bold text-amber-600 transition-all">
+                                            <p class="text-[11px] text-slate-400 mt-1">No HTML tags needed! This word will automatically glow bright yellow.</p>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Hero Subtitle / Short Description</label>
                                             <textarea name="scholarships_hero_subtitle" rows="2" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all text-slate-800">{{ $flatSettings['scholarships_hero_subtitle'] ?? 'Unlock financial aid opportunities and fully-funded programs at the world\'s best universities.' }}</textarea>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm space-y-4">
-                                    <h4 class="text-sm font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200/70 pb-3">
-                                        <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs"><i class="fa-solid fa-award"></i></span>
-                                        Scholarship Box 1: Merit-Based Excellence Awards
-                                    </h4>
-                                    <div class="grid grid-cols-1 gap-5">
+                                <!-- Dynamic Scholarship Boxes List -->
+                                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                                         <div>
-                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Box 1 Title</label>
-                                            <input type="text" name="scholarships_card1_title" value="{{ $flatSettings['scholarships_card1_title'] ?? 'Merit-Based Excellence Awards' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
+                                            <h4 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+                                                <i class="fa-solid fa-award text-amber-500"></i> Active Scholarship Boxes on Public Site
+                                            </h4>
+                                            <p class="text-xs text-slate-500 mt-0.5">Click "Edit Box" to modify title, text, icon & color, or "Delete Box" to remove an old scholarship.</p>
                                         </div>
-                                        <div>
-                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2 flex items-center justify-between">
-                                                <span>Box 1 Description (Rich Text)</span>
-                                                <span class="text-xs text-amber-600 font-bold bg-amber-100/60 px-2 py-0.5 rounded">Summernote Active</span>
-                                            </label>
-                                            <textarea name="scholarships_card1_desc" class="richtext block w-full rounded-xl border-slate-200 shadow-sm">{{ $flatSettings['scholarships_card1_desc'] ?? '<p>Many of our partner universities in the UK and Australia offer significant tuition fee discounts (up to 50%) for students with outstanding academic records.</p>' }}</textarea>
-                                        </div>
+                                        <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-extrabold">{{ isset($scholarships) ? $scholarships->count() : 0 }} Boxes Live</span>
                                     </div>
-                                </div>
 
-                                <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm space-y-4">
-                                    <h4 class="text-sm font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200/70 pb-3">
-                                        <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs"><i class="fa-solid fa-landmark"></i></span>
-                                        Scholarship Box 2: Government & Regional Scholarships
-                                    </h4>
-                                    <div class="grid grid-cols-1 gap-5">
-                                        <div>
-                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Box 2 Title</label>
-                                            <input type="text" name="scholarships_card2_title" value="{{ $flatSettings['scholarships_card2_title'] ?? 'Government & Regional Scholarships' }}" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
+                                    @if(isset($scholarships) && $scholarships->count() > 0)
+                                        <div class="grid grid-cols-1 gap-4">
+                                            @foreach($scholarships as $item)
+                                                @php
+                                                    $pillColors = [
+                                                        'yellow' => 'bg-amber-100 text-amber-800 border-amber-200',
+                                                        'red' => 'bg-rose-100 text-rose-800 border-rose-200',
+                                                        'blue' => 'bg-blue-100 text-blue-800 border-blue-200',
+                                                        'emerald' => 'bg-emerald-100 text-emerald-800 border-emerald-200',
+                                                        'purple' => 'bg-purple-100 text-purple-800 border-purple-200',
+                                                    ][$item->color_theme] ?? 'bg-amber-100 text-amber-800 border-amber-200';
+                                                @endphp
+                                                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                                    <div class="flex items-start gap-4">
+                                                        <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-2xl text-slate-700 shrink-0 mt-0.5">
+                                                            <i class="fa-solid {{ $item->icon ?: 'fa-award' }}"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                                                @if($item->badge)
+                                                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider {{ $pillColors }}">{{ $item->badge }}</span>
+                                                                @endif
+                                                                @if($item->highlight)
+                                                                    <span class="text-xs font-semibold text-slate-500">{{ $item->highlight }}</span>
+                                                                @endif
+                                                            </div>
+                                                            <h5 class="text-lg font-extrabold text-slate-900">{{ $item->title }}</h5>
+                                                            <div class="text-xs text-slate-500 mt-1.5 line-clamp-2 max-w-2xl prose prose-sm">{!! strip_tags($item->description) !!}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center gap-2.5 shrink-0 border-t md:border-t-0 pt-3 md:pt-0 border-slate-200">
+                                                        <button type="button" 
+                                                                @click="editItem = {{ $item->toJson() }}; showEditModal = true; setTimeout(() => { $('#edit_description').summernote('code', editItem.description); }, 100);" 
+                                                                style="background-color: #2563eb !important; color: #ffffff !important;" 
+                                                                class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
+                                                            <i class="fa-solid fa-pen-to-square"></i> Edit Box
+                                                        </button>
+                                                        <button type="submit" form="delete-scholarship-form-{{ $item->id }}" onclick="return confirm('Are you sure you want to delete this scholarship box?')" style="background-color: #dc2626 !important; color: #ffffff !important;" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
+                                                            <i class="fa-solid fa-trash"></i> Delete Box
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
-                                        <div>
-                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2 flex items-center justify-between">
-                                                <span>Box 2 Description (Rich Text)</span>
-                                                <span class="text-xs text-amber-600 font-bold bg-amber-100/60 px-2 py-0.5 rounded">Summernote Active</span>
-                                            </label>
-                                            <textarea name="scholarships_card2_desc" class="richtext block w-full rounded-xl border-slate-200 shadow-sm">{{ $flatSettings['scholarships_card2_desc'] ?? '<p>We specialize in helping students apply for regional government scholarships (such as DSU in Italy or DAAD in Germany) which can cover full tuition and provide living stipends.</p>' }}</textarea>
+                                    @else
+                                        <div class="text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+                                            <i class="fa-solid fa-award text-4xl text-slate-300 mb-3"></i>
+                                            <h5 class="font-bold text-slate-700">No Scholarship Boxes Found</h5>
+                                            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Click the "+ Add New Scholarship Box" button above to create your first dynamic scholarship program.</p>
                                         </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -453,6 +485,166 @@
                         </div>
 
                     </form>
+
+                    <!-- Standalone Delete Forms for Scholarship Boxes -->
+                    @if(isset($scholarships))
+                        @foreach($scholarships as $item)
+                            <form id="delete-scholarship-form-{{ $item->id }}" method="POST" action="{{ route('scholarships.destroy', $item->id) }}" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        @endforeach
+                    @endif
+
+                    <!-- Modal: Add New Scholarship Box -->
+                    <div x-show="showAddModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+                        <div @click.away="showAddModal = false" class="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-2xl w-full overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+                            <div class="px-6 py-5 bg-gradient-to-r from-[#0b1b3d] to-[#162e63] text-white flex items-center justify-between shrink-0">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg"><i class="fa-solid fa-plus"></i></span>
+                                    <div>
+                                        <h4 class="font-extrabold text-lg">Add New Scholarship Box</h4>
+                                        <p class="text-xs text-slate-300">Create a dynamic funding program for the live website.</p>
+                                    </div>
+                                </div>
+                                <button type="button" @click="showAddModal = false" class="text-white/70 hover:text-white text-2xl font-bold">&times;</button>
+                            </div>
+
+                            <form method="POST" action="{{ route('scholarships.store') }}" class="p-6 space-y-5 overflow-y-auto grow">
+                                @csrf
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Box Title <span class="text-red-500">*</span></label>
+                                        <input type="text" name="title" required placeholder="e.g. Merit-Based Excellence Awards" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Badge Tag</label>
+                                        <input type="text" name="badge" placeholder="e.g. Academic Excellence" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Highlight Note / Perk</label>
+                                        <input type="text" name="highlight" placeholder="e.g. • Up to 50% Tuition Coverage" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Choose Icon</label>
+                                        <select name="icon" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-bold text-slate-800">
+                                            <option value="fa-award">🏆 Medal / Award (fa-award)</option>
+                                            <option value="fa-landmark">🏛️ Government / Regional (fa-landmark)</option>
+                                            <option value="fa-graduation-cap">🎓 Graduation Cap (fa-graduation-cap)</option>
+                                            <option value="fa-globe-europe">🌍 Global / Abroad (fa-globe-europe)</option>
+                                            <option value="fa-hand-holding-dollar">💰 Financial Aid (fa-hand-holding-dollar)</option>
+                                            <option value="fa-book-open">📚 Study & Research (fa-book-open)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Choose Color Theme</label>
+                                        <select name="color_theme" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-bold text-slate-800">
+                                            <option value="yellow">🟡 Gold / Amber Theme</option>
+                                            <option value="red">🔴 Rose / Red Theme</option>
+                                            <option value="blue">🔵 Royal Blue Theme</option>
+                                            <option value="emerald">🟢 Emerald Green Theme</option>
+                                            <option value="purple">🟣 Royal Purple Theme</option>
+                                        </select>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Description (Rich Text or Normal Text) <span class="text-red-500">*</span></label>
+                                        <textarea name="description" rows="4" required placeholder="Describe eligibility criteria, benefits, and how to apply..." class="richtext block w-full rounded-xl border-slate-200 shadow-sm text-sm p-3 font-normal text-slate-800"></textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Button Text</label>
+                                        <input type="text" name="button_text" value="Check Your Eligibility" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Button Link</label>
+                                        <input type="text" name="button_link" value="/contact" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3 shrink-0">
+                                    <button type="button" @click="showAddModal = false" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Cancel</button>
+                                    <button type="submit" style="background-color: #059669 !important; color: #ffffff !important;" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md">
+                                        <i class="fa-solid fa-check mr-1.5"></i> Save Scholarship Box
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Modal: Edit Scholarship Box -->
+                    <div x-show="showEditModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+                        <div @click.away="showEditModal = false" class="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-2xl w-full overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+                            <div class="px-6 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex items-center justify-between shrink-0">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-pen-to-square"></i></span>
+                                    <div>
+                                        <h4 class="font-extrabold text-lg">Edit Scholarship Box</h4>
+                                        <p class="text-xs text-blue-100">Update details for <span x-text="editItem.title" class="font-bold underline"></span></p>
+                                    </div>
+                                </div>
+                                <button type="button" @click="showEditModal = false" class="text-white/70 hover:text-white text-2xl font-bold">&times;</button>
+                            </div>
+
+                            <form :action="`/admin/scholarships/${editItem.id}`" method="POST" class="p-6 space-y-5 overflow-y-auto grow">
+                                @csrf
+                                @method('PUT')
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Box Title <span class="text-red-500">*</span></label>
+                                        <input type="text" name="title" x-model="editItem.title" required class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Badge Tag</label>
+                                        <input type="text" name="badge" x-model="editItem.badge" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Highlight Note / Perk</label>
+                                        <input type="text" name="highlight" x-model="editItem.highlight" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Choose Icon</label>
+                                        <select name="icon" x-model="editItem.icon" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-bold text-slate-800">
+                                            <option value="fa-award">🏆 Medal / Award (fa-award)</option>
+                                            <option value="fa-landmark">🏛️ Government / Regional (fa-landmark)</option>
+                                            <option value="fa-graduation-cap">🎓 Graduation Cap (fa-graduation-cap)</option>
+                                            <option value="fa-globe-europe">🌍 Global / Abroad (fa-globe-europe)</option>
+                                            <option value="fa-hand-holding-dollar">💰 Financial Aid (fa-hand-holding-dollar)</option>
+                                            <option value="fa-book-open">📚 Study & Research (fa-book-open)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Choose Color Theme</label>
+                                        <select name="color_theme" x-model="editItem.color_theme" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-bold text-slate-800">
+                                            <option value="yellow">🟡 Gold / Amber Theme</option>
+                                            <option value="red">🔴 Rose / Red Theme</option>
+                                            <option value="blue">🔵 Royal Blue Theme</option>
+                                            <option value="emerald">🟢 Emerald Green Theme</option>
+                                            <option value="purple">🟣 Royal Purple Theme</option>
+                                        </select>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Description (Rich Text or Normal Text) <span class="text-red-500">*</span></label>
+                                        <textarea id="edit_description" name="description" rows="4" required class="richtext block w-full rounded-xl border-slate-200 shadow-sm text-sm p-3 font-normal text-slate-800"></textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Button Text</label>
+                                        <input type="text" name="button_text" x-model="editItem.button_text" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Button Link</label>
+                                        <input type="text" name="button_link" x-model="editItem.button_link" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3 shrink-0">
+                                    <button type="button" @click="showEditModal = false" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Cancel</button>
+                                    <button type="submit" style="background-color: #2563eb !important; color: #ffffff !important;" class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md">
+                                        <i class="fa-solid fa-check mr-1.5"></i> Update Scholarship Box
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
