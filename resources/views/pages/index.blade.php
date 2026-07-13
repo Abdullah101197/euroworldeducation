@@ -7,58 +7,90 @@
 
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-36 lg:pt-44 pb-0 bg-[#f2f5f8] font-sans overflow-hidden">
-        <!-- Dotted background pattern -->
-        <div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 24px 24px;"></div>
+    <section id="hero" class="relative pt-36 lg:pt-44 pb-12 bg-white font-sans overflow-hidden">
+        <!-- Subtle modern geometric grid pattern -->
+        <div class="absolute inset-0 z-0 opacity-30 pointer-events-none" style="background-image: radial-gradient(#94a3b8 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
+        
+        <!-- Ambient glowing lighting effects for luxury feel -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
+        <div class="absolute top-1/3 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse" style="animation-delay: 2s;"></div>
 
-        <div class="max-w-[1150px] mx-auto px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row lg:items-start items-center justify-center gap-4 lg:gap-8">
-                <!-- Left Content -->
-                <div class="w-full lg:w-[54%] reveal-up pt-8 lg:pt-0 text-center lg:text-left z-20 relative">
-                    <div class="flex items-center justify-center lg:justify-start gap-3 mb-5">
-                        <div class="h-[2px] w-8 bg-[#c6181b]"></div>
-                        <span class="text-[13px] font-bold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+                <!-- Left Content Area -->
+                <div class="w-full lg:w-[54%] reveal-up pt-4 lg:pt-0 text-center lg:text-left z-20 relative">
+                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50/80 border border-blue-100/80 mb-6 shadow-sm">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-[#c6181b] animate-ping"></span>
+                        <span class="text-[12px] font-extrabold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-[64px] font-extrabold leading-[1.12] mb-6 tracking-tight text-[#0b1b3d] relative inline-block">
-                        {!! $global_settings['home_hero_title'] ?? 'Your Journey to <br><span class="text-[#c6181b] relative inline-block">Global<span class="absolute left-0 -bottom-1 h-[3px] w-full bg-[#3b82f6]"></span></span> Education' !!}
+                    <h1 class="text-4xl sm:text-5xl lg:text-[66px] font-black leading-[1.1] mb-6 tracking-tight text-[#0b1b3d]">
+                        {!! $global_settings['home_hero_title'] ?? 'Your Journey to <br><span class="text-[#c6181b] relative inline-block">Global<span class="absolute left-0 -bottom-1 h-[4px] w-full bg-gradient-to-r from-[#3b82f6] via-[#0b1b3d] to-[#c6181b] rounded-full opacity-80"></span></span> Education' !!}
                     </h1>
 
-                    <p class="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                         {{ $global_settings['home_hero_subtitle'] ?? 'We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.' }}
                     </p>
 
-                    <!-- Feature Badges -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-8">
-                        <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
-                            <div class="w-8 h-8 rounded-full bg-[#e2e8f0] flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-graduation-cap text-xs"></i></div>
-                            <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">Top Ranked<br>Universities</span>
+                    <!-- Feature Chips -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-10">
+                        <div class="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl pr-5 pl-2.5 py-2.5 shadow-md border border-gray-100 transform hover:-translate-y-0.5 transition-all">
+                            <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-[#0b1b3d] shadow-inner"><i class="fa-solid fa-graduation-cap text-sm"></i></div>
+                            <span class="text-[12px] font-bold text-[#0b1b3d] leading-tight text-left">Top Ranked<br>Universities</span>
                         </div>
-                        <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
-                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600"><i class="fa-solid fa-clipboard-check text-xs"></i></div>
-                            <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">End-to-End<br>Assistance</span>
+                        <div class="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl pr-5 pl-2.5 py-2.5 shadow-md border border-gray-100 transform hover:-translate-y-0.5 transition-all">
+                            <div class="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center text-green-600 shadow-inner"><i class="fa-solid fa-clipboard-check text-sm"></i></div>
+                            <span class="text-[12px] font-bold text-[#0b1b3d] leading-tight text-left">End-to-End<br>Assistance</span>
                         </div>
-                        <div class="flex items-center gap-3 bg-[#f8fafc] rounded-full pr-5 pl-2 py-2 shadow-sm border border-gray-100">
-                            <div class="w-8 h-8 rounded-full bg-[#e2e8f0] flex items-center justify-center text-[#0b1b3d]"><i class="fa-solid fa-file-shield text-xs"></i></div>
-                            <span class="text-[11px] font-bold text-[#0b1b3d] leading-tight text-left">High Visa<br>Success Rate</span>
+                        <div class="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl pr-5 pl-2.5 py-2.5 shadow-md border border-gray-100 transform hover:-translate-y-0.5 transition-all">
+                            <div class="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center text-[#c6181b] shadow-inner"><i class="fa-solid fa-file-shield text-sm"></i></div>
+                            <span class="text-[12px] font-bold text-[#0b1b3d] leading-tight text-left">High Visa<br>Success Rate</span>
                         </div>
                     </div>
 
                     <!-- Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="{{ route('destinations') }}" class="w-full sm:w-auto bg-[#c6181b] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-red-800 transition-colors flex items-center justify-center gap-2 shadow-md">
+                        <a href="{{ route('destinations') }}" style="background-color: #c6181b !important; color: #ffffff !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-red-800 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-xl shadow-red-600/25 text-base">
                             Explore Destinations <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
-                        <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#f8fafc] border border-blue-200 text-[#0b1b3d] px-8 py-3.5 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                        <a href="{{ route('contact') }}" style="background-color: #ffffff !important; color: #0b1b3d !important; border: 2px solid #0b1b3d !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-slate-50 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-lg text-base">
                             Book Free Consultation <i class="fa-regular fa-calendar-check text-blue-600 text-lg"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Image Section -->
-                <div class="w-full lg:w-[46%] relative mt-8 lg:mt-0 flex justify-center lg:justify-center items-end z-10">
-                    <!-- Hero Image (Exact 100% match from provided design) -->
-                    <img src="{{ asset('images/hero.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-w-[550px] object-contain object-bottom">
+                <!-- Right HD Image Section with Interactive Glass Cards -->
+                <div class="w-full lg:w-[46%] relative mt-10 lg:mt-0 flex justify-center items-center z-10 min-h-[480px] lg:min-h-[560px]">
+                    <!-- Glowing circular geometric background accent -->
+                    <div class="absolute w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] bg-gradient-to-tr from-blue-100/80 via-blue-50/40 to-red-100/60 rounded-full -z-10 shadow-inner"></div>
+                    <div class="absolute right-6 top-1/4 w-48 h-48 bg-[#c6181b]/15 rounded-full blur-2xl -z-10 animate-pulse"></div>
+
+                    <!-- Ultra-HD 1024x1024 Hero Image Showcase -->
+                    <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="relative z-10 w-full h-auto max-w-[560px] object-contain drop-shadow-[0_25px_35px_rgba(11,27,61,0.22)] transform hover:scale-[1.01] transition-transform duration-500">
+
+                    <!-- Floating Glass Badge 1 (Top Right) -->
+                    <div class="absolute top-8 right-2 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 animate-bounce-slow transform hover:scale-105 transition-all">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0b1b3d] flex items-center justify-center text-white shadow-md shrink-0"><i class="fa-solid fa-globe text-lg"></i></div>
+                        <div class="text-left">
+                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight">50+ Countries</div>
+                            <div class="text-[11px] text-gray-500 font-medium">Global Universities</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Badge 2 (Bottom Left) -->
+                    <div class="absolute bottom-10 left-2 sm:left-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500 flex items-center justify-center text-white shadow-md shrink-0"><i class="fa-solid fa-check-double text-lg"></i></div>
+                        <div class="text-left">
+                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight">95% Success Rate</div>
+                            <div class="text-[11px] text-green-600 font-bold">Verified Visa Support</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Badge 3 (Middle Right) -->
+                    <div class="absolute top-1/2 -right-1 sm:-right-4 bg-white/95 backdrop-blur-md rounded-xl shadow-lg py-2 px-3.5 flex items-center gap-2 z-20 border border-amber-100/80 hidden sm:flex">
+                        <div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 shrink-0"><i class="fa-solid fa-star text-xs"></i></div>
+                        <span class="text-xs font-bold text-[#0b1b3d]">100% Guidance</span>
+                    </div>
                 </div>
             </div>
         </div>
