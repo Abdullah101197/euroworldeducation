@@ -207,7 +207,7 @@
     <!-- Footer (Last Section) -->
     <footer class="bg-[#0b1b3d] text-gray-300 pt-16 pb-8 border-t border-white/10 font-sans">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pb-4">
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex flex-col items-start gap-1 mb-6">
                         @php
