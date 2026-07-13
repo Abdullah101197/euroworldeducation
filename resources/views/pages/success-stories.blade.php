@@ -6,18 +6,19 @@
 @section('content')
 
 
-    <!-- Stories Hero -->
-    <section class="relative pt-40 pb-20 bg-[#0b1b3d] font-sans overflow-hidden text-center">
-        <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Student <span class="text-[#c6181b]">Success</span></h1>
-            <p class="text-gray-300 max-w-2xl mx-auto">Real stories from students who achieved their dreams of studying abroad through Euro World.</p>
+    <!-- Stories Hero with Modern Glow -->
+    <section class="relative pt-40 pb-24 bg-[#0b1b3d] font-sans overflow-hidden text-center">
+        <!-- Subtle Ambient Glows -->
+        <div class="absolute top-1/4 left-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-10 right-1/4 w-72 h-72 bg-red-600/15 rounded-full blur-3xl pointer-events-none translate-x-1/2"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
 
-
-    <!-- Stories Hero -->
-    <section class="relative pt-40 pb-20 bg-[#0b1b3d] font-sans overflow-hidden text-center">
-        <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Student <span class="text-[#c6181b]">Success</span></h1>
-            <p class="text-gray-300 max-w-2xl mx-auto">Real stories from students who achieved their dreams of studying abroad through Euro World.</p>
+        <div class="container mx-auto px-6 relative z-10 max-w-3xl">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-yellow-400 text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md">
+                <i class="fa-solid fa-star text-yellow-300"></i> Verified Student Journeys
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Student <span class="text-[#c6181b]">Success</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">Real stories from students who achieved their dreams of studying abroad through Euro World.</p>
         </div>
     </section>
 
