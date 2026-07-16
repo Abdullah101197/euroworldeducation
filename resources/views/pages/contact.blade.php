@@ -24,222 +24,293 @@
                 }
             @endphp
 
-            <div class="max-w-5xl mx-auto bg-white rounded-[28px] shadow-2xl border border-slate-200/80 overflow-hidden grid grid-cols-1 md:grid-cols-12 items-stretch">
-                
-                <!-- Left 5 Columns: Clean Dark Contact Information Panel -->
-                <div class="md:col-span-5 bg-[#0b1b3d] text-white p-8 sm:p-10 flex flex-col justify-between relative border-r border-slate-200/10">
-                    <div class="space-y-6">
+            <!-- TOP SECTION: Clean Eligibility Check & Evaluation Form -->
+            <div class="max-w-4xl mx-auto bg-white rounded-[28px] shadow-2xl border border-slate-200/80 p-8 sm:p-12 mb-10" id="eligibility-form-container">
+                <div class="mb-6">
+                    <h3 class="text-2xl sm:text-3xl font-black text-[#0b1b3d] tracking-tight">Check your Eligibility</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-1">kindly share the following details to start evaluation on whatsapp</p>
+                </div>
+
+                @if (session('success'))
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl relative mb-6 font-medium text-sm" role="alert">
+                        <strong class="font-bold">Success!</strong>
+                        <span class="block sm:inline">{{ session('success') }}</span>
+                    </div>
+                @endif
+
+                <div id="ajax-success-alert" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl relative mb-6 font-medium text-sm" role="alert">
+                    <strong class="font-bold">Success!</strong>
+                    <span id="ajax-success-message">Your profile has been successfully recorded in our Admin Panel.</span>
+                </div>
+
+                <form id="eligibility-assessment-form" action="{{ route('contact.submit') }}" method="POST" class="space-y-4">
+                    @csrf
+                    <input type="hidden" name="lead_type" id="form_lead_type" value="admin_form">
+                    
+                    <!-- Row 1: Full Name & Phone/Email -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <h2 class="text-2xl font-black tracking-tight text-white">Direct Contact</h2>
-                            <p class="text-slate-300 text-xs sm:text-sm mt-1.5 leading-relaxed">Reach out directly to our head office or talk with an evaluation specialist right now.</p>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="wa_full_name" name="wa_full_name" required placeholder="Enter your full name" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
-
-                        <div class="space-y-6 pt-4">
-                            <!-- WhatsApp / Phone -->
-                            <div class="flex items-start gap-4 pb-5 border-b border-white/10">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 mt-0.5">
-                                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider">WhatsApp & Hotline</span>
-                                    <span class="text-sm font-bold text-white block mt-0.5">{{ $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '+92 300 000 0000') }}</span>
-                                    <span class="text-[11px] text-emerald-400/90 font-medium mt-0.5 block">Online • Instant response</span>
-                                </div>
-                            </div>
-
-                            <!-- Head Office Address -->
-                            <div class="flex items-start gap-4 pb-5 border-b border-white/10">
-                                <div class="w-10 h-10 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center shrink-0 border border-red-500/20 mt-0.5">
-                                    <i class="fa-solid fa-location-dot text-base"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider">Head Office</span>
-                                    <span class="text-xs font-medium text-slate-200 leading-relaxed block mt-0.5">{!! nl2br(e($global_settings['site_address'] ?? 'Kalma Chowk, Lahore, Pakistan')) !!}</span>
-                                </div>
-                            </div>
-
-                            <!-- Email Address -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 mt-0.5">
-                                    <i class="fa-solid fa-envelope text-base"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider">Email Address</span>
-                                    <span class="text-xs font-medium text-slate-200 block mt-0.5">{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}</span>
-                                </div>
-                            </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Phone Number or Email <span class="text-red-500">*</span></label>
+                            <input type="text" id="wa_phone_email" name="wa_phone_email" required placeholder="Enter your Phone number or Email" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
                     </div>
 
-                    <div class="pt-8 mt-8 border-t border-white/10 flex items-center gap-3 text-slate-400 text-xs font-medium">
-                        <i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i>
-                        <span>Verified European Education Counselors</span>
+                    <!-- Row 2: City Name & Age -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">City Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="wa_city" name="wa_city" required placeholder="Enter your city name" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Age <span class="text-red-500">*</span></label>
+                            <input type="number" id="wa_age" name="wa_age" required min="14" max="65" placeholder="e.g. 21" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Last Degree & CGPA / Marks & Passing Year -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Last Degree & CGPA / Marks <span class="text-red-500">*</span></label>
+                            <input type="text" id="wa_qualification_marks" name="wa_qualification_marks" required placeholder="e.g. FSC (85%) or BSCS (3.4 CGPA)" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Passing Year <span class="text-red-500">*</span></label>
+                            <input type="number" id="wa_passing_year" name="wa_passing_year" required min="2000" max="2030" placeholder="e.g. 2024" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Interested Country (Only Countries Name) & Preferred Intake -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Interested Country <span class="text-red-500">*</span></label>
+                            <select id="wa_interest" name="wa_interest" required class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
+                                <option value="">Select Destination</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Germany">Germany</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="France">France</option>
+                                <option value="Hungary">Hungary</option>
+                                <option value="Romania">Romania</option>
+                                <option value="South Korea">South Korea</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Preferred Intake <span class="text-red-500">*</span></label>
+                            <select id="wa_intake" name="wa_intake" required class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
+                                <option value="">Select Target Intake</option>
+                                <option value="Fall 2026 (September / October)">Fall 2026 (September / October)</option>
+                                <option value="Spring 2027 (January / February)">Spring 2027 (January / February)</option>
+                                <option value="Fall 2027 (September / October)">Fall 2027 (September / October)</option>
+                                <option value="Earliest Possible Available">Earliest Possible Available</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons: Admin Form Submit & WhatsApp Evaluation -->
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Button 1: Submit Form directly to Admin Panel -->
+                        <button type="button" onclick="submitToAdminPanel(event)" class="w-full bg-[#0b1b3d] hover:bg-[#15326d] text-white font-bold py-4 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-base sm:text-lg transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-paper-plane text-xl"></i> Submit Form
+                        </button>
+
+                        <!-- Button 2: Start Evaluation on WhatsApp (also records to Admin Panel) -->
+                        <button type="button" onclick="submitToWhatsApp(event, '{{ $cleanWaContact }}')" class="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold py-4 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-base sm:text-lg transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Start WhatsApp Evaluation
+                        </button>
+                    </div>
+                    <p class="text-center text-[11px] text-slate-400 mt-2 font-medium">
+                        🔒 Submitting instantly saves your profile securely in our Admin Panel.
+                    </p>
+                </form>
+
+                <script>
+                    function validateFormFields() {
+                        const fullName = document.getElementById('wa_full_name').value.trim();
+                        const phoneEmail = document.getElementById('wa_phone_email').value.trim();
+                        const city = document.getElementById('wa_city').value.trim();
+                        const age = document.getElementById('wa_age').value.trim();
+                        const qualMarks = document.getElementById('wa_qualification_marks').value.trim();
+                        const passingYear = document.getElementById('wa_passing_year').value.trim();
+                        const interest = document.getElementById('wa_interest').value;
+                        const intake = document.getElementById('wa_intake').value;
+
+                        if (!fullName || !phoneEmail || !city || !age || !qualMarks || !passingYear || !interest || !intake) {
+                            alert('Please fill in all mandatory fields before submitting.');
+                            return false;
+                        }
+                        return { fullName, phoneEmail, city, age, qualMarks, passingYear, interest, intake };
+                    }
+
+                    function submitToAdminPanel(event) {
+                        event.preventDefault();
+                        const fields = validateFormFields();
+                        if (!fields) return;
+
+                        const alertBox = document.getElementById('ajax-success-alert');
+                        const alertMsg = document.getElementById('ajax-success-message');
+
+                        fetch("{{ route('contact.submit') }}", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                wa_full_name: fields.fullName,
+                                wa_phone_email: fields.phoneEmail,
+                                wa_city: fields.city,
+                                wa_age: fields.age,
+                                wa_qualification_marks: fields.qualMarks,
+                                wa_passing_year: fields.passingYear,
+                                wa_interest: fields.interest,
+                                wa_intake: fields.intake,
+                                lead_type: 'admin_form'
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            alertBox.classList.remove('hidden');
+                            alertMsg.textContent = 'Thank you, ' + fields.fullName + '! Your eligibility details have been successfully saved in our Admin Panel.';
+                            document.getElementById('eligibility-assessment-form').reset();
+                            window.scrollTo({ top: document.getElementById('eligibility-form-container').offsetTop - 100, behavior: 'smooth' });
+                        })
+                        .catch(err => {
+                            // Fallback standard submit if AJAX fails
+                            document.getElementById('eligibility-assessment-form').submit();
+                        });
+                    }
+
+                    function submitToWhatsApp(event, cleanPhone) {
+                        event.preventDefault();
+                        const fields = validateFormFields();
+                        if (!fields) return;
+
+                        // First save contact lead to Admin Panel right before opening WhatsApp
+                        fetch("{{ route('contact.submit') }}", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                wa_full_name: fields.fullName,
+                                wa_phone_email: fields.phoneEmail,
+                                wa_city: fields.city,
+                                wa_age: fields.age,
+                                wa_qualification_marks: fields.qualMarks,
+                                wa_passing_year: fields.passingYear,
+                                wa_interest: fields.interest,
+                                wa_intake: fields.intake,
+                                lead_type: 'whatsapp'
+                            })
+                        }).catch(err => console.log('Lead recording status:', err));
+
+                        let message = `*🌟 New Student Eligibility Evaluation 🌟*\n\n` +
+                                      `*👤 Full Name:* ${fields.fullName}\n` +
+                                      `*📞 Phone / Email:* ${fields.phoneEmail}\n` +
+                                      `*🏙️ City Name:* ${fields.city}\n` +
+                                      `*🎂 Age:* ${fields.age} Years\n` +
+                                      `*🎓 Qualification & Marks:* ${fields.qualMarks}\n` +
+                                      `*📅 Passing Year:* ${fields.passingYear}\n` +
+                                      `*🌍 Target Destination:* ${fields.interest}\n` +
+                                      `*🎯 Preferred Intake:* ${fields.intake}\n\n` +
+                                      `_Sent via Euro World Education Website_`;
+
+                        const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+                        window.open(waUrl, '_blank');
+                    }
+                </script>
+            </div>
+
+            <!-- BOTTOM SECTION: Clean Dark Blue Direct Contact Panel (Moved Below with 3 Numbers Grid) -->
+            <div class="max-w-4xl mx-auto bg-[#0b1b3d] text-white p-8 sm:p-12 rounded-[28px] shadow-2xl border border-slate-200/10 relative overflow-hidden">
+                <div class="mb-8 border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">Direct Contact</h2>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed max-w-xl">Reach out directly to our head office or talk with an evaluation specialist right now across any of our dedicated hotlines.</p>
+                    </div>
+                    <div class="shrink-0 flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-medium text-slate-300">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i> Verified Education Counselors
                     </div>
                 </div>
 
-                <!-- Right 7 Columns: Ultra-Clean 4-Step Assessment & Contact Form -->
-                <div class="md:col-span-7 p-8 sm:p-12 bg-white flex flex-col justify-center" x-data="{ mode: 'whatsapp' }">
-                    
-                    <!-- Form Switcher Pill -->
-                    <div class="flex p-1 bg-slate-100 rounded-xl mb-8 border border-slate-200/60 w-fit sm:w-full max-w-md mx-auto sm:mx-0">
-                        <button type="button" @click="mode = 'whatsapp'" :class="mode === 'whatsapp' ? 'bg-[#25D366] text-white shadow font-bold' : 'text-slate-600 hover:text-slate-900 font-semibold'" class="flex-1 py-2.5 px-4 rounded-lg text-xs sm:text-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Evaluation
-                        </button>
-                        <button type="button" @click="mode = 'email'" :class="mode === 'email' ? 'bg-[#0b1b3d] text-white shadow font-bold' : 'text-slate-600 hover:text-slate-900 font-semibold'" class="flex-1 py-2.5 px-4 rounded-lg text-xs sm:text-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            <i class="fa-regular fa-envelope text-base"></i> Standard Email
-                        </button>
+                <!-- 3 Hotline Numbers Horizontal / Grid Layout -->
+                <div class="mb-8">
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Direct Counselor Hotlines & WhatsApp (Select Any Desk)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                        <!-- Number 1: Primary Hotline -->
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $global_settings['site_whatsapp'] ?? '+923273333046') }}" target="_blank" class="p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all group shadow-md flex flex-col justify-between transform hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full font-bold border border-emerald-500/30">Online</span>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Primary WhatsApp</span>
+                                <span class="text-base font-extrabold text-white block mt-0.5">{{ $global_settings['site_whatsapp'] ?? '+92 327 3333046' }}</span>
+                                <span class="text-xs text-emerald-400/90 font-medium mt-1 block">Evaluation & Eligibility Desk</span>
+                            </div>
+                        </a>
+
+                        <!-- Number 2: Admissions Counseling -->
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $global_settings['site_phone'] ?? '+923008444111') }}" class="p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all group shadow-md flex flex-col justify-between transform hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </div>
+                                <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full font-bold border border-blue-500/30">Direct Call</span>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Admissions Counseling</span>
+                                <span class="text-base font-extrabold text-white block mt-0.5">{{ $global_settings['site_phone'] ?? '+92 300 8444111' }}</span>
+                                <span class="text-xs text-blue-300 font-medium mt-1 block">University Application Support</span>
+                            </div>
+                        </a>
+
+                        <!-- Number 3: Visa Specialist Desk -->
+                        <a href="https://wa.me/923219998888" target="_blank" class="p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all group shadow-md flex flex-col justify-between transform hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2.5 py-1 rounded-full font-bold border border-amber-500/30">24/7 Desk</span>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Visa Specialist Desk</span>
+                                <span class="text-base font-extrabold text-white block mt-0.5">+92 321 9998888</span>
+                                <span class="text-xs text-amber-300 font-medium mt-1 block">Schengen & European Visas</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Head Office & Email Address Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center shrink-0 border border-red-500/20 mt-0.5">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Head Office Address</span>
+                            <span class="text-sm font-semibold text-slate-100 leading-relaxed block mt-1">{!! nl2br(e($global_settings['site_address'] ?? 'Kalma Chowk, Lahore, Pakistan')) !!}</span>
+                        </div>
                     </div>
 
-                    <!-- MODE 1: SIMPLE WHATSAPP EVALUATION -->
-                    <div x-show="mode === 'whatsapp'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-[#0b1b3d] tracking-tight">Quick Eligibility Check</h3>
-                            <p class="text-slate-500 text-xs sm:text-sm mt-1">Fill in 4 simple details below to start an instant evaluation chat on WhatsApp.</p>
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 mt-0.5">
+                            <i class="fa-solid fa-envelope text-lg"></i>
                         </div>
-
-                        <form id="whatsapp-assessment-form" onsubmit="submitWhatsAppAssessment(event, '{{ $cleanWaContact }}')" class="space-y-4">
-                            <!-- Full Name & DOB -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
-                                    <input type="text" id="wa_full_name" required placeholder="Enter your full name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Date of Birth <span class="text-red-500">*</span></label>
-                                    <input type="date" id="wa_dob" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
-                                </div>
-                            </div>
-
-                            <!-- Combined Qualification & Marks (Simple & Human-friendly) -->
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Last Degree & CGPA / Marks <span class="text-red-500">*</span></label>
-                                <input type="text" id="wa_qualification_marks" required placeholder="e.g. FSC Pre-Engineering (85%) or BSCS (3.4 CGPA)" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
-                            </div>
-
-                            <!-- Target Country & Intake -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Interested Country <span class="text-red-500">*</span></label>
-                                    <select id="wa_interest" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
-                                        <option value="">Select Destination</option>
-                                        <option value="Italy (Fully Funded DSU Scholarships)">Italy (Fully Funded DSU Scholarships)</option>
-                                        <option value="Germany (Tuition-Free Public Univ.)">Germany (Tuition-Free Public Univ.)</option>
-                                        <option value="United Kingdom (Russell Group)">United Kingdom (Russell Group)</option>
-                                        <option value="France (Public / Private Univ.)">France (Public / Private Univ.)</option>
-                                        <option value="Hungary (Stipendium Hungaricum)">Hungary (Stipendium Hungaricum)</option>
-                                        <option value="Other / General Study Advice">Other / General Study Advice</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Preferred Intake <span class="text-red-500">*</span></label>
-                                    <select id="wa_intake" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
-                                        <option value="">Select Target Intake</option>
-                                        <option value="Fall 2026 (September / October)">Fall 2026 (September / October)</option>
-                                        <option value="Spring 2027 (January / February)">Spring 2027 (January / February)</option>
-                                        <option value="Fall 2027 (September / October)">Fall 2027 (September / October)</option>
-                                        <option value="Earliest Possible Available">Earliest Possible Available</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="pt-3">
-                                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2.5 text-base transform hover:-translate-y-0.5">
-                                    <i class="fa-brands fa-whatsapp text-2xl"></i> Start WhatsApp Evaluation
-                                </button>
-                                <p class="text-center text-[11px] text-slate-400 mt-2 font-medium">
-                                    🔒 Pre-fills your structured profile directly into WhatsApp. Fast and secure.
-                                </p>
-                            </div>
-                        </form>
-
-                        <script>
-                            function submitWhatsAppAssessment(event, cleanPhone) {
-                                event.preventDefault();
-                                
-                                const fullName = document.getElementById('wa_full_name').value.trim();
-                                const dob = document.getElementById('wa_dob').value.trim();
-                                const qualMarks = document.getElementById('wa_qualification_marks').value.trim();
-                                const interest = document.getElementById('wa_interest').value;
-                                const intake = document.getElementById('wa_intake').value;
-
-                                if (!fullName || !dob || !qualMarks || !interest || !intake) {
-                                    alert('Please fill in all required fields to proceed.');
-                                    return;
-                                }
-
-                                // Save contact lead directly to Admin Leads table right before opening WhatsApp
-                                fetch("{{ route('contact.submit') }}", {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                                        'Accept': 'application/json'
-                                    },
-                                    body: JSON.stringify({
-                                        wa_full_name: fullName,
-                                        wa_dob: dob,
-                                        wa_qualification_marks: qualMarks,
-                                        wa_interest: interest,
-                                        wa_intake: intake,
-                                        lead_type: 'whatsapp'
-                                    })
-                                }).catch(err => console.log('Lead recording status:', err));
-
-                                let message = `*🌟 New Student Profile Assessment 🌟*\n\n` +
-                                              `*👤 Full Name:* ${fullName}\n` +
-                                              `*🎂 Date of Birth:* ${dob}\n` +
-                                              `*🎓 Qualification & Marks:* ${qualMarks}\n` +
-                                              `*🌍 Interested Country:* ${interest}\n` +
-                                              `*📅 Preferred Intake:* ${intake}\n\n` +
-                                              `_Sent via Euro World Education Website_`;
-
-                                const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
-                                window.open(waUrl, '_blank');
-                            }
-                        </script>
-                    </div>
-
-                    <!-- MODE 2: STANDARD EMAIL FORM -->
-                    <div x-show="mode === 'email'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-[#0b1b3d] tracking-tight">Send an Email Message</h3>
-                            <p class="text-slate-500 text-xs sm:text-sm mt-1">Prefer traditional email? Send your query directly to our admissions team.</p>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Official Email Address</span>
+                            <span class="text-sm font-semibold text-slate-100 block mt-1"><a href="mailto:{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}" class="hover:underline text-blue-300">{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}</a></span>
                         </div>
-
-                        @if (session('success'))
-                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl relative mb-6 font-medium text-sm" role="alert">
-                                <strong class="font-bold">Success!</strong>
-                                <span class="block sm:inline">{{ session('success') }}</span>
-                            </div>
-                        @endif
-
-                        <form action="{{ route('contact.submit') }}" method="POST" class="space-y-4">
-                            @csrf
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1">First Name <span class="text-red-500">*</span></label>
-                                    <input type="text" name="first_name" required placeholder="First Name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Last Name <span class="text-red-500">*</span></label>
-                                    <input type="text" name="last_name" required placeholder="Last Name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address <span class="text-red-500">*</span></label>
-                                <input type="email" name="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1">Subject <span class="text-red-500">*</span></label>
-                                <input type="text" name="subject" required placeholder="Inquiry Subject" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1">Message <span class="text-red-500">*</span></label>
-                                <textarea name="message" required placeholder="Write your message here..." rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0b1b3d] focus:bg-white transition-colors"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-[#0b1b3d] hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all">Send Email Message</button>
-                        </form>
                     </div>
                 </div>
             </div>

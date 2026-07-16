@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shieldNavyIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1b3d"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="bookTealIcon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="starGoldIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <filter id="shadowIcon" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1b3d" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(10, 6)" filter="url(#shadowIcon)">
+    <!-- Open Book Top Silhouette -->
+    <path d="M 12 18 C 24 13, 38 13, 44 21 C 50 13, 64 13, 76 18 L 74 6 C 62 1, 48 2, 44 11 C 40 2, 26 1, 14 6 Z" fill="url(#bookTealIcon)"/>
+
+    <!-- Main Shield Body -->
+    <path d="M 12 21 L 76 21 C 76 52, 64 71, 44 83 C 24 71, 12 52, 12 21 Z" fill="url(#shieldNavyIcon)"/>
+
+    <!-- Shield Inner Border -->
+    <path d="M 16 25 L 72 25 C 72 50, 61 66, 44 77 C 27 66, 16 50, 16 25 Z" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.25"/>
+
+    <!-- Stylized Monogram 'EW' (CRYSTAL CLEAR 'EW') -->
+    <g transform="translate(20, 28)">
+      <!-- Bold Letter 'E' with all 3 horizontal bars -->
+      <path d="M 4 4 L 19 4 L 19 8.5 L 9 8.5 L 9 13.5 L 17 13.5 L 17 17.5 L 9 17.5 L 9 22.5 L 19 22.5 L 19 27 L 4 27 Z" fill="#ffffff"/>
+      <!-- Bold Letter 'W' -->
+      <path d="M 23 4 L 27.5 21 L 32 9 L 36.5 21 L 41 4 L 46 4 L 39.5 27 L 34.5 27 L 32 15 L 29.5 27 L 24.5 27 L 18 4 Z" fill="#ffffff"/>
+    </g>
+
+    <!-- Dynamic Swooping Orbit Arc -->
+    <path d="M 16 60 C 26 50, 48 44, 73 35 L 71 31 C 46 40, 24 46, 14 56 Z" fill="url(#bookTealIcon)" opacity="0.95"/>
+
+    <!-- Bottom Point Gold Star -->
+    <polygon points="44,66 46,70.5 51,70.5 47,73.5 48.5,78 44,75 39.5,78 41,73.5 37,70.5 42,70.5" fill="url(#starGoldIcon)"/>
+  </g>
+</svg>

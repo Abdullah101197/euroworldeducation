@@ -15,6 +15,8 @@ Route::get('/news', [PageController::class, 'blog'])->name('news');
 Route::get('/news-and-updates', [PageController::class, 'blog'])->name('news-and-updates');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
+Route::get('/feedback', [PageController::class, 'feedback'])->name('feedback');
+Route::post('/feedback', [PageController::class, 'submitFeedback'])->name('feedback.submit');
 
 Route::get('/dashboard', function () {
     $totalLeads = \App\Models\Contact::count();
@@ -29,6 +31,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/contacts/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'show'])->name('contacts.show');
     Route::delete('/contacts/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'destroy'])->name('contacts.destroy');
     Route::patch('/contacts/{contact}/toggle-status', [\App\Http\Controllers\Admin\ContactController::class, 'toggleStatus'])->name('contacts.toggle-status');
+
+    Route::get('/feedbacks', [\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('feedbacks.index');
+    Route::get('/feedbacks/{feedback}', [\App\Http\Controllers\Admin\FeedbackController::class, 'show'])->name('feedbacks.show');
+    Route::delete('/feedbacks/{feedback}', [\App\Http\Controllers\Admin\FeedbackController::class, 'destroy'])->name('feedbacks.destroy');
+    Route::patch('/feedbacks/{feedback}/toggle-status', [\App\Http\Controllers\Admin\FeedbackController::class, 'toggleStatus'])->name('feedbacks.toggle-status');
 
     Route::get('/settings', [\App\Http\Controllers\SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [\App\Http\Controllers\SettingController::class, 'update'])->name('settings.update');

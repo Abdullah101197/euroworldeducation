@@ -271,10 +271,10 @@
                                                     @php
                                                         $logoPath = $flatSettings['site_logo'] ?? null;
                                                     @endphp
-                                                    @if($logoPath && $logoPath !== 'images/logo.png')
-                                                        <img src="{{ asset($logoPath) }}" onerror="this.onerror=null; this.src='{{ asset('images/logo.png') }}';" alt="Site Logo" class="max-h-12 max-w-full object-contain">
+                                                    @if($logoPath && $logoPath !== 'images/logo.png' && $logoPath !== 'images/logo.svg')
+                                                        <img src="{{ asset($logoPath) }}" onerror="this.onerror=null; this.src='{{ file_exists(public_path('images/logo.svg')) ? asset('images/logo.svg') : asset('images/logo.png') }}';" alt="Site Logo" class="max-h-12 max-w-full object-contain">
                                                     @else
-                                                        <img src="{{ asset('images/logo.png') }}" alt="Site Logo" class="max-h-12 max-w-full object-contain">
+                                                        <img src="{{ file_exists(public_path('images/logo.svg')) ? asset('images/logo.svg') : asset('images/logo.png') }}" alt="Site Logo" class="max-h-12 max-w-full object-contain">
                                                     @endif
                                                     <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase tracking-tighter">Current Live Logo</span>
                                                 </div>

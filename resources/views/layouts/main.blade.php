@@ -34,42 +34,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
-<body class="bg-light text-dark font-sans antialiased overflow-x-hidden">
-
-    <meta name="description" content="@yield('description', 'Study abroad with Euro World Education')">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#1e3a8a', // dark blue
-                        secondary: '#facc15', // yellow
-                        accent: '#3b82f6', // blue
-                        dark: '#0f172a',
-                        light: '#f8fafc',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('styles.css') }}">
-</head>
-<body class="bg-light text-dark font-sans antialiased overflow-x-hidden">
+<body class="bg-light text-dark font-sans antialiased overflow-x-hidden m-0 p-0">
 
     <!-- Header (Section 1) -->
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 shadow-sm font-sans">
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm font-sans">
         <!-- Top Bar -->
         <div class="bg-[#0b1b3d] text-white text-xs py-2 hidden md:block">
             <div class="container mx-auto px-6 flex justify-between items-center">
@@ -101,10 +69,10 @@
                     @php
                         $headerLogoPath = $global_settings['site_logo'] ?? null;
                     @endphp
-                    @if($headerLogoPath && $headerLogoPath !== 'images/logo.png')
-                        <img src="{{ asset($headerLogoPath) }}" onerror="this.onerror=null; this.src='{{ asset('images/logo.png') }}';" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
+                    @if($headerLogoPath && $headerLogoPath !== 'images/logo.png' && $headerLogoPath !== 'images/logo.svg')
+                        <img src="{{ asset($headerLogoPath) }}" onerror="this.onerror=null; this.src='{{ file_exists(public_path('images/logo.svg')) ? asset('images/logo.svg') : asset('images/logo.png') }}';" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @else
-                        <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
+                        <img src="{{ file_exists(public_path('images/logo.svg')) ? asset('images/logo.svg') : asset('images/logo.png') }}" alt="EuroWorld Consultants" class="h-14 md:h-16 object-contain transition-all duration-300">
                     @endif
                 </a>
                 
@@ -159,7 +127,7 @@
     </main>
 
     <!-- Pre-Footer CTA Banner (Hidden on Contact & Scholarships Pages to avoid visual repetition) -->
-    @if(!request()->is('contact*') && !request()->is('scholarships*'))
+    <!-- Mandatory CTA Banner (Shown on Every Page) -->
     <section class="bg-[#f2f5f8] font-sans relative z-20 py-16 md:py-20 border-t border-gray-200">
         <div class="container mx-auto px-6">
             <div class="bg-gradient-to-r from-[#0b1b3d] via-[#0f2557] to-[#0b1b3d] rounded-[28px] p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
@@ -201,7 +169,6 @@
             </div>
         </div>
     </section>
-    @endif
 
 
     <!-- Footer (Last Section) -->
@@ -213,10 +180,10 @@
                         @php
                             $footerLogoPath = $global_settings['site_logo'] ?? null;
                         @endphp
-                        @if($footerLogoPath && $footerLogoPath !== 'images/logo.png')
-                            <img src="{{ asset($footerLogoPath) }}" onerror="this.onerror=null; this.src='{{ asset('images/logo.png') }}';" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
+                        @if($footerLogoPath && $footerLogoPath !== 'images/logo.png' && $footerLogoPath !== 'images/logo.svg')
+                            <img src="{{ asset($footerLogoPath) }}" onerror="this.onerror=null; this.src='{{ file_exists(public_path('images/logo.svg')) ? asset('images/logo.svg') : asset('images/logo.png') }}';" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @else
-                            <img src="{{ asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
+                            <img src="{{ file_exists(public_path('images/logo.svg')) ? asset('images/logo.svg') : asset('images/logo.png') }}" alt="EuroWorld Consultants Logo" class="h-14 md:h-16 object-contain bg-white rounded-xl px-4 py-2 shadow-md">
                         @endif
                     </div>
                     <p class="text-sm text-gray-400 mb-6 leading-relaxed">Empowering students to achieve global success through quality education in Europe.</p>

@@ -18,6 +18,9 @@
             <x-sidebar-link :href="route('admin.contacts.index')" :active="request()->routeIs('admin.contacts.*')">
                 {{ __('Leads') }}
             </x-sidebar-link>
+            <x-sidebar-link :href="route('admin.feedbacks.index')" :active="request()->routeIs('admin.feedbacks.*')">
+                {{ __('Feedbacks') }}
+            </x-sidebar-link>
             <x-sidebar-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
                 {{ __('Admin Users') }}
             </x-sidebar-link>

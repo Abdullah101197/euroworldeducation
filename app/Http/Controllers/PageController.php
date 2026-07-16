@@ -59,27 +59,42 @@ class PageController extends Controller
 
     public function submitContact(Request $request)
     {
-        // Check if this is a WhatsApp Assessment submission
-        if ($request->has('wa_full_name') || $request->input('lead_type') === 'whatsapp') {
+        // Check if this is an Eligibility Check / WhatsApp Assessment submission
+        if ($request->has('wa_full_name') || $request->input('lead_type') === 'whatsapp' || $request->input('lead_type') === 'admin_form') {
             $name = trim($request->input('wa_full_name', 'Student Lead'));
-            $dob = trim($request->input('wa_dob', 'N/A'));
+            $city = trim($request->input('wa_city', 'N/A'));
+            $age = trim($request->input('wa_age', 'N/A'));
             $qual = trim($request->input('wa_qualification_marks', 'N/A'));
+            $passingYear = trim($request->input('wa_passing_year', 'N/A'));
             $interest = trim($request->input('wa_interest', 'General Study Advice'));
             $intake = trim($request->input('wa_intake', 'Earliest Possible Available'));
+            $phoneEmail = trim($request->input('wa_phone_email', 'N/A'));
+
+            // Extract email/phone if provided
+            $email = filter_var($phoneEmail, FILTER_VALIDATE_EMAIL) ? $phoneEmail : ($request->input('email', 'student_lead@euroworldeducation.com'));
+            $phone = !filter_var($phoneEmail, FILTER_VALIDATE_EMAIL) ? $phoneEmail : ($request->input('phone', $phoneEmail));
+
+            $messageContent = "🏙️ City Name: {$city}\n" .
+                              "🎂 Age: {$age} Years\n" .
+                              "🎓 Last Degree & CGPA / Marks: {$qual}\n" .
+                              "📅 Passing Year: {$passingYear}\n" .
+                              "🌍 Target Destination: {$interest}\n" .
+                              "🎯 Preferred Intake: {$intake}\n" .
+                              "📞 Phone Number or Email: {$phoneEmail}";
 
             \App\Models\Contact::create([
                 'name' => $name,
-                'email' => $request->input('email', 'whatsapp_lead@euroworldeducation.com'),
-                'phone' => $request->input('phone', null),
-                'subject' => 'WhatsApp Evaluation: ' . $interest,
-                'message' => "📅 Date of Birth: {$dob}\n🎓 Qualification & Marks: {$qual}\n🌍 Target Destination: {$interest}\n🎯 Preferred Intake: {$intake}",
+                'email' => $email,
+                'phone' => $phone,
+                'subject' => 'Eligibility Check: ' . $interest,
+                'message' => $messageContent,
                 'is_contacted' => false,
             ]);
 
-            if ($request->wantsJson() || $request->ajax()) {
-                return response()->json(['status' => 'success', 'message' => 'WhatsApp lead saved to admin!']);
+            if ($request->wantsJson() || $request->ajax() || $request->input('lead_type') === 'whatsapp') {
+                return response()->json(['status' => 'success', 'message' => 'Lead successfully saved to Admin Panel!']);
             }
-            return back()->with('success', 'Thank you, ' . $name . '! Your profile has been recorded.');
+            return back()->with('success', 'Thank you, ' . $name . '! Your eligibility check profile has been successfully submitted to our Admin Panel.');
         }
 
         // Standard Email Form submission
@@ -100,5 +115,31 @@ class PageController extends Controller
         ]);
 
         return back()->with('success', 'Thank you, ' . $validated['first_name'] . '! Your message has been received.');
+    }
+
+    public function feedback() { return view('pages.feedback'); }
+
+    public function submitFeedback(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'nullable|string|max:50',
+            'rating' => 'required|integer|min:1|max:5',
+            'category' => 'required|string|max:100',
+            'message' => 'required|string',
+        ]);
+
+        \App\Models\Feedback::create([
+            'name' => trim($validated['name']),
+            'email' => $validated['email'] ?? null,
+            'phone' => $validated['phone'] ?? null,
+            'rating' => (int) $validated['rating'],
+            'category' => $validated['category'],
+            'message' => $validated['message'],
+            'is_reviewed' => false,
+        ]);
+
+        return back()->with('success', 'Thank you for your valuable feedback! We truly appreciate your input.');
     }
 }

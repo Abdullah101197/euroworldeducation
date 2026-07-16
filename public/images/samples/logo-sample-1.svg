@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="100%" height="100%">
+  <defs>
+    <filter id="shadowS1" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- LEFT STUDIO ZONE (Center at x=70, y=70): European University Shield Crest -->
+  <g transform="translate(10, 10)" filter="url(#shadowS1)">
+    <!-- Outer Deep Navy Shield -->
+    <path d="M 10 10 L 110 10 L 110 55 Q 110 105 60 120 Q 10 105 10 55 Z" fill="#0a192f" stroke="#1e293b" stroke-width="2"/>
+    <!-- Inner Fine Gold Trim -->
+    <path d="M 16 16 L 104 16 L 104 53 Q 104 98 60 112 Q 16 98 16 53 Z" fill="none" stroke="#d4af37" stroke-width="1.8"/>
+    
+    <!-- Top Crimson Header Ribbon inside Shield -->
+    <path d="M 16 16 L 104 16 L 104 36 L 16 36 Z" fill="#a81c1c"/>
+    <text x="60" y="30" font-family="'Times New Roman', 'Cinzel', serif" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2px">
+      EST. 2026
+    </text>
+
+    <!-- Center Open Book of Knowledge -->
+    <path d="M 32 78 Q 46 72 60 78 Q 74 72 88 78 L 86 58 Q 74 53 60 58 Q 46 53 34 58 Z" fill="#ffffff"/>
+    <path d="M 34 75 Q 47 70 60 75 Q 73 70 86 75 L 84 57 Q 73 52 60 57 Q 47 52 36 57 Z" fill="#e2e8f0"/>
+    <line x1="60" y1="57" x2="60" y2="78" stroke="#0a192f" stroke-width="1.5"/>
+
+    <!-- Prominent 'EW' Monogram Above Book -->
+    <text x="60" y="52" font-family="'Times New Roman', 'Georgia', serif" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1px">
+      EW
+    </text>
+
+    <!-- Golden Star at Shield Tip -->
+    <polygon points="60,94 62.5,100 69,100 63.5,104 65.5,110 60,106 54.5,110 56.5,104 51,100 57.5,100" fill="#facc15"/>
+  </g>
+
+  <!-- RIGHT STUDIO ZONE (x=145 to 470): Exact Requested Typography Writing Colors & Hierarchy -->
+  <g transform="translate(148, 0)">
+    <!-- Main Wordmark: EURO (Solid Black) + WORLD (Crimson Red) -->
+    <text x="0" y="68" font-family="'Times New Roman', 'Georgia', 'Cinzel', serif" font-size="44" font-weight="900" letter-spacing="1.5px">
+      <tspan fill="#0f172a">EURO</tspan><tspan fill="#a81c1c">WORLD</tspan>
+    </text>
+
+    <!-- Studio-Grade Precision Divider Line -->
+    <line x1="2" y1="80" x2="315" y2="80" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="2" y1="80" x2="85" y2="80" stroke="#a81c1c" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Subtitle: EDUCATION CONSULTANTS (Solid Slate/Black) -->
+    <text x="2" y="102" font-family="'Segoe UI', 'Outfit', system-ui, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" letter-spacing="4.5px">
+      EDUCATION CONSULTANTS
+    </text>
+  </g>
+</svg>

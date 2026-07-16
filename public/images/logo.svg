@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="100%" height="100%">
+  <defs>
+    <filter id="shadowS2" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- LEFT STUDIO ZONE (Center at x=70, y=70): Official Circular Seal & Ribbon -->
+  <g transform="translate(10, 10)" filter="url(#shadowS2)">
+    <!-- Outer Navy Ring Frame -->
+    <circle cx="60" cy="55" r="52" fill="#0a192f" stroke="#1e293b" stroke-width="2"/>
+    <!-- Inner Fine Gold Ring -->
+    <circle cx="60" cy="55" r="46" fill="#0f172a" stroke="#d4af37" stroke-width="1.8"/>
+
+    <!-- Fine Grid Meridian Wireframe Globe in Background of Seal -->
+    <circle cx="60" cy="55" r="34" fill="none" stroke="#334155" stroke-width="1"/>
+    <ellipse cx="60" cy="55" rx="16" ry="34" fill="none" stroke="#334155" stroke-width="1"/>
+    <line x1="26" y1="55" x2="94" y2="55" stroke="#334155" stroke-width="1"/>
+    <line x1="33" y1="38" x2="87" y2="38" stroke="#334155" stroke-width="1"/>
+    <line x1="33" y1="72" x2="87" y2="72" stroke="#334155" stroke-width="1"/>
+
+    <!-- Prominent White Mortarboard Graduation Cap Hovering over Globe -->
+    <g transform="translate(60, 48)">
+      <polygon points="0,-16 32,-7 0,2 -32,-7" fill="#ffffff"/>
+      <polygon points="-18,-3 -18,8 0,14 18,8 18,-3 0,4" fill="#e2e8f0"/>
+      <!-- Tassel -->
+      <path d="M 0,-7 Q 20,4 23,16" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="23" cy="18" r="2.5" fill="#d4af37"/>
+      <circle cx="0" cy="-7" r="2.5" fill="#d4af37"/>
+    </g>
+
+    <!-- Lower Crimson Red Ribbon Banner Arching Across Seal -->
+    <path d="M 4 84 L 18 76 L 24 88 Z" fill="#7f1d1d"/>
+    <path d="M 116 84 L 102 76 L 96 88 Z" fill="#7f1d1d"/>
+    <path d="M 14 84 Q 60 96 106 84 L 102 104 Q 60 116 18 104 Z" fill="#a81c1c" stroke="#d4af37" stroke-width="1.2"/>
+    
+    <text x="60" y="98" font-family="'Segoe UI', 'Outfit', sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2px">
+      EST. 2026
+    </text>
+  </g>
+
+  <!-- RIGHT STUDIO ZONE (x=145 to 470): Exact Requested Typography Writing Colors & Hierarchy -->
+  <g transform="translate(148, 0)">
+    <!-- Main Wordmark: EURO (Solid Black) + WORLD (Crimson Red) -->
+    <text x="0" y="68" font-family="'Times New Roman', 'Georgia', 'Cinzel', serif" font-size="44" font-weight="900" letter-spacing="1.5px">
+      <tspan fill="#0f172a">EURO</tspan><tspan fill="#a81c1c">WORLD</tspan>
+    </text>
+
+    <!-- Studio-Grade Precision Divider Line -->
+    <line x1="2" y1="80" x2="315" y2="80" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="2" y1="80" x2="85" y2="80" stroke="#a81c1c" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Subtitle: EDUCATION CONSULTANTS (Solid Slate/Black) -->
+    <text x="2" y="102" font-family="'Segoe UI', 'Outfit', system-ui, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" letter-spacing="4.5px">
+      EDUCATION CONSULTANTS
+    </text>
+  </g>
+</svg>

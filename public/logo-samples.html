@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro World Education - Client Logo Selection Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0b1b3d',
+                        accent: '#c6181b',
+                        blue: '#3b82f6',
+                        gold: '#facc15'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #080f22; color: #ffffff; min-height: 100vh; }
+        .sample-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .sample-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25); }
+        .bg-checkers {
+            background-image: linear-gradient(45deg, #f1f5f9 25%, transparent 25%), linear-gradient(-45deg, #f1f5f9 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f1f5f9 75%), linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+    </style>
+</head>
+<body class="py-12 px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Section -->
+    <div class="max-w-6xl mx-auto text-center mb-12">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-4">
+            <i class="fa-solid fa-crown"></i> Client Brand Identity Showcase
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-white">
+            Euro World Education &amp; Consultants
+        </h1>
+        <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+            Please review the 8 custom vector logo concepts below. Each sample is unique, simple, attractive, and crafted specifically to align with international education standards.
+        </p>
+
+        <!-- Global Theme Toggle -->
+        <div class="flex justify-center items-center gap-3 mt-8 bg-white/5 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 w-fit mx-auto">
+            <button onclick="setGlobalBg('light')" class="px-5 py-2 rounded-xl text-sm font-bold transition-all bg-white text-slate-900 shadow-md" id="btn-light">
+                <i class="fa-solid fa-sun text-yellow-500 mr-1.5"></i> Light Background
+            </button>
+            <button onclick="setGlobalBg('navy')" class="px-5 py-2 rounded-xl text-sm font-bold transition-all text-slate-300 hover:text-white" id="btn-navy">
+                <i class="fa-solid fa-moon text-blue-400 mr-1.5"></i> Navy Header Background
+            </button>
+            <button onclick="setGlobalBg('dark')" class="px-5 py-2 rounded-xl text-sm font-bold transition-all text-slate-300 hover:text-white" id="btn-dark">
+                <i class="fa-solid fa-circle-half-stroke text-purple-400 mr-1.5"></i> Dark Mode
+            </button>
+        </div>
+    </div>
+
+    <!-- Grid of 8 Logo Samples -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+        <!-- Sample 1 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-teal-500/20 text-teal-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Sample #1 • Reference Crest
+                    </span>
+                        Style #1 • Classic Horizontal
+                    </span>
+                    <h3 class="text-xl font-bold text-white">Classic Horizontal Academic Bar</h3>
+                </div>
+                <a href="images/logo-sample-1.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <!-- Logo Display Box -->
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-1.svg" alt="Sample 1 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #1: The European University Shield Crest (480x140 Master Canvas)</strong>
+                    A classic human-crafted institutional crest in Oxford Navy (`#0A192F`) with gold trim (`#D4AF37`), an open ledger book of knowledge, and a sharp `EW` monogram—paired directly with your exact requested `EURO` (Black) + `WORLD` (Red) wordmark.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-1.svg', 'Sample #1 (University Shield Crest)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #1
+                    </button>
+                    <a href="images/logo-sample-1.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #2 • Official Circular Seal
+                    </span>
+                    <h3 class="text-xl font-bold text-white">The Official Circular Seal &amp; Crimson Ribbon</h3>
+                </div>
+                <a href="images/logo-sample-2.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <!-- Logo Display Box -->
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-2.svg" alt="Sample 2 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #2: Official Circular Seal Lockup (480x140 Master Canvas)</strong>
+                    Inspired directly by your reference! Features a flawless circular navy badge (`120x120`) containing a crisp white mortarboard hovering over a wireframe globe and a crimson `EST. 2026` ribbon, paired alongside your exact requested writing hierarchy.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-2.svg', 'Sample #2 (Official Circular Seal & Ribbon)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-sm shadow-lg shadow-red-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #2
+                    </button>
+                    <a href="images/logo-sample-2.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 3 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #3 • Aristocratic Gold Crest
+                    </span>
+                    <h3 class="text-xl font-bold text-white">Royal Gold Crown &amp; Meridian Globe Crest</h3>
+                </div>
+                <a href="images/logo-sample-3.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <!-- Logo Display Box -->
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-3.svg" alt="Sample 3 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #3: Royal Crown &amp; Globe Crest (480x140 Master Canvas)</strong>
+                    Prestige European nobility authority! A pristine golden 5-point arching crown (`#D4AF37`) sits majestically on a deep navy wireframe globe flanked by golden laurel wings, aligned perfectly with your exact requested writing color lockup.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-3.svg', 'Sample #3 (Royal Crown & Globe Crest)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #3
+                    </button>
+                    <a href="images/logo-sample-3.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #4 • Interlocking Monogram
+                    </span>
+                    <h3 class="text-xl font-bold text-white">Modern Interlocking Lettermark (EW) &amp; Cap</h3>
+                </div>
+                <a href="images/logo-sample-4.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <!-- Logo Display Box -->
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-4.svg" alt="Sample 4 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #4: Modern Interlocking Monogram (480x140 Master Canvas)</strong>
+                    Fortune 500 studio precision! A bold geometric `E` in deep navy (`#0F172A`) and `W` in crimson red (`#A81C1C`) interlock inside a clean rounded square badge topped by a subtle graduation cap, alongside your exact requested writing colors.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-4.svg', 'Sample #4 (Interlocking Monogram Lockup)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-rose-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #4
+                    </button>
+                    <a href="images/logo-sample-4.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 5 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #5 • Classical Architecture
+                    </span>
+                    <h3 class="text-xl font-bold text-white">The Greek Pillar Arch of Knowledge</h3>
+                </div>
+                <a href="images/logo-sample-5.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-5.svg" alt="Sample 5 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #5: Classical Pillar Arch (480x140 Master Canvas)</strong>
+                    An enduring symbol of European higher education! Three Doric columns supporting a classical pediment arch inside which glows a crimson rising sun over an open book, paired perfectly with your exact requested typography lockup.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-5.svg', 'Sample #5 (Greek Pillar Arch of Knowledge)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-red-800 to-red-600 hover:from-red-700 hover:to-red-500 text-white font-bold text-sm shadow-lg shadow-red-600/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #5
+                    </button>
+                    <a href="images/logo-sample-5.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 6 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #6 • Swiss Minimalist Compass
+                    </span>
+                    <h3 class="text-xl font-bold text-white">Swiss Precision Compass &amp; Globe Mark</h3>
+                </div>
+                <a href="images/logo-sample-6.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-6.svg" alt="Sample 6 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #6: Swiss Precision Compass (480x140 Master Canvas)</strong>
+                    Clean international minimalist authority! A crisp circular globe frame intersected by an exact navigational compass arrow pointing North-East towards global study success, alongside your exact requested writing hierarchy.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-6.svg', 'Sample #6 (Swiss Minimalist Compass)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-sm shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #6
+                    </button>
+                    <a href="images/logo-sample-6.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 7 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #7 • Oxford Laurel Wreath
+                    </span>
+                    <h3 class="text-xl font-bold text-white">Traditional Oxford Laurel Wreath &amp; Torch</h3>
+                </div>
+                <a href="images/logo-sample-7.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-7.svg" alt="Sample 7 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #7: Oxford Laurel Wreath &amp; Torch (480x140 Master Canvas)</strong>
+                    Timeless British academic prestige! Two symmetrical forest green laurel branches (`#166534`) curve upward to embrace a prominent golden torch of wisdom with a crimson flame, aligned with your exact requested wordmark colors.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-7.svg', 'Sample #7 (Oxford Laurel Wreath & Torch)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-sm shadow-lg shadow-purple-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #7
+                    </button>
+                    <a href="images/logo-sample-7.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 8 -->
+        <div class="sample-card bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+                        Style #8 • Diamond Starburst Crest
+                    </span>
+                    <h3 class="text-xl font-bold text-white">Diamond Starburst &amp; Open Book Badge</h3>
+                </div>
+                <a href="images/logo-sample-8.svg" download class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all" title="Download Vector SVG">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            
+            <div class="logo-box p-8 flex items-center justify-center min-h-[260px] bg-white transition-all duration-500">
+                <img src="images/logo-sample-8.svg" alt="Sample 8 Logo" class="max-h-52 max-w-[92%] w-auto object-contain">
+            </div>
+
+            <div class="p-6 bg-slate-900/50 text-slate-300 text-sm">
+                <p class="mb-4 text-slate-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Style #8: Diamond Starburst Badge (480x140 Master Canvas)</strong>
+                    High-impact geometric institutional badge! A deep navy diamond crest enclosed by gold trim, containing an open book with a radiant golden starburst shining right from the pages, paired with your exact requested writing color lockup.
+                </p>
+                <div class="flex items-center gap-3">
+                    <button onclick="selectLogo('logo-sample-8.svg', 'Sample #8 (Diamond Starburst Badge)')" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-600 to-emerald-700 hover:from-amber-500 hover:to-emerald-600 text-white font-bold text-sm shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Select &amp; Use Style #8
+                    </button>
+                    <a href="images/logo-sample-8.svg" target="_blank" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                        Preview Full
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Selection Confirmation Modal -->
+    <div id="modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-slate-900 border border-slate-700 max-w-md w-full rounded-3xl p-8 text-center shadow-2xl transform scale-95 transition-all">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center text-2xl mb-6">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white mb-2" id="modal-title">Logo Activated!</h3>
+            <p class="text-slate-300 text-sm mb-6" id="modal-desc">
+                You have selected Sample #X. The live website header and footer will now display this logo concept.
+            </p>
+            <div class="p-4 rounded-2xl bg-slate-800/80 border border-slate-700 mb-6 flex items-center justify-center">
+                <img id="modal-img" src="" alt="Selected Logo" class="max-h-12 w-auto object-contain">
+            </div>
+            <div class="flex gap-3">
+                <a href="/" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all block text-center">
+                    <i class="fa-solid fa-eye mr-1.5"></i> View Live Website
+                </a>
+                <button onclick="closeModal()" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition-all">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-slate-500 text-xs py-8 border-t border-slate-800 max-w-6xl mx-auto">
+        &copy; 2026 Euro World Education &amp; Consultants. All Rights Reserved. Client Brand Portal.
+    </footer>
+
+    <script>
+        function setGlobalBg(mode) {
+            const boxes = document.querySelectorAll('.logo-box');
+            const btnLight = document.getElementById('btn-light');
+            const btnNavy = document.getElementById('btn-navy');
+            const btnDark = document.getElementById('btn-dark');
+
+            btnLight.className = 'px-5 py-2 rounded-xl text-sm font-bold transition-all text-slate-300 hover:text-white';
+            btnNavy.className = 'px-5 py-2 rounded-xl text-sm font-bold transition-all text-slate-300 hover:text-white';
+            btnDark.className = 'px-5 py-2 rounded-xl text-sm font-bold transition-all text-slate-300 hover:text-white';
+
+            if (mode === 'light') {
+                boxes.forEach(b => { b.className = 'logo-box p-10 flex items-center justify-center h-52 bg-white transition-all duration-500'; });
+                btnLight.className = 'px-5 py-2 rounded-xl text-sm font-bold transition-all bg-white text-slate-900 shadow-md';
+            } else if (mode === 'navy') {
+                boxes.forEach(b => { b.className = 'logo-box p-10 flex items-center justify-center h-52 bg-[#0b1b3d] transition-all duration-500'; });
+                btnNavy.className = 'px-5 py-2 rounded-xl text-sm font-bold transition-all bg-[#0b1b3d] text-white border border-blue-500/50 shadow-md';
+            } else if (mode === 'dark') {
+                boxes.forEach(b => { b.className = 'logo-box p-10 flex items-center justify-center h-52 bg-slate-950 transition-all duration-500'; });
+                btnDark.className = 'px-5 py-2 rounded-xl text-sm font-bold transition-all bg-purple-600 text-white shadow-md';
+            }
+        }
+
+        function selectLogo(filename, sampleName) {
+            // Save choice locally and show modal
+            localStorage.setItem('selected_euroworld_logo', filename);
+            document.getElementById('modal-title').innerText = 'Logo Activated!';
+            document.getElementById('modal-desc').innerText = 'You selected ' + sampleName + '. Your preference has been saved and ready for live deployment.';
+            document.getElementById('modal-img').src = 'images/' + filename;
+            
+            const modal = document.getElementById('modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-95');
+            modal.querySelector('div').classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+        }
+    </script>
+</body>
+</html>

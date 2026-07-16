@@ -62,8 +62,8 @@
                         <a href="{{ route('destinations') }}" style="background-color: #c6181b !important; color: #ffffff !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-red-800 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-xl shadow-red-600/25 text-base">
                             Explore Destinations <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
-                        <a href="{{ route('contact') }}" style="background-color: #ffffff !important; color: #0b1b3d !important; border: 2px solid #0b1b3d !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-slate-50 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-lg text-base">
-                            Book Free Consultation <i class="fa-regular fa-calendar-check text-blue-600 text-lg"></i>
+                        <a href="{{ route('contact') }}" style="background-color: #25D366 !important; color: #ffffff !important; border: 2px solid #25D366 !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-[#1ebe5d] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-xl shadow-green-600/25 text-base">
+                            Book Free Consultation <i class="fa-regular fa-calendar-check text-white text-lg"></i>
                         </a>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <div class="absolute top-8 right-2 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 animate-bounce-slow transform hover:scale-105 transition-all">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0b1b3d] flex items-center justify-center text-white shadow-md shrink-0"><i class="fa-solid fa-globe text-lg"></i></div>
                         <div class="text-left">
-                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight">50+ Countries</div>
+                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight"><span class="count-up" data-target="50">0</span>+ Countries</div>
                             <div class="text-[11px] text-gray-500 font-medium">Global Universities</div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <div class="absolute bottom-10 left-2 sm:left-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 transform hover:scale-105 transition-all duration-300">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500 flex items-center justify-center text-white shadow-md shrink-0"><i class="fa-solid fa-check-double text-lg"></i></div>
                         <div class="text-left">
-                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight">95% Success Rate</div>
+                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight"><span class="count-up" data-target="95">0</span>% Success Rate</div>
                             <div class="text-[11px] text-green-600 font-bold">Verified Visa Support</div>
                         </div>
                     </div>
@@ -105,59 +105,58 @@
         </div>
 
         <!-- Statistics Bar -->
-        <div class="w-full max-w-[1440px] mx-auto px-4 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16" style="margin:0% auto;">
-            <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row py-4">
-
-                <!-- Stat 1 -->
-                <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
-                        <i class="fa-solid fa-user-group"></i>
+        <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-30 -mt-6 lg:-mt-8 mb-16">
+            <div class="bg-[#0b1b3d] rounded-[24px] shadow-2xl overflow-hidden py-4 sm:py-6 border border-white/10">
+                <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-white/10">
+                    <!-- Stat 1 -->
+                    <div class="p-4 sm:p-6 flex flex-col items-center justify-center text-center lg:border-r border-white/10">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-white text-lg sm:text-2xl mb-2.5 sm:mb-3.5 shrink-0 shadow-inner">
+                            <i class="fa-solid fa-user-group text-red-500"></i>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1"><span class="count-up" data-target="12000">0</span>+</div>
+                        <div class="text-[11px] sm:text-sm font-semibold text-gray-300 uppercase tracking-wider">Successful Students</div>
                     </div>
-                    <div>
-                        <div class="text-3xl font-bold text-white mb-1">12,000+</div>
-                        <div class="text-sm font-medium text-gray-400">Successful Students</div>
+
+                    <!-- Stat 2 -->
+                    <div class="p-4 sm:p-6 flex flex-col items-center justify-center text-center lg:border-r border-white/10">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-white text-lg sm:text-2xl mb-2.5 sm:mb-3.5 shrink-0 shadow-inner">
+                            <i class="fa-solid fa-building-columns text-red-500"></i>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1"><span class="count-up" data-target="500">0</span>+</div>
+                        <div class="text-[11px] sm:text-sm font-semibold text-gray-300 uppercase tracking-wider">Partner Universities</div>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="p-4 sm:p-6 flex flex-col items-center justify-center text-center border-t border-white/10 lg:border-t-0 lg:border-r border-white/10">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-white text-lg sm:text-2xl mb-2.5 sm:mb-3.5 shrink-0 shadow-inner">
+                            <i class="fa-solid fa-globe text-red-500"></i>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1"><span class="count-up" data-target="50">0</span>+</div>
+                        <div class="text-[11px] sm:text-sm font-semibold text-gray-300 uppercase tracking-wider">Countries</div>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="p-4 sm:p-6 flex flex-col items-center justify-center text-center border-t border-white/10 lg:border-t-0">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-white text-lg sm:text-2xl mb-2.5 sm:mb-3.5 shrink-0 shadow-inner">
+                            <i class="fa-solid fa-award text-red-500"></i>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1"><span class="count-up" data-target="95">0</span>%</div>
+                        <div class="text-[11px] sm:text-sm font-semibold text-gray-300 uppercase tracking-wider">Visa Success Rate</div>
                     </div>
                 </div>
-
-                <!-- Stat 2 -->
-                <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-white mb-1">500+</div>
-                        <div class="text-sm font-medium text-gray-400">Partner Universities</div>
-                    </div>
-                </div>
-
-                <!-- Stat 3 -->
-                <div class="flex-1 p-6 flex items-center justify-center gap-5 border-b md:border-b-0 md:border-r border-white/10">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
-                        <i class="fa-solid fa-globe"></i>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-white mb-1">50+</div>
-                        <div class="text-sm font-medium text-gray-400">Countries</div>
-                    </div>
-                </div>
-
-                <!-- Stat 4 -->
-                <div class="flex-1 p-6 flex items-center justify-center gap-5">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-2xl shrink-0">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-white mb-1">95%</div>
-                        <div class="text-sm font-medium text-gray-400">Visa Success Rate</div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <!-- Countries We Cover (Section 3) -->
     <section id="countries" class="pt-12 pb-8 bg-light relative font-sans">
+        @php
+            $rawWa = $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '923000000000');
+            $cleanWaCountry = preg_replace('/[^0-9]/', '', $rawWa);
+            if (empty($cleanWaCountry)) {
+                $cleanWaCountry = '923000000000';
+            }
+        @endphp
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 reveal-up">
                 <div class="flex items-center justify-center gap-4 mb-2">
@@ -172,121 +171,212 @@
             <!-- 3 Popular Countries (Large Cards - Upper Design) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <!-- Italy Large Card -->
-                <div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up">
+                <div class="group relative h-[440px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer reveal-up flex flex-col justify-between p-8">
                     <img src="{{ asset('assets/dest_italy_1783324333447.png') }}" alt="Italy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-[#0b1b3d]/70 transition-opacity group-hover:bg-[#0b1b3d]/60"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <div class="absolute top-6 left-6 bg-[#c6181b] text-white text-xs font-bold px-3 py-1.5 rounded-sm flex items-center gap-1">
+                    <div class="absolute inset-0 bg-[#0b1b3d]/75 transition-opacity group-hover:bg-[#0b1b3d]/65"></div>
+                    
+                    <!-- Top Badge Area (Fixed height for exact alignment) -->
+                    <div class="relative z-10 h-8 flex items-center justify-start shrink-0">
+                        <div class="bg-[#c6181b] text-white text-xs font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5 shadow-lg tracking-wider">
                             <i class="fa-solid fa-star text-[10px]"></i> MOST POPULAR
                         </div>
-                        <h4 class="text-5xl font-black text-white mb-4 uppercase tracking-wide">Italy</h4>
-                        <div class="w-16 h-10 bg-white rounded-md p-1 mb-6 flex overflow-hidden">
-                            <div class="w-1/3 h-full bg-green-600"></div>
+                    </div>
+
+                    <!-- Bottom Content Area (Fixed structure so titles align exactly) -->
+                    <div class="relative z-10 mt-auto flex flex-col">
+                        <h4 class="text-4xl lg:text-5xl font-black text-white mb-3 uppercase tracking-wide drop-shadow-md">Italy</h4>
+                        
+                        <!-- Flag Badge -->
+                        <div class="w-14 h-9 bg-white rounded-md p-0.5 mb-4 flex overflow-hidden shadow-md shrink-0 border border-white/25">
+                            <div class="w-1/3 h-full bg-[#009246] rounded-l-sm"></div>
                             <div class="w-1/3 h-full bg-white"></div>
-                            <div class="w-1/3 h-full bg-red-600"></div>
+                            <div class="w-1/3 h-full bg-[#CE2B37] rounded-r-sm"></div>
                         </div>
-                        <p class="text-white text-sm mb-6 max-w-xs leading-relaxed">Affordable public universities, scholarship opportunities, and student visa guidance for Pakistani students.</p>
-                        <button class="bg-[#c6181b] text-white w-max px-6 py-2.5 rounded-md font-semibold flex items-center gap-2 hover:bg-red-800 transition-colors">
-                            Explore <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        
+                        <p class="text-white/90 text-xs sm:text-sm mb-6 h-12 overflow-hidden leading-relaxed font-medium line-clamp-2">Affordable public universities, scholarship opportunities, and student visa guidance for Pakistani students.</p>
+                        
+                        <!-- Buttons Row -->
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="{{ route('destinations') }}" class="bg-[#c6181b] hover:bg-red-800 text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20Italy.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="hover:bg-[#1ebe5d] text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 flex-1 text-center">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Apply Now
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- France Large Card -->
-                <div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up" style="transition-delay: 100ms;">
+                <div class="group relative h-[440px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer reveal-up flex flex-col justify-between p-8" style="transition-delay: 100ms;">
                     <img src="{{ asset('assets/dest_france_1783324344345.png') }}" alt="France" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-[#0b1b3d]/70 transition-opacity group-hover:bg-[#0b1b3d]/60"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <h4 class="text-5xl font-black text-white mb-4 uppercase tracking-wide">France</h4>
-                        <div class="w-16 h-10 bg-white rounded-md p-1 mb-6 flex overflow-hidden">
-                            <div class="w-1/3 h-full bg-blue-700"></div>
+                    <div class="absolute inset-0 bg-[#0b1b3d]/75 transition-opacity group-hover:bg-[#0b1b3d]/65"></div>
+                    
+                    <!-- Top Spacer for exact alignment -->
+                    <div class="relative z-10 h-8 shrink-0"></div>
+
+                    <!-- Bottom Content Area -->
+                    <div class="relative z-10 mt-auto flex flex-col">
+                        <h4 class="text-4xl lg:text-5xl font-black text-white mb-3 uppercase tracking-wide drop-shadow-md">France</h4>
+                        
+                        <!-- Flag Badge -->
+                        <div class="w-14 h-9 bg-white rounded-md p-0.5 mb-4 flex overflow-hidden shadow-md shrink-0 border border-white/25">
+                            <div class="w-1/3 h-full bg-[#002654] rounded-l-sm"></div>
                             <div class="w-1/3 h-full bg-white"></div>
-                            <div class="w-1/3 h-full bg-red-600"></div>
+                            <div class="w-1/3 h-full bg-[#ED2939] rounded-r-sm"></div>
                         </div>
-                        <p class="text-white text-sm mb-6 max-w-xs leading-relaxed">Quality education with affordable tuition and excellent future opportunities.</p>
-                        <button class="bg-[#c6181b] text-white w-max px-6 py-2.5 rounded-md font-semibold flex items-center gap-2 hover:bg-red-800 transition-colors">
-                            Explore <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        
+                        <p class="text-white/90 text-xs sm:text-sm mb-6 h-12 overflow-hidden leading-relaxed font-medium line-clamp-2">Quality education with affordable tuition and excellent future opportunities across globally top-ranked institutions.</p>
+                        
+                        <!-- Buttons Row -->
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="{{ route('destinations') }}" class="bg-[#c6181b] hover:bg-red-800 text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20France.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="hover:bg-[#1ebe5d] text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 flex-1 text-center">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Apply Now
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- UK Large Card -->
-                <div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl cursor-pointer reveal-up" style="transition-delay: 200ms;">
-                    <img src="{{ asset('assets/dest_uk_1783324356242.png') }}" alt="UK" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-[#0b1b3d]/70 transition-opacity group-hover:bg-[#0b1b3d]/60"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <h4 class="text-5xl font-black text-white mb-4 uppercase tracking-wide">UK</h4>
-                        <div class="w-16 h-10 bg-[#00247d] rounded-md p-1 mb-6 relative overflow-hidden flex items-center justify-center">
-                            <span class="text-white font-bold text-xs">UK Flag</span>
+                <!-- Turkey Large Card (Replaced UK) -->
+                <div class="group relative h-[440px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer reveal-up flex flex-col justify-between p-8" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&q=80" alt="Turkey" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-[#0b1b3d]/75 transition-opacity group-hover:bg-[#0b1b3d]/65"></div>
+                    
+                    <!-- Top Spacer for exact alignment -->
+                    <div class="relative z-10 h-8 shrink-0"></div>
+
+                    <!-- Bottom Content Area -->
+                    <div class="relative z-10 mt-auto flex flex-col">
+                        <h4 class="text-4xl lg:text-5xl font-black text-white mb-3 uppercase tracking-wide drop-shadow-md">Turkey</h4>
+                        
+                        <!-- Turkey Flag Badge -->
+                        <div class="w-14 h-9 bg-[#E30A17] rounded-md p-1 mb-4 flex items-center justify-center overflow-hidden shadow-md shrink-0 border border-white/25 relative">
+                            <i class="fa-solid fa-moon text-white text-base -rotate-45"></i>
+                            <i class="fa-solid fa-star text-white text-[7px] -ml-1 mt-0.5"></i>
                         </div>
-                        <p class="text-white text-sm mb-6 max-w-xs leading-relaxed">World-class universities and globally recognized degrees with great career prospects.</p>
-                        <button class="bg-[#c6181b] text-white w-max px-6 py-2.5 rounded-md font-semibold flex items-center gap-2 hover:bg-red-800 transition-colors">
-                            Explore <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        
+                        <p class="text-white/90 text-xs sm:text-sm mb-6 h-12 overflow-hidden leading-relaxed font-medium line-clamp-2">Top-ranked universities, affordable tuition fees, and rich cultural heritage at the crossroads of Europe and Asia.</p>
+                        
+                        <!-- Buttons Row -->
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="{{ route('destinations') }}" class="bg-[#c6181b] hover:bg-red-800 text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20Turkey.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="hover:bg-[#1ebe5d] text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 flex-1 text-center">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Apply Now
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Small Cards -->
+            <!-- Attractive Modern Small/Medium Cards (Hungary, United Kingdom, Romania, South Korea) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up">
-                <!-- Germany -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
-                    <div class="w-full h-24 bg-gray-200 relative">
-                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white bg-black flex flex-col overflow-hidden">
-                            <div class="h-1/3 w-full bg-black"></div>
-                            <div class="h-1/3 w-full bg-red-600"></div>
-                            <div class="h-1/3 w-full bg-yellow-400"></div>
+                <!-- Hungary Card -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 h-[430px]">
+                    <div class="h-44 relative overflow-hidden group/img shrink-0">
+                        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=700&q=80" alt="Hungary" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <!-- Flag Badge -->
+                        <div class="absolute bottom-3 left-4 z-10 w-11 h-7 rounded shadow-md border border-white/40 overflow-hidden bg-white shrink-0">
+                            <div class="w-full h-full flex flex-col"><div class="h-1/3 bg-[#CE2939]"></div><div class="h-1/3 bg-white"></div><div class="h-1/3 bg-[#477050]"></div></div>
                         </div>
                     </div>
-                    <h4 class="mt-8 font-bold text-[#0b1b3d] uppercase tracking-wide text-sm">Germany</h4>
-                    <p class="text-center text-gray-500 text-xs px-4 mt-2 h-12">Top engineering programs and zero tuition fees.</p>
-                    <button class="mt-4 border border-gray-300 text-gray-700 px-6 py-1.5 rounded-full text-xs font-semibold hover:border-red-600 hover:text-red-600 transition-colors flex items-center gap-2">
-                        Explore <span class="text-red-600">&rarr;</span>
-                    </button>
+                    <div class="p-5 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-xl font-extrabold text-[#0b1b3d] uppercase tracking-wide mb-2">Hungary</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed h-12 overflow-hidden mb-4 font-medium line-clamp-2">Prestigious medical, engineering, and business universities with affordable tuition fees and European degrees.</p>
+                        </div>
+                        <div class="mt-auto flex flex-col sm:flex-row items-center gap-2 pt-3 border-t border-gray-100">
+                            <a href="{{ route('destinations') }}" class="w-full sm:w-auto text-center bg-[#0b1b3d] hover:bg-slate-800 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20Hungary.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="w-full flex-1 text-center hover:bg-[#1ebe5d] text-white px-3 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Apply Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Australia -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
-                    <div class="w-full h-24 bg-gray-200 relative">
-                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white bg-[#00008b] flex items-center justify-center text-[8px] text-white font-bold">
-                            AUS
+                <!-- United Kingdom Card -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 h-[430px]">
+                    <div class="h-44 relative overflow-hidden group/img shrink-0">
+                        <img src="{{ asset('assets/dest_uk_1783324356242.png') }}" alt="United Kingdom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <!-- Flag Badge -->
+                        <div class="absolute bottom-3 left-4 z-10 w-11 h-7 rounded shadow-md border border-white/40 overflow-hidden bg-[#012169] flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-flag text-white text-xs"></i><span class="text-[9px] font-black text-white ml-1">UK</span>
                         </div>
                     </div>
-                    <h4 class="mt-8 font-bold text-[#0b1b3d] uppercase tracking-wide text-sm">Australia</h4>
-                    <p class="text-center text-gray-500 text-xs px-4 mt-2 h-12">High-quality education in a safe environment.</p>
-                    <button class="mt-4 border border-gray-300 text-gray-700 px-6 py-1.5 rounded-full text-xs font-semibold hover:border-red-600 hover:text-red-600 transition-colors flex items-center gap-2">
-                        Explore <span class="text-red-600">&rarr;</span>
-                    </button>
+                    <div class="p-5 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-xl font-extrabold text-[#0b1b3d] uppercase tracking-wide mb-2">United Kingdom</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed h-12 overflow-hidden mb-4 font-medium line-clamp-2">World-class universities, globally recognized degrees, shorter course durations, and great post-study career pathways.</p>
+                        </div>
+                        <div class="mt-auto flex flex-col sm:flex-row items-center gap-2 pt-3 border-t border-gray-100">
+                            <a href="{{ route('destinations') }}" class="w-full sm:w-auto text-center bg-[#0b1b3d] hover:bg-slate-800 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20United%20Kingdom.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="w-full flex-1 text-center hover:bg-[#1ebe5d] text-white px-3 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Apply Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Spain -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
-                    <div class="w-full h-24 bg-gray-200 relative">
-                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white flex flex-col overflow-hidden">
-                            <div class="h-1/4 w-full bg-red-600"></div>
-                            <div class="h-2/4 w-full bg-yellow-400"></div>
-                            <div class="h-1/4 w-full bg-red-600"></div>
+                <!-- Romania Card -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 h-[430px]">
+                    <div class="h-44 relative overflow-hidden group/img shrink-0">
+                        <img src="{{ asset('assets/dest_bucharest.png') }}" alt="Romania" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <!-- Flag Badge -->
+                        <div class="absolute bottom-3 left-4 z-10 w-11 h-7 rounded shadow-md border border-white/40 overflow-hidden shrink-0">
+                            <div class="w-full h-full flex"><div class="w-1/3 bg-[#002B7F]"></div><div class="w-1/3 bg-[#FCD116]"></div><div class="w-1/3 bg-[#CE1126]"></div></div>
                         </div>
                     </div>
-                    <h4 class="mt-8 font-bold text-[#0b1b3d] uppercase tracking-wide text-sm">Spain</h4>
-                    <p class="text-center text-gray-500 text-xs px-4 mt-2 h-12">Rich culture and excellent business schools.</p>
-                    <button class="mt-4 border border-gray-300 text-gray-700 px-6 py-1.5 rounded-full text-xs font-semibold hover:border-red-600 hover:text-red-600 transition-colors flex items-center gap-2">
-                        Explore <span class="text-red-600">&rarr;</span>
-                    </button>
+                    <div class="p-5 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-xl font-extrabold text-[#0b1b3d] uppercase tracking-wide mb-2">Romania</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed h-12 overflow-hidden mb-4 font-medium line-clamp-2">High quality European education, exceptionally low living costs, and globally recognized medical & technical degrees.</p>
+                        </div>
+                        <div class="mt-auto flex flex-col sm:flex-row items-center gap-2 pt-3 border-t border-gray-100">
+                            <a href="{{ route('destinations') }}" class="w-full sm:w-auto text-center bg-[#0b1b3d] hover:bg-slate-800 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20Romania.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="w-full flex-1 text-center hover:bg-[#1ebe5d] text-white px-3 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Apply Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- USA -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col items-center pb-6 hover:shadow-lg transition-shadow">
-                    <div class="w-full h-24 bg-gray-200 relative">
-                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white bg-[#3c3b6e] flex items-center justify-center text-[8px] text-white font-bold">
-                            USA
+                <!-- South Korea Card -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 h-[430px]">
+                    <div class="h-44 relative overflow-hidden group/img shrink-0">
+                        <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=700&q=80" alt="South Korea" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <!-- Flag Badge -->
+                        <div class="absolute bottom-3 left-4 z-10 w-11 h-7 rounded shadow-md border border-white/40 overflow-hidden bg-white flex items-center justify-center shrink-0">
+                            <div class="w-4 h-4 rounded-full bg-gradient-to-b from-red-600 to-blue-700"></div>
                         </div>
                     </div>
-                    <h4 class="mt-8 font-bold text-[#0b1b3d] uppercase tracking-wide text-sm">USA</h4>
-                    <p class="text-center text-gray-500 text-xs px-4 mt-2 h-12">Top universities and wide range of programs.</p>
-                    <button class="mt-4 border border-gray-300 text-gray-700 px-6 py-1.5 rounded-full text-xs font-semibold hover:border-red-600 hover:text-red-600 transition-colors flex items-center gap-2">
-                        Explore <span class="text-red-600">&rarr;</span>
-                    </button>
+                    <div class="p-5 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-xl font-extrabold text-[#0b1b3d] uppercase tracking-wide mb-2">South Korea</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed h-12 overflow-hidden mb-4 font-medium line-clamp-2">Cutting-edge technology, world-class research campuses, generous government scholarships, and vibrant culture.</p>
+                        </div>
+                        <div class="mt-auto flex flex-col sm:flex-row items-center gap-2 pt-3 border-t border-gray-100">
+                            <a href="{{ route('destinations') }}" class="w-full sm:w-auto text-center bg-[#0b1b3d] hover:bg-slate-800 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1 shrink-0">
+                                Explore <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                            <a href="https://wa.me/{{ $cleanWaCountry }}?text=Hello%20Euro%20World%20Education,%20I%20am%20interested%20in%20studying%20in%20South%20Korea.%20Please%20guide%20me%20on%20admissions%20and%20visa%20details." target="_blank" style="background-color: #25D366 !important;" class="w-full flex-1 text-center hover:bg-[#1ebe5d] text-white px-3 py-2 rounded-lg text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Apply Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -426,7 +516,7 @@
                     <h3 class="text-[#c6181b] font-bold tracking-widest uppercase text-sm">Student Success</h3>
                     <div class="h-px w-16 bg-[#c6181b]"></div>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2"><span class="text-[#0b1b3d]">RECENT</span> <span class="text-[#c6181b]">ADMISSIONS</span></h2>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2"><span class="text-[#0b1b3d]">SUCCESS</span> <span class="text-[#c6181b]">STORIES</span></h2>
                 <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-sm">We are proud to have helped students secure admission in top universities around the world. Your success is our greatest achievement.</p>
             </div>
 
@@ -696,63 +786,60 @@
             </div>
 
             <!-- Statistics Bar -->
-            <div class="bg-gray-100 rounded-xl max-w-5xl mx-auto p-6 md:p-8 flex flex-wrap justify-between items-center gap-6 shadow-sm reveal-up">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white text-xl">
+            <div class="bg-white border border-slate-200/80 rounded-[24px] max-w-5xl mx-auto p-6 md:p-8 shadow-md reveal-up grid grid-cols-2 lg:grid-cols-4 gap-6 items-center text-center">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-[#0b1b3d] flex items-center justify-center text-white text-lg mb-2 shadow-sm">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <div>
-                        <h4 class="text-red-600 font-bold text-xl leading-none mb-1">500+</h4>
-                        <p class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Successful Admissions</p>
-                    </div>
+                    <h4 class="text-red-600 font-extrabold text-2xl leading-none mb-1"><span class="count-up" data-target="500">0</span>+</h4>
+                    <p class="text-[11px] font-bold text-gray-600 uppercase tracking-wide">Successful Admissions</p>
                 </div>
 
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white text-xl">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-[#0b1b3d] flex items-center justify-center text-white text-lg mb-2 shadow-sm">
                         <i class="fa-solid fa-globe"></i>
                     </div>
-                    <div>
-                        <h4 class="text-red-600 font-bold text-xl leading-none mb-1">10+</h4>
-                        <p class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Countries</p>
-                    </div>
+                    <h4 class="text-red-600 font-extrabold text-2xl leading-none mb-1"><span class="count-up" data-target="10">0</span>+</h4>
+                    <p class="text-[11px] font-bold text-gray-600 uppercase tracking-wide">Countries</p>
                 </div>
 
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white text-xl">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-[#0b1b3d] flex items-center justify-center text-white text-lg mb-2 shadow-sm">
                         <i class="fa-solid fa-building-columns"></i>
                     </div>
-                    <div>
-                        <h4 class="text-red-600 font-bold text-xl leading-none mb-1">300+</h4>
-                        <p class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Top Universities</p>
-                    </div>
+                    <h4 class="text-red-600 font-extrabold text-2xl leading-none mb-1"><span class="count-up" data-target="300">0</span>+</h4>
+                    <p class="text-[11px] font-bold text-gray-600 uppercase tracking-wide">Top Universities</p>
                 </div>
 
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-[#0b1b3d] flex items-center justify-center text-white text-xl">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-[#0b1b3d] flex items-center justify-center text-white text-lg mb-2 shadow-sm">
                         <i class="fa-solid fa-users"></i>
                     </div>
-                    <div>
-                        <h4 class="text-red-600 font-bold text-xl leading-none mb-1">98%</h4>
-                        <p class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Visa Success Ratio</p>
-                    </div>
+                    <h4 class="text-red-600 font-extrabold text-2xl leading-none mb-1"><span class="count-up" data-target="98">0</span>%</h4>
+                    <p class="text-[11px] font-bold text-gray-600 uppercase tracking-wide">Visa Success Ratio</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Feedback / Mission Section -->
-    <section class="bg-[#0b1b3d] py-20 font-sans">
+    <section class="bg-[#0b1b3d] py-10 font-sans border-t border-white/10">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
                 <div class="flex-1">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">
                         Help us improve <span class="text-[#c6181b]">Euroworld Education</span>
                     </h2>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
-                        Your feedback is incredibly valuable to us! We are constantly working to enhance our services and make your experience with Euroworld Education as smooth and rewarding as possible. Please take a moment to share your thoughts, suggestions, or any challenges you've faced. Whether it's about our counseling, visa process, or university selection, your input helps us serve you better.
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light line-clamp-2">
+                        Your feedback is incredibly valuable to us! Whether it's about our counseling, visa guidance, or university selection, please share your thoughts or call us directly to help us serve you better.
                     </p>
-                    <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 bg-[#c6181b] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-red-800 transition-colors shadow-lg">
-                        Share Your Feedback <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="shrink-0 flex flex-wrap items-center justify-center gap-3">
+                    <a href="{{ route('feedback') }}" class="inline-flex items-center gap-2 bg-[#c6181b] text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm hover:bg-red-800 transition-all shadow-lg hover:-translate-y-0.5">
+                        Share Your Feedback <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="tel:{{ $global_settings['site_phone'] ?? '+923000000000' }}" class="inline-flex items-center gap-2 bg-white/10 text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm hover:bg-white/20 border border-white/20 transition-all shadow-lg hover:-translate-y-0.5">
+                        <i class="fa-solid fa-phone text-red-400"></i> Call Us to Improve
                     </a>
                 </div>
             </div>

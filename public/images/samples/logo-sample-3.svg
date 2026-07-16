@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="100%" height="100%">
+  <defs>
+    <filter id="shadowS3" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- LEFT STUDIO ZONE (Center at x=70, y=70): Royal Crown & Globe Crest -->
+  <g transform="translate(10, 10)" filter="url(#shadowS3)">
+    <!-- Flank Gold Laurel Wings -->
+    <path d="M 22 84 C 10 70 14 44 32 36 C 24 50 28 70 38 78 Z" fill="#d4af37"/>
+    <path d="M 98 84 C 110 70 106 44 88 36 C 96 50 92 70 82 78 Z" fill="#d4af37"/>
+
+    <!-- Central Deep Navy Meridian Globe (Radius 36) -->
+    <circle cx="60" cy="72" r="36" fill="#0f172a" stroke="#d4af37" stroke-width="2"/>
+    <circle cx="60" cy="72" r="26" fill="none" stroke="#334155" stroke-width="1.2"/>
+    <ellipse cx="60" cy="72" rx="12" ry="36" fill="none" stroke="#334155" stroke-width="1.2"/>
+    <line x1="24" y1="72" x2="96" y2="72" stroke="#334155" stroke-width="1.2"/>
+    <line x1="30" y1="53" x2="90" y2="53" stroke="#334155" stroke-width="1.2"/>
+    <line x1="30" y1="91" x2="90" y2="91" stroke="#334155" stroke-width="1.2"/>
+
+    <!-- Crisp Golden European Crown Sitting Top of Globe -->
+    <g transform="translate(60, 32)">
+      <path d="M -26 5 L -18 -16 L -7 -4 L 0 -22 L 7 -4 L 18 -16 L 26 5 Z" fill="#d4af37" stroke="#0f172a" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M -26 5 L 26 5 L 23 10 L -23 10 Z" fill="#a81c1c"/>
+      <!-- Crown Jewels -->
+      <circle cx="0" cy="-22" r="3" fill="#facc15"/>
+      <circle cx="-18" cy="-16" r="2.5" fill="#facc15"/>
+      <circle cx="18" cy="-16" r="2.5" fill="#facc15"/>
+    </g>
+
+    <!-- Crisp Golden Banner Below Globe -->
+    <path d="M 28 108 L 92 108 L 86 118 L 34 118 Z" fill="#d4af37"/>
+    <text x="60" y="116" font-family="'Segoe UI', 'Outfit', sans-serif" font-size="8.5" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="1.5px">
+      EXCELLENCE
+    </text>
+  </g>
+
+  <!-- RIGHT STUDIO ZONE (x=145 to 470): Exact Requested Typography Writing Colors & Hierarchy -->
+  <g transform="translate(148, 0)">
+    <!-- Main Wordmark: EURO (Solid Black) + WORLD (Crimson Red) -->
+    <text x="0" y="68" font-family="'Times New Roman', 'Georgia', 'Cinzel', serif" font-size="44" font-weight="900" letter-spacing="1.5px">
+      <tspan fill="#0f172a">EURO</tspan><tspan fill="#a81c1c">WORLD</tspan>
+    </text>
+
+    <!-- Studio-Grade Precision Divider Line -->
+    <line x1="2" y1="80" x2="315" y2="80" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="2" y1="80" x2="85" y2="80" stroke="#a81c1c" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Subtitle: EDUCATION CONSULTANTS (Solid Slate/Black) -->
+    <text x="2" y="102" font-family="'Segoe UI', 'Outfit', system-ui, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" letter-spacing="4.5px">
+      EDUCATION CONSULTANTS
+    </text>
+  </g>
+</svg>

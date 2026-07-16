@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="100%" height="100%">
+  <defs>
+    <filter id="shadowS4" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- LEFT STUDIO ZONE (Center at x=70, y=70): Modern Interlocking Monogram Lockup -->
+  <g transform="translate(10, 10)" filter="url(#shadowS4)">
+    <!-- Outer Rounded Square Monoline Border -->
+    <rect x="8" y="8" width="104" height="104" rx="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/>
+    <rect x="14" y="14" width="92" height="92" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+
+    <!-- Interlocking E (Navy #0f172a) & W (Crimson Red #a81c1c) -->
+    <g transform="translate(60, 64)">
+      <!-- Navy E -->
+      <path d="M -32 -22 L -8 -22 L -8 -14 L -22 -14 L -22 -4 L -12 -4 L -12 4 L -22 4 L -22 14 L -8 14 L -8 22 L -32 22 Z" fill="#0f172a"/>
+      <!-- Red W intersecting -->
+      <path d="M -6 -22 L 3 10 L 12 -12 L 21 10 L 30 -22 L 39 -22 L 26 22 L 16 22 L 12 -2 L 8 22 L -2 22 L -15 -22 Z" fill="#a81c1c"/>
+      <!-- Golden Accent Dot in Monogram Center -->
+      <circle cx="2" cy="-6" r="3" fill="#d4af37"/>
+    </g>
+
+    <!-- Top-Right Corner Academic Cap Icon -->
+    <g transform="translate(86, 26)">
+      <polygon points="0,-9 16,-4 0,1 -16,-4" fill="#0f172a"/>
+      <polygon points="-9,-1 -9,5 0,8 9,5 9,-1 0,2" fill="#a81c1c"/>
+    </g>
+  </g>
+
+  <!-- RIGHT STUDIO ZONE (x=145 to 470): Exact Requested Typography Writing Colors & Hierarchy -->
+  <g transform="translate(148, 0)">
+    <!-- Main Wordmark: EURO (Solid Black) + WORLD (Crimson Red) -->
+    <text x="0" y="68" font-family="'Times New Roman', 'Georgia', 'Cinzel', serif" font-size="44" font-weight="900" letter-spacing="1.5px">
+      <tspan fill="#0f172a">EURO</tspan><tspan fill="#a81c1c">WORLD</tspan>
+    </text>
+
+    <!-- Studio-Grade Precision Divider Line -->
+    <line x1="2" y1="80" x2="315" y2="80" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="2" y1="80" x2="85" y2="80" stroke="#a81c1c" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Subtitle: EDUCATION CONSULTANTS (Solid Slate/Black) -->
+    <text x="2" y="102" font-family="'Segoe UI', 'Outfit', system-ui, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" letter-spacing="4.5px">
+      EDUCATION CONSULTANTS
+    </text>
+  </g>
+</svg>
