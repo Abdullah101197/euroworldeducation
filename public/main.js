@@ -68,46 +68,57 @@ $(document).ready(function() {
         }
     });
 
-    // Animated Number Counter on Scroll / Viewport Entry
-    function animateCounters() {
-        $('.count-up').each(function() {
-            var $this = $(this);
-            if ($this.hasClass('counted')) return;
-            
-            var elementTop = $this.offset().top;
-            var windowBottom = $(window).scrollTop() + $(window).height();
-            
-            if (elementTop < windowBottom - 20) {
-                $this.addClass('counted');
-                var target = parseInt($this.attr('data-target'), 10);
-                var duration = 2000; // 2 seconds
-                var startTime = null;
-                
-                function step(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    var progress = Math.min((timestamp - startTime) / duration, 1);
-                    // Ease out quart function for ultra-smooth realistic deceleration
-                    var easeProgress = 1 - Math.pow(1 - progress, 4);
-                    var current = Math.floor(easeProgress * target);
+    // Animated Number Counter on Scroll / Viewport Entry using IntersectionObserver
+    function initCounters() {
+        var counters = document.querySelectorAll('.count-up');
+        if (!counters.length) return;
+
+        var observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        var observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var $this = entry.target;
+                    if ($this.classList.contains('counted')) return;
+                    $this.classList.add('counted');
                     
-                    $this.text(current.toLocaleString());
+                    var target = parseInt($this.getAttribute('data-target'), 10);
+                    if (isNaN(target)) return;
                     
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                        $this.text(target.toLocaleString());
+                    var duration = 2000; // 2 seconds
+                    var startTime = null;
+                    
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        var progress = Math.min((timestamp - startTime) / duration, 1);
+                        var easeProgress = 1 - Math.pow(1 - progress, 4); // Ease out quart
+                        var current = Math.floor(easeProgress * target);
+                        
+                        $this.innerText = current.toLocaleString();
+                        
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            $this.innerText = target.toLocaleString();
+                        }
                     }
+                    
+                    window.requestAnimationFrame(step);
+                    observer.unobserve($this);
                 }
-                
-                window.requestAnimationFrame(step);
-            }
+            });
+        }, observerOptions);
+
+        counters.forEach(function(counter) {
+            observer.observe(counter);
         });
     }
 
-    // Trigger counters on scroll and initial load
-    $(window).on('scroll', function() {
-        animateCounters();
-    });
-    animateCounters();
+    // Initialize counters
+    initCounters();
 
 });

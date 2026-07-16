@@ -15,90 +15,67 @@
             animation: gentle-float 6s ease-in-out infinite;
         }
     </style>
-    <!-- Hero Section -->
-    <section id="hero" class="relative pt-36 lg:pt-44 pb-12 bg-white font-sans overflow-hidden">
-        <!-- Subtle modern geometric grid pattern -->
-        <div class="absolute inset-0 z-0 opacity-30 pointer-events-none" style="background-image: radial-gradient(#94a3b8 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
+    <!-- Hero Section (Classic Dark Premium with Background Video) -->
+    <section id="hero" class="relative pt-36 lg:pt-44 pb-16 bg-[#040d27]/90 font-sans overflow-hidden">
         
-        <!-- Ambient glowing lighting effects for luxury feel -->
-        <div class="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
-        <div class="absolute top-1/3 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse" style="animation-delay: 2s;"></div>
+        <!-- Background Video (Backend playing) -->
+        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover -z-20 mix-blend-overlay opacity-60">
+            <!-- Placeholder video URL (Replace with your actual video link or local file) -->
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-students-walking-in-a-university-campus-4253-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Abstract dark background overlay elements -->
+        <div class="absolute inset-0 z-0 opacity-30 bg-[#040d27]/70 pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#040d27] via-[#040d27]/80 to-transparent -z-10"></div>
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#c6181b]/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
                 <!-- Left Content Area -->
-                <div class="w-full lg:w-[54%] reveal-up pt-4 lg:pt-0 text-center lg:text-left z-20 relative">
-                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50/80 border border-blue-100/80 mb-6 shadow-sm">
-                        <span class="flex h-2.5 w-2.5 rounded-full bg-[#c6181b] animate-ping"></span>
-                        <span class="text-[12px] font-extrabold uppercase tracking-widest text-[#0b1b3d]">YOUR FUTURE. OUR GUIDANCE</span>
+                <div class="w-full lg:w-[50%] reveal-up pt-4 lg:pt-0 text-center lg:text-left z-20">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-amber-500/10 border border-amber-500/20 mb-6">
+                        <i class="fa-solid fa-medal text-amber-400 text-sm"></i>
+                        <span class="text-[12px] font-bold text-amber-400 tracking-wider">10+ YEARS OF EXCELLENCE</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-[66px] font-black leading-[1.1] mb-6 tracking-tight text-[#0b1b3d]">
-                        {!! $global_settings['home_hero_title'] ?? 'Your Journey to <br><span class="text-[#c6181b] relative inline-block">Global<span class="absolute left-0 -bottom-1 h-[4px] w-full bg-gradient-to-r from-[#3b82f6] via-[#0b1b3d] to-[#c6181b] rounded-full opacity-80"></span></span> Education' !!}
+                    <h1 class="text-4xl sm:text-5xl lg:text-[60px] font-black leading-[1.15] mb-6 tracking-tight text-white">
+                        Study in Europe & <br>
+                        <span class="text-[#c6181b]">Shape Your Future</span>
                     </h1>
 
-                    <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        {{ $global_settings['home_hero_subtitle'] ?? 'We make study abroad simple and successful. From university selection to visa approval, we are with you at every step of the way.' }}
+                    <p class="text-base sm:text-lg text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                        Expert guidance for university admissions, visa processing, and career counseling to help you achieve your dreams of studying abroad.
                     </p>
 
-                    <!-- Feature Chips -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-10">
-                        <div class="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl pr-5 pl-2.5 py-2.5 shadow-md border border-gray-100 transform hover:-translate-y-0.5 transition-all">
-                            <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-[#0b1b3d] shadow-inner"><i class="fa-solid fa-graduation-cap text-sm"></i></div>
-                            <span class="text-[12px] font-bold text-[#0b1b3d] leading-tight text-left">Top Ranked<br>Universities</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl pr-5 pl-2.5 py-2.5 shadow-md border border-gray-100 transform hover:-translate-y-0.5 transition-all">
-                            <div class="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center text-green-600 shadow-inner"><i class="fa-solid fa-clipboard-check text-sm"></i></div>
-                            <span class="text-[12px] font-bold text-[#0b1b3d] leading-tight text-left">End-to-End<br>Assistance</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl pr-5 pl-2.5 py-2.5 shadow-md border border-gray-100 transform hover:-translate-y-0.5 transition-all">
-                            <div class="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center text-[#c6181b] shadow-inner"><i class="fa-solid fa-file-shield text-sm"></i></div>
-                            <span class="text-[12px] font-bold text-[#0b1b3d] leading-tight text-left">High Visa<br>Success Rate</span>
-                        </div>
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 mb-10">
+                        <a href="{{ route('destinations') }}" style="background-color: #c6181b !important; color: #ffffff !important;" class="w-full sm:w-auto px-8 py-3.5 rounded font-extrabold hover:bg-red-800 transition-all text-sm tracking-wide">
+                            Get Started Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="{{ route('services') }}" class="w-full sm:w-auto px-8 py-3.5 rounded font-bold border border-white/20 text-white hover:bg-white/5 transition-all text-sm tracking-wide">
+                            Explore Services
+                        </a>
                     </div>
 
-                    <!-- Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="{{ route('destinations') }}" style="background-color: #c6181b !important; color: #ffffff !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-red-800 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-xl shadow-red-600/25 text-base">
-                            Explore Destinations <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </a>
-                        <a href="{{ route('contact') }}" style="background-color: #25D366 !important; color: #ffffff !important; border: 2px solid #25D366 !important;" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold hover:bg-[#1ebe5d] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-xl shadow-green-600/25 text-base">
-                            Book Free Consultation <i class="fa-regular fa-calendar-check text-white text-lg"></i>
-                        </a>
+                    <!-- Trust Checkmarks -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-400 text-sm"></i>
+                            <span class="text-xs font-bold text-gray-300 uppercase tracking-wider">FREE CONSULTATION</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-400 text-sm"></i>
+                            <span class="text-xs font-bold text-gray-300 uppercase tracking-wider">HIGH VISA SUCCESS</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right HD Image Section with Interactive Glass Cards -->
-                <div class="w-full lg:w-[46%] relative mt-10 lg:mt-0 flex justify-center items-center z-10 min-h-[480px] lg:min-h-[560px]">
-                    <!-- Glowing circular geometric background accent -->
-                    <div class="absolute w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] bg-gradient-to-tr from-blue-100/80 via-blue-50/40 to-red-100/60 rounded-full -z-10 shadow-inner"></div>
-                    <div class="absolute right-6 top-1/4 w-48 h-48 bg-[#c6181b]/15 rounded-full blur-2xl -z-10 animate-pulse"></div>
-
-                    <!-- Ultra-HD 1024x1024 Hero Image Showcase -->
-                    <img src="{{ asset('assets/hero_corporate.png') }}" alt="Student Global Education" class="animate-gentle-float relative z-10 w-full h-auto max-w-[560px] object-contain drop-shadow-[0_25px_35px_rgba(11,27,61,0.22)]">
-
-                    <!-- Floating Glass Badge 1 (Top Right) -->
-                    <div class="absolute top-8 right-2 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 animate-bounce-slow transform hover:scale-105 transition-all">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0b1b3d] flex items-center justify-center text-white shadow-md shrink-0"><i class="fa-solid fa-globe text-lg"></i></div>
-                        <div class="text-left">
-                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight"><span class="count-up" data-target="50">0</span>+ Countries</div>
-                            <div class="text-[11px] text-gray-500 font-medium">Global Universities</div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Glass Badge 2 (Bottom Left) -->
-                    <div class="absolute bottom-10 left-2 sm:left-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-3.5 sm:p-4 flex items-center gap-3 z-20 border border-gray-100 transform hover:scale-105 transition-all duration-300">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500 flex items-center justify-center text-white shadow-md shrink-0"><i class="fa-solid fa-check-double text-lg"></i></div>
-                        <div class="text-left">
-                            <div class="text-[13px] sm:text-sm font-extrabold text-[#0b1b3d] leading-tight"><span class="count-up" data-target="95">0</span>% Success Rate</div>
-                            <div class="text-[11px] text-green-600 font-bold">Verified Visa Support</div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Glass Badge 3 (Middle Right) -->
-                    <div class="absolute top-1/2 -right-1 sm:-right-4 bg-white/95 backdrop-blur-md rounded-xl shadow-lg py-2 px-3.5 flex items-center gap-2 z-20 border border-amber-100/80 hidden sm:flex">
-                        <div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 shrink-0"><i class="fa-solid fa-star text-xs"></i></div>
-                        <span class="text-xs font-bold text-[#0b1b3d]">100% Guidance</span>
+                <!-- Right Framed Image Section -->
+                <div class="w-full lg:w-[48%] relative mt-10 lg:mt-0 flex justify-end items-center z-10">
+                    <!-- Clean White Frame (Polaroid Style) -->
+                    <div class="bg-white p-3 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500 w-full max-w-[580px]">
+                        <img src="{{ asset('assets/hero_corporate.png') }}" alt="Study in Europe" class="w-full h-auto object-cover border border-gray-100">
                     </div>
                 </div>
             </div>
