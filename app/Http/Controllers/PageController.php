@@ -86,22 +86,16 @@ class PageController extends Controller
             $city = trim($request->input('wa_city', 'N/A'));
             $age = trim($request->input('wa_age', 'N/A'));
             $qual = trim($request->input('wa_qualification_marks', 'N/A'));
-            $passingYear = trim($request->input('wa_passing_year', 'N/A'));
             $interest = trim($request->input('wa_interest', 'General Study Advice'));
-            $intake = trim($request->input('wa_intake', 'Earliest Possible Available'));
-            $phoneEmail = trim($request->input('wa_phone_email', 'N/A'));
-
-            // Extract email/phone if provided
-            $email = filter_var($phoneEmail, FILTER_VALIDATE_EMAIL) ? $phoneEmail : ($request->input('email', 'student_lead@euroworldeducation.com'));
-            $phone = !filter_var($phoneEmail, FILTER_VALIDATE_EMAIL) ? $phoneEmail : ($request->input('phone', $phoneEmail));
+            $phone = trim($request->input('wa_phone', 'N/A'));
+            $email = trim($request->input('wa_email', 'N/A'));
 
             $messageContent = "🏙️ City Name: {$city}\n" .
                               "🎂 Age: {$age} Years\n" .
-                              "🎓 Last Degree & CGPA / Marks: {$qual}\n" .
-                              "📅 Passing Year: {$passingYear}\n" .
+                              "🎓 Last Degree, CGPA / Marks & Passing Year: {$qual}\n" .
                               "🌍 Target Destination: {$interest}\n" .
-                              "🎯 Preferred Intake: {$intake}\n" .
-                              "📞 Phone Number or Email: {$phoneEmail}";
+                              "📞 Phone Number: {$phone}\n" .
+                              "✉️ Email Address: {$email}";
 
             \App\Models\Contact::create([
                 'name' => $name,

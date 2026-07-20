@@ -47,44 +47,44 @@
                     @csrf
                     <input type="hidden" name="lead_type" id="form_lead_type" value="admin_form">
                     
-                    <!-- Row 1: Full Name & Phone/Email -->
+                    <!-- Row 1: Full Name & Phone -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
                             <input type="text" id="wa_full_name" name="wa_full_name" required placeholder="Enter your full name" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Phone Number or Email <span class="text-red-500">*</span></label>
-                            <input type="text" id="wa_phone_email" name="wa_phone_email" required placeholder="Enter your Phone number or Email" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+                            <input type="text" id="wa_phone" name="wa_phone" required placeholder="Enter your Phone number" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
                     </div>
 
-                    <!-- Row 2: City Name & Age -->
+                    <!-- Row 2: Email & City Name -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
+                            <input type="email" id="wa_email" name="wa_email" required placeholder="Enter your Email" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                        </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1.5">City Name <span class="text-red-500">*</span></label>
                             <input type="text" id="wa_city" name="wa_city" required placeholder="Enter your city name" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
+                    </div>
+
+                    <!-- Row 3: Age & Last Degree / Passing Year -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1.5">Age <span class="text-red-500">*</span></label>
                             <input type="number" id="wa_age" name="wa_age" required min="14" max="65" placeholder="e.g. 21" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
-                    </div>
-
-                    <!-- Row 3: Last Degree & CGPA / Marks & Passing Year -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div class="sm:col-span-2">
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Last Degree & CGPA / Marks <span class="text-red-500">*</span></label>
-                            <input type="text" id="wa_qualification_marks" name="wa_qualification_marks" required placeholder="e.g. FSC (85%) or BSCS (3.4 CGPA)" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Passing Year <span class="text-red-500">*</span></label>
-                            <input type="number" id="wa_passing_year" name="wa_passing_year" required min="2000" max="2030" placeholder="e.g. 2024" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Last Degree, CGPA / Marks & Passing Year <span class="text-red-500">*</span></label>
+                            <input type="text" id="wa_qualification_marks" name="wa_qualification_marks" required placeholder="e.g. FSC (85%) 2023 or BSCS (3.4 CGPA) 2024" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
                     </div>
 
-                    <!-- Row 4: Interested Country (Only Countries Name) & Preferred Intake -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Row 4: Interested Country -->
+                    <div class="grid grid-cols-1 gap-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1.5">Interested Country <span class="text-red-500">*</span></label>
                             <select id="wa_interest" name="wa_interest" required class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
@@ -96,16 +96,6 @@
                                 <option value="Hungary">Hungary</option>
                                 <option value="Romania">Romania</option>
                                 <option value="South Korea">South Korea</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Preferred Intake <span class="text-red-500">*</span></label>
-                            <select id="wa_intake" name="wa_intake" required class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800">
-                                <option value="">Select Target Intake</option>
-                                <option value="Fall 2026 (September / October)">Fall 2026 (September / October)</option>
-                                <option value="Spring 2027 (January / February)">Spring 2027 (January / February)</option>
-                                <option value="Fall 2027 (September / October)">Fall 2027 (September / October)</option>
-                                <option value="Earliest Possible Available">Earliest Possible Available</option>
                             </select>
                         </div>
                     </div>
@@ -130,19 +120,18 @@
                 <script>
                     function validateFormFields() {
                         const fullName = document.getElementById('wa_full_name').value.trim();
-                        const phoneEmail = document.getElementById('wa_phone_email').value.trim();
+                        const phone = document.getElementById('wa_phone').value.trim();
+                        const email = document.getElementById('wa_email').value.trim();
                         const city = document.getElementById('wa_city').value.trim();
                         const age = document.getElementById('wa_age').value.trim();
                         const qualMarks = document.getElementById('wa_qualification_marks').value.trim();
-                        const passingYear = document.getElementById('wa_passing_year').value.trim();
                         const interest = document.getElementById('wa_interest').value;
-                        const intake = document.getElementById('wa_intake').value;
 
-                        if (!fullName || !phoneEmail || !city || !age || !qualMarks || !passingYear || !interest || !intake) {
+                        if (!fullName || !phone || !email || !city || !age || !qualMarks || !interest) {
                             alert('Please fill in all mandatory fields before submitting.');
                             return false;
                         }
-                        return { fullName, phoneEmail, city, age, qualMarks, passingYear, interest, intake };
+                        return { fullName, phone, email, city, age, qualMarks, interest };
                     }
 
                     function submitToAdminPanel(event) {
@@ -162,13 +151,12 @@
                             },
                             body: JSON.stringify({
                                 wa_full_name: fields.fullName,
-                                wa_phone_email: fields.phoneEmail,
+                                wa_phone: fields.phone,
+                                wa_email: fields.email,
                                 wa_city: fields.city,
                                 wa_age: fields.age,
                                 wa_qualification_marks: fields.qualMarks,
-                                wa_passing_year: fields.passingYear,
                                 wa_interest: fields.interest,
-                                wa_intake: fields.intake,
                                 lead_type: 'admin_form'
                             })
                         })
@@ -200,26 +188,24 @@
                             },
                             body: JSON.stringify({
                                 wa_full_name: fields.fullName,
-                                wa_phone_email: fields.phoneEmail,
+                                wa_phone: fields.phone,
+                                wa_email: fields.email,
                                 wa_city: fields.city,
                                 wa_age: fields.age,
                                 wa_qualification_marks: fields.qualMarks,
-                                wa_passing_year: fields.passingYear,
                                 wa_interest: fields.interest,
-                                wa_intake: fields.intake,
                                 lead_type: 'whatsapp'
                             })
                         }).catch(err => console.log('Lead recording status:', err));
 
                         let message = `*🌟 New Student Eligibility Evaluation 🌟*\n\n` +
                                       `*👤 Full Name:* ${fields.fullName}\n` +
-                                      `*📞 Phone / Email:* ${fields.phoneEmail}\n` +
+                                      `*📞 Phone:* ${fields.phone}\n` +
+                                      `*✉️ Email:* ${fields.email}\n` +
                                       `*🏙️ City Name:* ${fields.city}\n` +
                                       `*🎂 Age:* ${fields.age} Years\n` +
-                                      `*🎓 Qualification & Marks:* ${fields.qualMarks}\n` +
-                                      `*📅 Passing Year:* ${fields.passingYear}\n` +
-                                      `*🌍 Target Destination:* ${fields.interest}\n` +
-                                      `*🎯 Preferred Intake:* ${fields.intake}\n\n` +
+                                      `*🎓 Qualification, Marks & Passing Year:* ${fields.qualMarks}\n` +
+                                      `*🌍 Target Destination:* ${fields.interest}\n\n` +
                                       `_Sent via Euro World Education Website_`;
 
                         const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
