@@ -78,18 +78,39 @@
                 </a>
                 
                 <!-- Nav Links -->
-                <nav class="hidden lg:flex flex-1 justify-end mr-8 space-x-6 text-sm font-semibold text-[#0b1b3d]">
-                    <a href="{{ route('home') }}" class="relative group">
+                <nav class="hidden lg:flex flex-1 justify-end mr-8 space-x-6 text-sm font-semibold text-[#0b1b3d] items-center">
+                    <a href="{{ route('home') }}" class="relative group py-2">
                         Home
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-red-600"></span>
                     </a>
-                    <a href="{{ route('about') }}" class="hover:text-red-600 transition-colors">About Us</a>
-                    <a href="{{ route('destinations') }}" class="hover:text-red-600 transition-colors flex items-center gap-1">Destinations <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
-                    <a href="{{ route('services') }}" class="hover:text-red-600 transition-colors flex items-center gap-1">Services <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
-                    <a href="{{ route('scholarships') }}" class="hover:text-red-600 transition-colors">Scholarships</a>
-                    <a href="{{ route('success-stories') }}" class="hover:text-red-600 transition-colors">Success Stories</a>
-                    <a href="{{ route('blog') }}" class="hover:text-red-600 transition-colors">News & Updates</a>
-                    <a href="{{ route('contact') }}" class="hover:text-red-600 transition-colors">Contact Us</a>
+                    
+                    <!-- Destinations Dropdown -->
+                    <div class="relative group cursor-pointer h-full flex items-center">
+                        <span class="hover:text-red-600 transition-colors flex items-center gap-1 py-2">
+                            Destinations <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </span>
+                        <div class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Destination 1</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Destination 2</a>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('services') }}" class="hover:text-red-600 transition-colors flex items-center gap-1 py-2">Services <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
+                    
+                    <!-- Scholarships Dropdown -->
+                    <div class="relative group cursor-pointer h-full flex items-center">
+                        <span class="hover:text-red-600 transition-colors flex items-center gap-1 py-2">
+                            Scholarships <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </span>
+                        <div class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Scholarship 1</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Scholarship 2</a>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('success-stories') }}" class="hover:text-red-600 transition-colors py-2">Success Stories</a>
+                    <a href="{{ route('blog') }}" class="hover:text-red-600 transition-colors py-2">News & Updates</a>
+                    <a href="{{ route('about') }}" class="hover:text-red-600 transition-colors py-2">About Us</a>
                 </nav>
 
                 <!-- CTA Button -->
@@ -107,13 +128,32 @@
             <!-- Mobile Menu Overlay -->
             <div id="mobile-menu" class="hidden absolute top-[72px] left-0 w-full bg-[#0b1b3d] text-white shadow-xl border-t border-white/10 flex flex-col font-sans">
                 <a href="{{ route('home') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Home</a>
-                <a href="{{ route('about') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">About Us</a>
-                <a href="{{ route('destinations') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center">Destinations <i class="fa-solid fa-chevron-down text-xs"></i></a>
+                
+                <div class="mobile-dropdown w-full">
+                    <button class="w-full text-left px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        Destinations <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="hidden bg-[#0a1530] text-sm flex flex-col">
+                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Destination 1</a>
+                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Destination 2</a>
+                    </div>
+                </div>
+
                 <a href="{{ route('services') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center">Services <i class="fa-solid fa-chevron-down text-xs"></i></a>
-                <a href="{{ route('scholarships') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Scholarships</a>
+                
+                <div class="mobile-dropdown w-full">
+                    <button class="w-full text-left px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        Scholarships <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="hidden bg-[#0a1530] text-sm flex flex-col">
+                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Scholarship 1</a>
+                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Scholarship 2</a>
+                    </div>
+                </div>
+
                 <a href="{{ route('success-stories') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Success Stories</a>
                 <a href="{{ route('blog') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">News & Updates</a>
-                <a href="{{ route('contact') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Contact Us</a>
+                <a href="{{ route('about') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">About Us</a>
                 <div class="p-6">
                     <a href="{{ route('contact') }}" class="mobile-link flex items-center justify-center gap-2 w-full bg-[#c6181b] text-white py-3 rounded-full font-semibold hover:bg-red-800 transition-colors">
                         <i class="fa-regular fa-paper-plane"></i> Free Consultation
