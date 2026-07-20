@@ -305,25 +305,91 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Live Chat Button -->
-    @php
-        $rawWaFloat = $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '923000000000');
-        $cleanWaFloat = preg_replace('/[^0-9]/', '', $rawWaFloat);
-        if (empty($cleanWaFloat)) {
-            $cleanWaFloat = '923000000000';
-        }
-        $waUrlFloat = 'https://wa.me/' . $cleanWaFloat . '?text=' . urlencode('Hello Euro World Education, I am interested in studying abroad and would like more information.');
-    @endphp
-    <a href="{{ $waUrlFloat }}" target="_blank" aria-label="Chat with us on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebe5d] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transform hover:scale-110 transition-all duration-300 group border-2 border-white/40">
-        <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500 border border-white"></span>
-        </span>
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <span class="absolute right-full mr-3 px-3 py-1.5 bg-slate-900/90 text-white text-xs font-bold rounded-lg whitespace-nowrap shadow-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Chat on WhatsApp
-        </span>
-    </a>
+    <!-- Floating Contact Widgets Container -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end">
+
+        <!-- Phone Widget -->
+        <div class="relative group flex items-center justify-end">
+            @php
+                $hasMultiplePhones = isset($global_phone_numbers) && $global_phone_numbers->count() > 0;
+                $rawPhoneFloat = $global_settings['site_phone'] ?? '923000000000';
+                $cleanPhoneFloat = preg_replace('/[^0-9+]/', '', $rawPhoneFloat);
+            @endphp
+            
+            <!-- Phone Menu (Shows on hover) -->
+            <div class="absolute right-full mr-4 bottom-0 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 w-64 translate-y-2 group-hover:translate-y-0">
+                <div class="bg-blue-600 text-white px-4 py-3 font-bold text-sm">
+                    <i class="fa-solid fa-phone mr-2"></i> Call Us
+                </div>
+                <div class="flex flex-col">
+                    @if($hasMultiplePhones)
+                        @foreach($global_phone_numbers as $ph)
+                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $ph->number) }}" class="px-4 py-3 border-b border-slate-50 hover:bg-slate-50 transition-colors flex flex-col last:border-0">
+                                <span class="font-bold text-slate-800 text-sm">{{ $ph->label }}</span>
+                                <span class="text-xs text-slate-500">{{ $ph->number }}</span>
+                            </a>
+                        @endforeach
+                    @else
+                        <a href="tel:{{ $cleanPhoneFloat }}" class="px-4 py-3 hover:bg-slate-50 transition-colors flex flex-col">
+                            <span class="font-bold text-slate-800 text-sm">Main Office</span>
+                            <span class="text-xs text-slate-500">{{ $rawPhoneFloat }}</span>
+                        </a>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Phone Button -->
+            <a href="{{ $hasMultiplePhones ? 'javascript:void(0)' : 'tel:' . $cleanPhoneFloat }}" aria-label="Call us" class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 border-2 border-white/40">
+                <i class="fa-solid fa-phone text-2xl"></i>
+            </a>
+        </div>
+
+        <!-- WhatsApp Widget -->
+        <div class="relative group flex items-center justify-end">
+            @php
+                $hasMultipleWa = isset($global_whatsapp_numbers) && $global_whatsapp_numbers->count() > 0;
+                $rawWaFloat = $global_settings['site_whatsapp'] ?? ($global_settings['site_phone'] ?? '923000000000');
+                $cleanWaFloat = preg_replace('/[^0-9]/', '', $rawWaFloat);
+                $defaultWaUrl = 'https://wa.me/' . ($cleanWaFloat ?: '923000000000') . '?text=' . urlencode('Hello Euro World Education, I am interested in studying abroad and would like more information.');
+            @endphp
+
+            <!-- WA Menu (Shows on hover) -->
+            <div class="absolute right-full mr-4 bottom-0 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 w-64 translate-y-2 group-hover:translate-y-0">
+                <div class="bg-[#25D366] text-white px-4 py-3 font-bold text-sm">
+                    <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> WhatsApp Us
+                </div>
+                <div class="flex flex-col">
+                    @if($hasMultipleWa)
+                        @foreach($global_whatsapp_numbers as $wa)
+                            @php
+                                $waNum = preg_replace('/[^0-9]/', '', $wa->number);
+                                $url = 'https://wa.me/' . $waNum . '?text=' . urlencode('Hello Euro World Education, I am interested in studying abroad and would like more information.');
+                            @endphp
+                            <a href="{{ $url }}" target="_blank" class="px-4 py-3 border-b border-slate-50 hover:bg-slate-50 transition-colors flex flex-col last:border-0">
+                                <span class="font-bold text-slate-800 text-sm">{{ $wa->label }}</span>
+                                <span class="text-xs text-slate-500">{{ $wa->number }}</span>
+                            </a>
+                        @endforeach
+                    @else
+                        <a href="{{ $defaultWaUrl }}" target="_blank" class="px-4 py-3 hover:bg-slate-50 transition-colors flex flex-col">
+                            <span class="font-bold text-slate-800 text-sm">Main Support</span>
+                            <span class="text-xs text-slate-500">{{ $rawWaFloat }}</span>
+                        </a>
+                    @endif
+                </div>
+            </div>
+
+            <!-- WhatsApp Button -->
+            <a href="{{ $hasMultipleWa ? 'javascript:void(0)' : $defaultWaUrl }}" {!! !$hasMultipleWa ? 'target="_blank"' : '' !!} aria-label="Chat with us on WhatsApp" class="w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full shadow-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 border-2 border-white/40">
+                <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500 border border-white"></span>
+                </span>
+                <i class="fa-brands fa-whatsapp text-3xl"></i>
+            </a>
+        </div>
+
+    </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

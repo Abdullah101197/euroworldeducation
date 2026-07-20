@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Euro World Education | Top Study Abroad Consultants')
+@section('title', 'EuroWorldEducation | Top Study Abroad Consultants')
 @section('description', 'Euro World Education empowers students to achieve global success through quality education in top European universities.')
 
 @section('content')
@@ -17,7 +17,7 @@
     </style>
     <!-- Hero Section (Classic Dark Premium with Background Video) -->
     <section id="hero" class="relative pt-36 lg:pt-44 pb-16 bg-[#040d27]/90 font-sans overflow-hidden">
-        
+
         <!-- Background Video (Backend playing) -->
         <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover -z-20 mix-blend-overlay opacity-60">
             <!-- Placeholder video URL (Replace with your actual video link or local file) -->
@@ -151,7 +151,7 @@
                 <div class="group relative h-[440px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer reveal-up flex flex-col justify-between p-8">
                     <img src="{{ asset('assets/dest_italy_1783324333447.png') }}" alt="Italy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-[#0b1b3d]/75 transition-opacity group-hover:bg-[#0b1b3d]/65"></div>
-                    
+
                     <!-- Top Badge Area (Fixed height for exact alignment) -->
                     <div class="relative z-10 h-8 flex items-center justify-start shrink-0">
                         <div class="bg-[#c6181b] text-white text-xs font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5 shadow-lg tracking-wider">
@@ -162,16 +162,16 @@
                     <!-- Bottom Content Area (Fixed structure so titles align exactly) -->
                     <div class="relative z-10 mt-auto flex flex-col">
                         <h4 class="text-4xl lg:text-5xl font-black text-white mb-3 uppercase tracking-wide drop-shadow-md">Italy</h4>
-                        
+
                         <!-- Flag Badge -->
                         <div class="w-14 h-9 bg-white rounded-md p-0.5 mb-4 flex overflow-hidden shadow-md shrink-0 border border-white/25">
                             <div class="w-1/3 h-full bg-[#009246] rounded-l-sm"></div>
                             <div class="w-1/3 h-full bg-white"></div>
                             <div class="w-1/3 h-full bg-[#CE2B37] rounded-r-sm"></div>
                         </div>
-                        
+
                         <p class="text-white/90 text-xs sm:text-sm mb-6 h-12 overflow-hidden leading-relaxed font-medium line-clamp-2">Affordable public universities, scholarship opportunities, and student visa guidance for Pakistani students.</p>
-                        
+
                         <!-- Buttons Row -->
                         <div class="flex items-center gap-3 pt-2">
                             <a href="{{ route('destinations') }}" class="bg-[#c6181b] hover:bg-red-800 text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 shrink-0">
@@ -188,23 +188,23 @@
                 <div class="group relative h-[440px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer reveal-up flex flex-col justify-between p-8" style="transition-delay: 100ms;">
                     <img src="{{ asset('assets/dest_france_1783324344345.png') }}" alt="France" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-[#0b1b3d]/75 transition-opacity group-hover:bg-[#0b1b3d]/65"></div>
-                    
+
                     <!-- Top Spacer for exact alignment -->
                     <div class="relative z-10 h-8 shrink-0"></div>
 
                     <!-- Bottom Content Area -->
                     <div class="relative z-10 mt-auto flex flex-col">
                         <h4 class="text-4xl lg:text-5xl font-black text-white mb-3 uppercase tracking-wide drop-shadow-md">France</h4>
-                        
+
                         <!-- Flag Badge -->
                         <div class="w-14 h-9 bg-white rounded-md p-0.5 mb-4 flex overflow-hidden shadow-md shrink-0 border border-white/25">
                             <div class="w-1/3 h-full bg-[#002654] rounded-l-sm"></div>
                             <div class="w-1/3 h-full bg-white"></div>
                             <div class="w-1/3 h-full bg-[#ED2939] rounded-r-sm"></div>
                         </div>
-                        
+
                         <p class="text-white/90 text-xs sm:text-sm mb-6 h-12 overflow-hidden leading-relaxed font-medium line-clamp-2">Quality education with affordable tuition and excellent future opportunities across globally top-ranked institutions.</p>
-                        
+
                         <!-- Buttons Row -->
                         <div class="flex items-center gap-3 pt-2">
                             <a href="{{ route('destinations') }}" class="bg-[#c6181b] hover:bg-red-800 text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 shrink-0">
@@ -221,22 +221,22 @@
                 <div class="group relative h-[440px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer reveal-up flex flex-col justify-between p-8" style="transition-delay: 200ms;">
                     <img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&q=80" alt="Turkey" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-[#0b1b3d]/75 transition-opacity group-hover:bg-[#0b1b3d]/65"></div>
-                    
+
                     <!-- Top Spacer for exact alignment -->
                     <div class="relative z-10 h-8 shrink-0"></div>
 
                     <!-- Bottom Content Area -->
                     <div class="relative z-10 mt-auto flex flex-col">
                         <h4 class="text-4xl lg:text-5xl font-black text-white mb-3 uppercase tracking-wide drop-shadow-md">Turkey</h4>
-                        
+
                         <!-- Turkey Flag Badge -->
                         <div class="w-14 h-9 bg-[#E30A17] rounded-md p-1 mb-4 flex items-center justify-center overflow-hidden shadow-md shrink-0 border border-white/25 relative">
                             <i class="fa-solid fa-moon text-white text-base -rotate-45"></i>
                             <i class="fa-solid fa-star text-white text-[7px] -ml-1 mt-0.5"></i>
                         </div>
-                        
+
                         <p class="text-white/90 text-xs sm:text-sm mb-6 h-12 overflow-hidden leading-relaxed font-medium line-clamp-2">Top-ranked universities, affordable tuition fees, and rich cultural heritage at the crossroads of Europe and Asia.</p>
-                        
+
                         <!-- Buttons Row -->
                         <div class="flex items-center gap-3 pt-2">
                             <a href="{{ route('destinations') }}" class="bg-[#c6181b] hover:bg-red-800 text-white px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5 shrink-0">

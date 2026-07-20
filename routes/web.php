@@ -51,6 +51,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::put('/destinations/{destination}', [\App\Http\Controllers\Admin\DestinationController::class, 'update'])->name('destinations.update');
     Route::delete('/destinations/{destination}', [\App\Http\Controllers\Admin\DestinationController::class, 'destroy'])->name('destinations.destroy');
 
+    Route::post('/contact-numbers', [\App\Http\Controllers\Admin\ContactNumberController::class, 'store'])->name('contact-numbers.store');
+    Route::put('/contact-numbers/{contact_number}', [\App\Http\Controllers\Admin\ContactNumberController::class, 'update'])->name('contact-numbers.update');
+    Route::delete('/contact-numbers/{contact_number}', [\App\Http\Controllers\Admin\ContactNumberController::class, 'destroy'])->name('contact-numbers.destroy');
+
     Route::resource('/users', \App\Http\Controllers\Admin\UserController::class)->except(['show']);
     Route::resource('/posts', \App\Http\Controllers\PostController::class)->except(['show']);
 

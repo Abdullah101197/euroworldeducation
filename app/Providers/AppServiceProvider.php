@@ -79,10 +79,18 @@ class AppServiceProvider extends ServiceProvider
 
             $global_scholarships = \App\Models\Scholarship::where('is_active', true)->orderBy('sort_order')->get();
             \Illuminate\Support\Facades\View::share('global_scholarships', $global_scholarships);
+
+            $global_contact_numbers = \App\Models\ContactNumber::orderBy('sort_order')->get();
+            $global_whatsapp_numbers = $global_contact_numbers->where('type', 'whatsapp');
+            $global_phone_numbers = $global_contact_numbers->where('type', 'phone');
+            \Illuminate\Support\Facades\View::share('global_whatsapp_numbers', $global_whatsapp_numbers);
+            \Illuminate\Support\Facades\View::share('global_phone_numbers', $global_phone_numbers);
         } catch (\Exception $e) {
             \Illuminate\Support\Facades\View::share('global_settings', collect());
             \Illuminate\Support\Facades\View::share('global_destinations', collect());
             \Illuminate\Support\Facades\View::share('global_scholarships', collect());
+            \Illuminate\Support\Facades\View::share('global_whatsapp_numbers', collect());
+            \Illuminate\Support\Facades\View::share('global_phone_numbers', collect());
         }
     }
 }

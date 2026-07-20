@@ -23,9 +23,18 @@ class SettingController extends Controller
             $destinations = collect();
         }
 
+        try {
+            $contact_numbers = \App\Models\ContactNumber::orderBy('sort_order')->orderBy('id', 'asc')->get();
+            $whatsapp_numbers = $contact_numbers->where('type', 'whatsapp');
+            $phone_numbers = $contact_numbers->where('type', 'phone');
+        } catch (\Exception $e) {
+            $whatsapp_numbers = collect();
+            $phone_numbers = collect();
+        }
+
         $defaultTab = $request->get('tab', 'global');
 
-        return view('admin.settings.index', compact('settings', 'flatSettings', 'scholarships', 'destinations', 'defaultTab'));
+        return view('admin.settings.index', compact('settings', 'flatSettings', 'scholarships', 'destinations', 'whatsapp_numbers', 'phone_numbers', 'defaultTab'));
     }
 
     public function update(Request $request)

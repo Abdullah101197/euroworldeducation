@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </x-slot>
 
-    <div class="py-10 bg-slate-100/60 min-h-screen" x-data="{ activeTab: {{ json_encode($defaultTab ?? 'global') }}, showAddModal: false, showEditModal: false, showAddDestinationModal: false, showEditDestinationModal: false, editItem: { id: '', title: '', badge: '', highlight: '', icon: 'fa-award', color_theme: 'yellow', description: '', button_text: 'Check Your Eligibility', button_link: '/contact' } }">
+    <div class="py-10 bg-slate-100/60 min-h-screen" x-data="{ activeTab: {{ json_encode($defaultTab ?? 'global') }}, showAddModal: false, showEditModal: false, showAddDestinationModal: false, showEditDestinationModal: false, showAddContactModal: false, showEditContactModal: false, editItem: { id: '', title: '', badge: '', highlight: '', icon: 'fa-award', color_theme: 'yellow', description: '', button_text: 'Check Your Eligibility', button_link: '/contact' }, editContactItem: { id: '', type: 'whatsapp', label: '', number: '' } }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             @if(session('success'))
@@ -126,6 +126,19 @@
                                 <span>Scholarships Page</span>
                             </div>
                             <i class="fa-solid fa-chevron-right text-xs transition-transform duration-200" :class="{ 'opacity-100 translate-x-0.5': activeTab === 'scholarships', 'opacity-0 -translate-x-2': activeTab !== 'scholarships' }"></i>
+                        </button>
+
+                        <button type="button" @click="activeTab = 'contact_widgets'" 
+                                :style="activeTab === 'contact_widgets' ? 'background-color: #2563eb !important; color: #ffffff !important;' : ''"
+                                :class="{ 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'contact_widgets', 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold bg-white': activeTab !== 'contact_widgets' }" 
+                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group border border-slate-200/60">
+                            <div class="flex items-center gap-3.5">
+                                <span class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" :class="{ 'bg-white/20 text-white': activeTab === 'contact_widgets', 'bg-green-50 text-green-600 group-hover:bg-green-100': activeTab !== 'contact_widgets' }">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                </span>
+                                <span>Contact Widgets</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-xs transition-transform duration-200" :class="{ 'opacity-100 translate-x-0.5': activeTab === 'contact_widgets', 'opacity-0 -translate-x-2': activeTab !== 'contact_widgets' }"></i>
                         </button>
                     </nav>
 
@@ -590,6 +603,87 @@
                             </div>
                         </div>
 
+                        <!-- Contact Widgets Tab Content -->
+                        <div x-show="activeTab === 'contact_widgets'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-6">
+                            
+                            <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl shadow-slate-200/50 border border-slate-200/80">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-100">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                            </div>
+                                            WhatsApp & Phone Numbers
+                                        </h3>
+                                        <p class="text-sm text-slate-500 mt-2 font-medium">Manage multiple contact numbers for your floating widgets.</p>
+                                    </div>
+                                    <button type="button" @click="showAddContactModal = true; editContactItem = { id: '', type: 'whatsapp', label: '', number: '' };" style="background-color: #2563eb !important; color: #ffffff !important;" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2 transition-all">
+                                        <i class="fa-solid fa-plus text-xs"></i> Add Contact Number
+                                    </button>
+                                </div>
+
+                                <div class="space-y-8">
+                                    <!-- WhatsApp Numbers List -->
+                                    <div>
+                                        <h4 class="font-bold text-slate-700 mb-4 flex items-center gap-2">
+                                            <i class="fa-brands fa-whatsapp text-green-500"></i> WhatsApp Numbers
+                                        </h4>
+                                        @if(isset($whatsapp_numbers) && $whatsapp_numbers->count() > 0)
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                @foreach($whatsapp_numbers as $wa)
+                                                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex justify-between items-center">
+                                                        <div>
+                                                            <div class="font-bold text-slate-800">{{ $wa->label }}</div>
+                                                            <div class="text-sm text-slate-500">{{ $wa->number }}</div>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <button type="button" @click="editContactItem = {{ $wa->toJson() }}; showEditContactModal = true;" class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </button>
+                                                            <button type="submit" form="delete-contact-form-{{ $wa->id }}" onclick="return confirm('Delete this WhatsApp number?')" class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        @else
+                                            <p class="text-sm text-slate-500 italic">No WhatsApp numbers added yet.</p>
+                                        @endif
+                                    </div>
+
+                                    <!-- Phone Numbers List -->
+                                    <div>
+                                        <h4 class="font-bold text-slate-700 mb-4 flex items-center gap-2">
+                                            <i class="fa-solid fa-phone text-blue-500"></i> Phone Numbers
+                                        </h4>
+                                        @if(isset($phone_numbers) && $phone_numbers->count() > 0)
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                @foreach($phone_numbers as $ph)
+                                                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex justify-between items-center">
+                                                        <div>
+                                                            <div class="font-bold text-slate-800">{{ $ph->label }}</div>
+                                                            <div class="text-sm text-slate-500">{{ $ph->number }}</div>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <button type="button" @click="editContactItem = {{ $ph->toJson() }}; showEditContactModal = true;" class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </button>
+                                                            <button type="submit" form="delete-contact-form-{{ $ph->id }}" onclick="return confirm('Delete this Phone number?')" class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        @else
+                                            <p class="text-sm text-slate-500 italic">No Phone numbers added yet.</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Bottom Sticky Save Bar on Mobile -->
                         <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-end lg:hidden">
                             <button type="submit" style="background-color: #2563eb !important; color: #ffffff !important;" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-xl shadow-blue-500/30 transition-all cursor-pointer">
@@ -614,6 +708,24 @@
                     @if(isset($destinations))
                         @foreach($destinations as $item)
                             <form id="delete-destination-form-{{ $item->id }}" method="POST" action="{{ route('admin.destinations.destroy', $item->id) }}" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        @endforeach
+                    @endif
+
+                    <!-- Standalone Delete Forms for Contact Numbers -->
+                    @if(isset($whatsapp_numbers))
+                        @foreach($whatsapp_numbers as $item)
+                            <form id="delete-contact-form-{{ $item->id }}" method="POST" action="{{ route('admin.contact-numbers.destroy', $item->id) }}" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        @endforeach
+                    @endif
+                    @if(isset($phone_numbers))
+                        @foreach($phone_numbers as $item)
+                            <form id="delete-contact-form-{{ $item->id }}" method="POST" action="{{ route('admin.contact-numbers.destroy', $item->id) }}" style="display: none;">
                                 @csrf
                                 @method('DELETE')
                             </form>
@@ -804,6 +916,93 @@
                                     <button type="button" @click="showEditModal = false" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Cancel</button>
                                     <button type="submit" style="background-color: #2563eb !important; color: #ffffff !important;" class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md">
                                         <i class="fa-solid fa-check mr-1.5"></i> Update Scholarship Box
+                                    </button>
+                                </div>
+                            </form>
+                    <!-- Modal: Add New Contact Widget -->
+                    <div x-show="showAddContactModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+                        <div @click.away="showAddContactModal = false" class="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-lg w-full overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+                            <div class="px-6 py-5 bg-gradient-to-r from-green-600 to-teal-600 text-white flex items-center justify-between shrink-0">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-address-book"></i></span>
+                                    <div>
+                                        <h4 class="font-extrabold text-lg">Add Contact Number</h4>
+                                        <p class="text-xs text-green-100">Add a WhatsApp or Phone number to the floating widget.</p>
+                                    </div>
+                                </div>
+                                <button type="button" @click="showAddContactModal = false" class="text-white/70 hover:text-white text-2xl font-bold">&times;</button>
+                            </div>
+
+                            <form method="POST" action="{{ route('admin.contact-numbers.store') }}" class="p-6 space-y-5 overflow-y-auto grow">
+                                @csrf
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Type <span class="text-red-500">*</span></label>
+                                        <select name="type" required class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-bold text-slate-800">
+                                            <option value="whatsapp">WhatsApp Number</option>
+                                            <option value="phone">Phone Number</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Label / Title <span class="text-red-500">*</span></label>
+                                        <input type="text" name="label" required placeholder="e.g. Visa Consultant" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                                        <input type="text" name="number" required placeholder="e.g. +923000000000" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                        <p class="text-[10px] text-slate-500 mt-1">Include country code for WhatsApp (e.g. 923...)</p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3 shrink-0">
+                                    <button type="button" @click="showAddContactModal = false" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Cancel</button>
+                                    <button type="submit" style="background-color: #059669 !important; color: #ffffff !important;" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md">
+                                        <i class="fa-solid fa-check mr-1.5"></i> Save Contact
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Modal: Edit Contact Widget -->
+                    <div x-show="showEditContactModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+                        <div @click.away="showEditContactModal = false" class="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-lg w-full overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+                            <div class="px-6 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex items-center justify-between shrink-0">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-pen-to-square"></i></span>
+                                    <div>
+                                        <h4 class="font-extrabold text-lg">Edit Contact Number</h4>
+                                        <p class="text-xs text-blue-100">Update details for <span x-text="editContactItem.label" class="font-bold underline"></span></p>
+                                    </div>
+                                </div>
+                                <button type="button" @click="showEditContactModal = false" class="text-white/70 hover:text-white text-2xl font-bold">&times;</button>
+                            </div>
+
+                            <form :action="`/admin/contact-numbers/${editContactItem.id}`" method="POST" class="p-6 space-y-5 overflow-y-auto grow">
+                                @csrf
+                                @method('PUT')
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Type <span class="text-red-500">*</span></label>
+                                        <select name="type" x-model="editContactItem.type" required class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-bold text-slate-800">
+                                            <option value="whatsapp">WhatsApp Number</option>
+                                            <option value="phone">Phone Number</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Label / Title <span class="text-red-500">*</span></label>
+                                        <input type="text" name="label" x-model="editContactItem.label" required class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                                        <input type="text" name="number" x-model="editContactItem.number" required class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3 shrink-0">
+                                    <button type="button" @click="showEditContactModal = false" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Cancel</button>
+                                    <button type="submit" style="background-color: #2563eb !important; color: #ffffff !important;" class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md">
+                                        <i class="fa-solid fa-check mr-1.5"></i> Update Contact
                                     </button>
                                 </div>
                             </form>
