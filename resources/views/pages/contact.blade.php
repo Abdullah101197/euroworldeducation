@@ -62,8 +62,8 @@
                     <!-- Row 2: Email & City Name -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
-                            <input type="email" id="wa_email" name="wa_email" required placeholder="Enter your Email" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email Address (Optional)</label>
+                            <input type="email" id="wa_email" name="wa_email" placeholder="Enter your Email" class="w-full px-4 py-3 sm:py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:border-[#25D366] transition-all text-slate-800 placeholder:text-slate-400">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1.5">City Name <span class="text-red-500">*</span></label>
@@ -127,7 +127,7 @@
                         const qualMarks = document.getElementById('wa_qualification_marks').value.trim();
                         const interest = document.getElementById('wa_interest').value;
 
-                        if (!fullName || !phone || !email || !city || !age || !qualMarks || !interest) {
+                        if (!fullName || !phone || !city || !age || !qualMarks || !interest) {
                             alert('Please fill in all mandatory fields before submitting.');
                             return false;
                         }
