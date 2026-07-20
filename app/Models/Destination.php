@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Scholarship extends Model
+class Destination extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
         'slug',
-        'badge',
-        'highlight',
-        'icon',
-        'color_theme',
-        'description',
-        'button_text',
-        'button_link',
-        'sort_order',
+        'content',
+        'image',
         'is_active',
+        'sort_order',
     ];
 
     protected $casts = [

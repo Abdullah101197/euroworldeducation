@@ -17,9 +17,15 @@ class SettingController extends Controller
             $scholarships = collect();
         }
 
+        try {
+            $destinations = \App\Models\Destination::orderBy('sort_order')->orderBy('id', 'asc')->get();
+        } catch (\Exception $e) {
+            $destinations = collect();
+        }
+
         $defaultTab = $request->get('tab', 'global');
 
-        return view('admin.settings.index', compact('settings', 'flatSettings', 'scholarships', 'defaultTab'));
+        return view('admin.settings.index', compact('settings', 'flatSettings', 'scholarships', 'destinations', 'defaultTab'));
     }
 
     public function update(Request $request)

@@ -90,12 +90,17 @@
                             Destinations <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </span>
                         <div class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Destination 1</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Destination 2</a>
+                            @if(isset($global_destinations) && count($global_destinations) > 0)
+                                @foreach($global_destinations as $destination)
+                                    <a href="{{ route('destinations.detail', $destination->slug ?? $destination->id) }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">{{ $destination->title }}</a>
+                                @endforeach
+                            @else
+                                <a href="{{ route('destinations') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">All Destinations</a>
+                            @endif
                         </div>
                     </div>
 
-                    <a href="{{ route('services') }}" class="hover:text-red-600 transition-colors flex items-center gap-1 py-2">Services <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
+                    <a href="{{ route('services') }}" class="hover:text-red-600 transition-colors py-2">Services</a>
                     
                     <!-- Scholarships Dropdown -->
                     <div class="relative group cursor-pointer h-full flex items-center">
@@ -103,8 +108,13 @@
                             Scholarships <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </span>
                         <div class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Scholarship 1</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">Scholarship 2</a>
+                            @if(isset($global_scholarships) && count($global_scholarships) > 0)
+                                @foreach($global_scholarships as $scholarship)
+                                    <a href="{{ route('scholarships.detail', $scholarship->slug ?? $scholarship->id) }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">{{ $scholarship->title }}</a>
+                                @endforeach
+                            @else
+                                <a href="{{ route('scholarships') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-colors">All Scholarships</a>
+                            @endif
                         </div>
                     </div>
 
@@ -134,20 +144,30 @@
                         Destinations <i class="fa-solid fa-chevron-down text-xs"></i>
                     </button>
                     <div class="hidden bg-[#0a1530] text-sm flex flex-col">
-                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Destination 1</a>
-                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Destination 2</a>
+                        @if(isset($global_destinations) && count($global_destinations) > 0)
+                            @foreach($global_destinations as $destination)
+                                <a href="{{ route('destinations.detail', $destination->slug ?? $destination->id) }}" class="px-8 py-3 border-b border-white/5 hover:text-red-400">{{ $destination->title }}</a>
+                            @endforeach
+                        @else
+                            <a href="{{ route('destinations') }}" class="px-8 py-3 border-b border-white/5 hover:text-red-400">All Destinations</a>
+                        @endif
                     </div>
                 </div>
 
-                <a href="{{ route('services') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center">Services <i class="fa-solid fa-chevron-down text-xs"></i></a>
+                <a href="{{ route('services') }}" class="mobile-link px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors">Services</a>
                 
                 <div class="mobile-dropdown w-full">
                     <button class="w-full text-left px-6 py-4 border-b border-white/10 hover:bg-white/5 transition-colors flex justify-between items-center" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         Scholarships <i class="fa-solid fa-chevron-down text-xs"></i>
                     </button>
                     <div class="hidden bg-[#0a1530] text-sm flex flex-col">
-                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Scholarship 1</a>
-                        <a href="#" class="px-8 py-3 border-b border-white/5 hover:text-red-400">Scholarship 2</a>
+                        @if(isset($global_scholarships) && count($global_scholarships) > 0)
+                            @foreach($global_scholarships as $scholarship)
+                                <a href="{{ route('scholarships.detail', $scholarship->slug ?? $scholarship->id) }}" class="px-8 py-3 border-b border-white/5 hover:text-red-400">{{ $scholarship->title }}</a>
+                            @endforeach
+                        @else
+                            <a href="{{ route('scholarships') }}" class="px-8 py-3 border-b border-white/5 hover:text-red-400">All Scholarships</a>
+                        @endif
                     </div>
                 </div>
 

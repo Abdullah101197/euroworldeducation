@@ -18,6 +18,17 @@ class PageController extends Controller
     public function about() { return view('pages.about'); }
     public function services() { return view('pages.services'); }
     public function destinations() { return view('pages.destinations'); }
+    
+    public function destinationDetail($slug)
+    {
+        try {
+            $destination = \App\Models\Destination::where('slug', $slug)->orWhere('id', $slug)->firstOrFail();
+            return view('pages.destination-detail', compact('destination'));
+        } catch (\Exception $e) {
+            abort(404);
+        }
+    }
+
     public function scholarships() 
     { 
         try {
@@ -26,6 +37,16 @@ class PageController extends Controller
             $scholarships = collect();
         }
         return view('pages.scholarships', compact('scholarships')); 
+    }
+
+    public function scholarshipDetail($slug)
+    {
+        try {
+            $scholarship = \App\Models\Scholarship::where('slug', $slug)->orWhere('id', $slug)->firstOrFail();
+            return view('pages.scholarship-detail', compact('scholarship'));
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
     public function successStories() { return view('pages.success-stories'); }
     public function blog() 

@@ -73,8 +73,16 @@ class AppServiceProvider extends ServiceProvider
         try {
             $settings = \App\Models\Setting::all()->pluck('value', 'key');
             \Illuminate\Support\Facades\View::share('global_settings', $settings);
+            
+            $global_destinations = \App\Models\Destination::where('is_active', true)->orderBy('sort_order')->get();
+            \Illuminate\Support\Facades\View::share('global_destinations', $global_destinations);
+
+            $global_scholarships = \App\Models\Scholarship::where('is_active', true)->orderBy('sort_order')->get();
+            \Illuminate\Support\Facades\View::share('global_scholarships', $global_scholarships);
         } catch (\Exception $e) {
             \Illuminate\Support\Facades\View::share('global_settings', collect());
+            \Illuminate\Support\Facades\View::share('global_destinations', collect());
+            \Illuminate\Support\Facades\View::share('global_scholarships', collect());
         }
     }
 }

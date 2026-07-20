@@ -8,7 +8,9 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/destinations', [PageController::class, 'destinations'])->name('destinations');
+Route::get('/destinations/{slug}', [PageController::class, 'destinationDetail'])->name('destinations.detail');
 Route::get('/scholarships', [PageController::class, 'scholarships'])->name('scholarships');
+Route::get('/scholarships/{slug}', [PageController::class, 'scholarshipDetail'])->name('scholarships.detail');
 Route::get('/success-stories', [PageController::class, 'successStories'])->name('success-stories');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/news', [PageController::class, 'blog'])->name('news');
@@ -43,6 +45,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::post('/scholarships', [\App\Http\Controllers\Admin\ScholarshipController::class, 'store'])->name('scholarships.store');
     Route::put('/scholarships/{scholarship}', [\App\Http\Controllers\Admin\ScholarshipController::class, 'update'])->name('scholarships.update');
     Route::delete('/scholarships/{scholarship}', [\App\Http\Controllers\Admin\ScholarshipController::class, 'destroy'])->name('scholarships.destroy');
+
+    Route::post('/destinations', [\App\Http\Controllers\Admin\DestinationController::class, 'store'])->name('destinations.store');
+    Route::get('/destinations/{destination}/edit', [\App\Http\Controllers\Admin\DestinationController::class, 'edit'])->name('destinations.edit');
+    Route::put('/destinations/{destination}', [\App\Http\Controllers\Admin\DestinationController::class, 'update'])->name('destinations.update');
+    Route::delete('/destinations/{destination}', [\App\Http\Controllers\Admin\DestinationController::class, 'destroy'])->name('destinations.destroy');
 
     Route::resource('/users', \App\Http\Controllers\Admin\UserController::class)->except(['show']);
     Route::resource('/posts', \App\Http\Controllers\PostController::class)->except(['show']);

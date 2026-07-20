@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </x-slot>
 
-    <div class="py-10 bg-slate-100/60 min-h-screen" x-data="{ activeTab: {{ json_encode($defaultTab ?? 'global') }}, showAddModal: false, showEditModal: false, editItem: { id: '', title: '', badge: '', highlight: '', icon: 'fa-award', color_theme: 'yellow', description: '', button_text: 'Check Your Eligibility', button_link: '/contact' } }">
+    <div class="py-10 bg-slate-100/60 min-h-screen" x-data="{ activeTab: {{ json_encode($defaultTab ?? 'global') }}, showAddModal: false, showEditModal: false, showAddDestinationModal: false, showEditDestinationModal: false, editItem: { id: '', title: '', badge: '', highlight: '', icon: 'fa-award', color_theme: 'yellow', description: '', button_text: 'Check Your Eligibility', button_link: '/contact' } }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             @if(session('success'))
@@ -100,6 +100,19 @@
                                 <span>About Page</span>
                             </div>
                             <i class="fa-solid fa-chevron-right text-xs transition-transform duration-200" :class="{ 'opacity-100 translate-x-0.5': activeTab === 'about', 'opacity-0 -translate-x-2': activeTab !== 'about' }"></i>
+                        </button>
+
+                        <button type="button" @click="activeTab = 'destinations'" 
+                                :style="activeTab === 'destinations' ? 'background-color: #2563eb !important; color: #ffffff !important;' : ''"
+                                :class="{ 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold translate-x-1': activeTab === 'destinations', 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold bg-white': activeTab !== 'destinations' }" 
+                                class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm transition-all duration-200 text-left group border border-slate-200/60">
+                            <div class="flex items-center gap-3.5">
+                                <span class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" :class="{ 'bg-white/20 text-white': activeTab === 'destinations', 'bg-teal-50 text-teal-600 group-hover:bg-teal-100': activeTab !== 'destinations' }">
+                                    <i class="fa-solid fa-plane text-sm"></i>
+                                </span>
+                                <span>Destinations</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-xs transition-transform duration-200" :class="{ 'opacity-100 translate-x-0.5': activeTab === 'destinations', 'opacity-0 -translate-x-2': activeTab !== 'destinations' }"></i>
                         </button>
 
                         <button type="button" @click="activeTab = 'scholarships'" 
@@ -380,6 +393,94 @@
                             </div>
                         </div>
 
+                        <!-- Destinations Page Tab -->
+                        <div x-show="activeTab === 'destinations'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="mb-8 pb-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                <div>
+                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Destinations Page & Manager</h3>
+                                    <p class="text-sm text-slate-500 mt-1">Manage your top header and add, edit, or delete dynamic destination items.</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" @click="showAddDestinationModal = true" style="background-color: #0d9488 !important; color: #ffffff !important;" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-teal-500/20 transition-all">
+                                        <i class="fa-solid fa-plus"></i> + Add New Destination
+                                    </button>
+                                    <a href="{{ url('/destinations') }}" target="_blank" class="text-xs font-bold text-teal-600 bg-teal-50 border border-teal-100 hover:bg-teal-100 px-3 py-2 rounded-xl flex items-center gap-1.5 transition-colors">
+                                        <i class="fa-solid fa-external-link-alt text-[10px]"></i> View Live Page
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-8">
+                                <!-- Easy Hero Setup -->
+                                <div class="bg-slate-50/80 p-6 rounded-2xl border border-slate-200/70 shadow-sm space-y-4">
+                                    <h4 class="text-sm font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200/70 pb-3">
+                                        <span class="w-7 h-7 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center text-xs"><i class="fa-solid fa-bookmark"></i></span>
+                                        Page Top Header Banner Setup
+                                    </h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div>
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Main Title Text</label>
+                                            <input type="text" name="destinations_hero_title" value="{{ $flatSettings['destinations_hero_title'] ?? 'Top' }}" placeholder="e.g. Top" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-medium transition-all text-slate-800">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Highlighted Word</label>
+                                            <input type="text" name="destinations_hero_highlight" value="{{ $flatSettings['destinations_hero_highlight'] ?? 'Destinations' }}" placeholder="e.g. Destinations" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm py-2.5 font-bold text-teal-600 transition-all">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Hero Subtitle / Short Description</label>
+                                            <textarea name="destinations_hero_subtitle" rows="2" class="w-full rounded-xl border-slate-200 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm p-3.5 font-medium transition-all text-slate-800">{{ $flatSettings['destinations_hero_subtitle'] ?? 'Explore the best countries for your higher education journey.' }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Destinations List -->
+                                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                                        <div>
+                                            <h4 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+                                                <i class="fa-solid fa-plane text-teal-500"></i> Active Destinations on Public Site
+                                            </h4>
+                                        </div>
+                                        <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-extrabold">{{ isset($destinations) ? $destinations->count() : 0 }} Destinations</span>
+                                    </div>
+
+                                    @if(isset($destinations) && $destinations->count() > 0)
+                                        <div class="grid grid-cols-1 gap-4">
+                                            @foreach($destinations as $item)
+                                                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                                    <div class="flex items-start gap-4">
+                                                        @if($item->image)
+                                                            <img src="{{ asset('storage/' . $item->image) }}" class="w-16 h-16 rounded-xl object-cover shadow">
+                                                        @else
+                                                            <div class="w-16 h-16 rounded-xl bg-slate-200 flex items-center justify-center text-slate-400"><i class="fa-solid fa-image"></i></div>
+                                                        @endif
+                                                        <div>
+                                                            <h5 class="text-lg font-extrabold text-slate-900">{{ $item->title }}</h5>
+                                                            <p class="text-xs text-slate-500 mt-1">Slug: {{ $item->slug }}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center gap-2.5 shrink-0">
+                                                        <a href="{{ route('admin.destinations.edit', $item->id) }}" style="background-color: #2563eb !important; color: #ffffff !important;" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
+                                                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                                                        </a>
+                                                        <button type="submit" form="delete-destination-form-{{ $item->id }}" onclick="return confirm('Delete this destination?')" style="background-color: #dc2626 !important; color: #ffffff !important;" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
+                                                            <i class="fa-solid fa-trash"></i> Delete
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @else
+                                        <div class="text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+                                            <i class="fa-solid fa-plane text-4xl text-slate-300 mb-3"></i>
+                                            <h5 class="font-bold text-slate-700">No Destinations Found</h5>
+                                            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Click the "+ Add New Destination" button above to create one.</p>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Scholarships Page Tab -->
                         <div x-show="activeTab === 'scholarships'" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter-end="opacity-100 translate-y-0">
                             <div class="mb-8 pb-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -508,6 +609,57 @@
                             </form>
                         @endforeach
                     @endif
+
+                    <!-- Standalone Delete Forms for Destinations -->
+                    @if(isset($destinations))
+                        @foreach($destinations as $item)
+                            <form id="delete-destination-form-{{ $item->id }}" method="POST" action="{{ route('admin.destinations.destroy', $item->id) }}" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        @endforeach
+                    @endif
+
+                    <!-- Modal: Add New Destination -->
+                    <div x-show="showAddDestinationModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+                        <div @click.away="showAddDestinationModal = false" class="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-2xl w-full overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+                            <div class="px-6 py-5 bg-gradient-to-r from-teal-600 to-emerald-600 text-white flex items-center justify-between shrink-0">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-plane"></i></span>
+                                    <div>
+                                        <h4 class="font-extrabold text-lg">Add New Destination</h4>
+                                        <p class="text-xs text-teal-100">Create a new study destination page.</p>
+                                    </div>
+                                </div>
+                                <button type="button" @click="showAddDestinationModal = false" class="text-white/70 hover:text-white text-2xl font-bold">&times;</button>
+                            </div>
+
+                            <form method="POST" action="{{ route('admin.destinations.store') }}" enctype="multipart/form-data" class="p-6 space-y-5 overflow-y-auto grow">
+                                @csrf
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Destination Name (Country) <span class="text-red-500">*</span></label>
+                                        <input type="text" name="title" required placeholder="e.g. United Kingdom" class="w-full rounded-xl border-slate-200 bg-white shadow-sm text-sm py-2.5 font-medium text-slate-800">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Feature Image</label>
+                                        <input type="file" name="image" accept="image/*" class="w-full rounded-xl border border-slate-200 bg-white shadow-sm text-sm py-2 px-3">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Page Content (Rich Text) <span class="text-red-500">*</span></label>
+                                        <textarea name="content" rows="6" required class="richtext block w-full rounded-xl border-slate-200 shadow-sm text-sm p-3 font-normal text-slate-800"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3 shrink-0">
+                                    <button type="button" @click="showAddDestinationModal = false" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Cancel</button>
+                                    <button type="submit" style="background-color: #0d9488 !important; color: #ffffff !important;" class="px-6 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-md">
+                                        <i class="fa-solid fa-check mr-1.5"></i> Save Destination
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
                     <!-- Modal: Add New Scholarship Box -->
                     <div x-show="showAddModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
