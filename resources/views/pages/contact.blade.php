@@ -214,88 +214,100 @@
                 </script>
             </div>
 
-            <!-- BOTTOM SECTION: Clean Dark Blue Direct Contact Panel (Moved Below with 3 Numbers Grid) -->
-            <div class="max-w-4xl mx-auto bg-[#0b1b3d] text-white p-8 sm:p-12 rounded-[28px] shadow-2xl border border-slate-200/10 relative overflow-hidden">
-                <div class="mb-8 border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">Direct Contact</h2>
-                        <p class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed max-w-xl">Reach out directly to our head office or talk with an evaluation specialist right now across any of our dedicated hotlines.</p>
-                    </div>
-                    <div class="shrink-0 flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-medium text-slate-300">
-                        <i class="fa-solid fa-shield-halved text-emerald-400"></i> Verified Education Counselors
-                    </div>
-                </div>
+            <!-- BOTTOM SECTION: Dynamic Direct Contact Panel -->
+            <div class="max-w-4xl mx-auto mt-8 bg-gradient-to-br from-[#0b1b3d] via-[#102754] to-[#071129] text-white p-8 sm:p-12 rounded-[32px] shadow-[0_20px_50px_-12px_rgba(11,27,61,0.5)] relative overflow-hidden ring-1 ring-white/10">
+                <!-- Abstract Glow -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] transform -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
-                <!-- 3 Hotline Numbers Horizontal / Grid Layout -->
-                <div class="mb-8">
-                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Direct Counselor Hotlines & WhatsApp (Select Any Desk)</span>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                        <!-- Number 1: Primary Hotline -->
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $global_settings['site_whatsapp'] ?? '+923273333046') }}" target="_blank" class="p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all group shadow-md flex flex-col justify-between transform hover:-translate-y-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all">
-                                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                                </div>
-                                <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full font-bold border border-emerald-500/30">Online</span>
-                            </div>
-                            <div>
-                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Primary WhatsApp</span>
-                                <span class="text-base font-extrabold text-white block mt-0.5">{{ $global_settings['site_whatsapp'] ?? '+92 327 3333046' }}</span>
-                                <span class="text-xs text-emerald-400/90 font-medium mt-1 block">Evaluation & Eligibility Desk</span>
-                            </div>
-                        </a>
-
-                        <!-- Number 2: Admissions Counseling -->
-                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $global_settings['site_phone'] ?? '+923008444111') }}" class="p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all group shadow-md flex flex-col justify-between transform hover:-translate-y-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="w-11 h-11 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                                    <i class="fa-solid fa-phone text-lg"></i>
-                                </div>
-                                <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full font-bold border border-blue-500/30">Direct Call</span>
-                            </div>
-                            <div>
-                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Admissions Counseling</span>
-                                <span class="text-base font-extrabold text-white block mt-0.5">{{ $global_settings['site_phone'] ?? '+92 300 8444111' }}</span>
-                                <span class="text-xs text-blue-300 font-medium mt-1 block">University Application Support</span>
-                            </div>
-                        </a>
-
-                        <!-- Number 3: Visa Specialist Desk -->
-                        <a href="https://wa.me/923219998888" target="_blank" class="p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all group shadow-md flex flex-col justify-between transform hover:-translate-y-1">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20 group-hover:bg-amber-500 group-hover:text-white transition-all">
-                                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                                </div>
-                                <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2.5 py-1 rounded-full font-bold border border-amber-500/30">24/7 Desk</span>
-                            </div>
-                            <div>
-                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Visa Specialist Desk</span>
-                                <span class="text-base font-extrabold text-white block mt-0.5">+92 321 9998888</span>
-                                <span class="text-xs text-amber-300 font-medium mt-1 block">Schengen & European Visas</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Head Office & Email Address Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-white/10">
-                    <div class="flex items-start gap-4">
-                        <div class="w-11 h-11 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center shrink-0 border border-red-500/20 mt-0.5">
-                            <i class="fa-solid fa-location-dot text-lg"></i>
-                        </div>
+                <div class="relative z-10">
+                    <div class="mb-10 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
                         <div>
-                            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Head Office Address</span>
-                            <span class="text-sm font-semibold text-slate-100 leading-relaxed block mt-1">{!! nl2br(e($global_settings['site_address'] ?? 'Kalma Chowk, Lahore, Pakistan')) !!}</span>
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wide text-blue-300 mb-4">
+                                <i class="fa-solid fa-headset text-blue-400"></i> Official Support
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white mb-3">Direct Contact Desk</h2>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">Connect instantly with our verified education counselors. Choose any desk below for immediate application assistance or general inquiries.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="w-11 h-11 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 mt-0.5">
-                            <i class="fa-solid fa-envelope text-lg"></i>
+                    <!-- Dynamic Contacts Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+                        @if(isset($global_contact_numbers) && $global_contact_numbers->count() > 0)
+                            @foreach($global_contact_numbers as $contact)
+                                @php
+                                    $isWa = $contact->type === 'whatsapp';
+                                    $cleanPhone = preg_replace('/[^0-9+]/', '', $contact->number);
+                                    $waCleanPhone = preg_replace('/[^0-9]/', '', $contact->number);
+                                    $href = $isWa ? "https://wa.me/{$waCleanPhone}" : "tel:{$cleanPhone}";
+                                    $icon = $isWa ? 'fa-brands fa-whatsapp' : 'fa-solid fa-phone';
+                                    
+                                    $borderHoverClass = $isWa ? 'hover:border-emerald-500/50' : 'hover:border-blue-500/50';
+                                    $shadowHoverClass = $isWa ? 'hover:shadow-emerald-500/20' : 'hover:shadow-blue-500/20';
+                                    $gradientClass = $isWa ? 'from-emerald-500/5' : 'from-blue-500/5';
+                                    $iconBgClass = $isWa ? 'bg-emerald-500/20' : 'bg-blue-500/20';
+                                    $iconTextClass = $isWa ? 'text-emerald-400' : 'text-blue-400';
+                                    $iconBorderClass = $isWa ? 'border-emerald-500/30' : 'border-blue-500/30';
+                                    $iconHoverBgClass = $isWa ? 'group-hover:bg-emerald-500' : 'group-hover:bg-blue-500';
+                                    $badgeHoverBgClass = $isWa ? 'group-hover:bg-emerald-500/20' : 'group-hover:bg-blue-500/20';
+                                    $badgeHoverTextClass = $isWa ? 'group-hover:text-emerald-300' : 'group-hover:text-blue-300';
+                                @endphp
+                                <a href="{{ $href }}" target="_blank" class="group relative p-6 rounded-2xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 {{ $borderHoverClass }} transition-all duration-300 shadow-lg {{ $shadowHoverClass }} overflow-hidden flex flex-col justify-between h-full transform hover:-translate-y-1.5">
+                                    <div class="absolute inset-0 bg-gradient-to-br {{ $gradientClass }} to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div class="relative z-10">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <div class="w-12 h-12 rounded-xl {{ $iconBgClass }} {{ $iconTextClass }} flex items-center justify-center shrink-0 border {{ $iconBorderClass }} group-hover:scale-110 {{ $iconHoverBgClass }} group-hover:text-white transition-all duration-300">
+                                                <i class="{{ $icon }} text-2xl"></i>
+                                            </div>
+                                            <span class="text-[10px] bg-white/10 text-slate-200 px-3 py-1 rounded-full font-bold border border-white/10 {{ $badgeHoverBgClass }} {{ $badgeHoverTextClass }} transition-colors uppercase tracking-wider">{{ $isWa ? 'Online' : 'Direct Call' }}</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1">{{ $contact->label }}</span>
+                                            <span class="text-lg font-black text-white block">{{ $contact->number }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        @else
+                            <!-- Fallback cards if no contacts in DB -->
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $global_settings['site_whatsapp'] ?? '+923273333046') }}" target="_blank" class="group relative p-6 rounded-2xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-emerald-500/50 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 overflow-hidden flex flex-col justify-between h-full transform hover:-translate-y-1.5">
+                                <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                        </div>
+                                        <span class="text-[10px] bg-white/10 text-slate-200 px-3 py-1 rounded-full font-bold border border-white/10 group-hover:bg-emerald-500/20 group-hover:text-emerald-300 transition-colors uppercase tracking-wider">Online</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Primary WhatsApp</span>
+                                        <span class="text-lg font-black text-white block">{{ $global_settings['site_whatsapp'] ?? '+92 327 3333046' }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        @endif
+                    </div>
+
+                    <!-- Head Office & Email Block -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 bg-white/[0.02] -mx-8 sm:-mx-12 -mb-8 sm:-mb-12 px-8 sm:px-12 pb-8 sm:pb-12">
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all shadow-inner">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] font-bold text-blue-300 uppercase tracking-widest mb-1.5">Head Office</span>
+                                <span class="text-sm font-semibold text-slate-200 leading-relaxed block">{!! nl2br(e($global_settings['site_address'] ?? 'Kalma Chowk, Lahore, Pakistan')) !!}</span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Official Email Address</span>
-                            <span class="text-sm font-semibold text-slate-100 block mt-1"><a href="mailto:{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}" class="hover:underline text-blue-300">{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}</a></span>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-all shadow-inner">
+                                <i class="fa-solid fa-envelope-open-text text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] font-bold text-indigo-300 uppercase tracking-widest mb-1.5">Official Email</span>
+                                <a href="mailto:{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}" class="text-sm font-semibold text-slate-200 block hover:text-white transition-colors">{{ $global_settings['site_email'] ?? 'info@euroworldeducation.com' }}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
