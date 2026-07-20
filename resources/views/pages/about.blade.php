@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'About Us - Euro World Education')
+@section('title', 'EuroWorldEducation')
 @section('description', 'Learn about our mission, vision, and 10+ years of trust in guiding students to their dream universities abroad.')
 
 @section('content')
@@ -23,7 +23,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative -mt-10 rounded-t-[40px] z-20 shadow-2xl border-t border-gray-100">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
+
                 <!-- Left Column: Mission & Vision Cards -->
                 <div class="lg:col-span-7 space-y-8">
                     <!-- Mission Card -->
@@ -42,7 +42,7 @@
                             {!! $global_settings['about_mission'] ?? '<p>At Euro World Education, our mission is to empower students by providing transparent, ethical, and comprehensive guidance for studying abroad. We believe that global education transforms lives, and we strive to make this transformation accessible to everyone.</p>' !!}
                         </div>
                     </div>
-                    
+
                     <!-- Vision Card -->
                     <div class="group bg-white p-8 md:p-10 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-100 hover:border-purple-200/80 transition-all duration-300 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
@@ -66,7 +66,7 @@
                     <div class="relative mx-auto max-w-md lg:max-w-none">
                         <div class="absolute inset-0 bg-gradient-to-tr from-[#0b1b3d] to-[#c6181b] rounded-3xl rotate-3 scale-105 opacity-15 blur-lg"></div>
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Consultation" class="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] border border-white/40">
-                        
+
                         <!-- Floating Trust Stats Badge -->
                         <div class="absolute -bottom-8 -left-6 md:-left-8 bg-gradient-to-br from-[#c6181b] to-[#991114] text-white p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 flex items-center gap-5 backdrop-blur-xl animate-bounce-subtle">
                             <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl font-extrabold">
@@ -83,5 +83,5 @@
             </div>
         </div>
     </section>
-    
+
 @endsection
