@@ -56,6 +56,19 @@ class SettingController extends Controller
         // Always unset site_logo from $data so it doesn't get overwritten to null when saving other settings
         unset($data['site_logo']);
 
+        if ($request->hasFile('site_favicon')) {
+            $file = $request->file('site_favicon');
+            if ($file->isValid()) {
+                $filename = 'favicon_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/logos'), $filename);
+                \App\Models\Setting::updateOrCreate(
+                    ['key' => 'site_favicon'],
+                    ['value' => 'uploads/logos/' . $filename, 'group' => 'general']
+                );
+            }
+        }
+        unset($data['site_favicon']);
+
         if ($request->hasFile('home_hero_image')) {
             $file = $request->file('home_hero_image');
             if ($file->isValid()) {

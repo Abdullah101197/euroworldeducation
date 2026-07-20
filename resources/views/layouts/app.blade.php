@@ -11,6 +11,16 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- Favicon -->
+        @php
+            $faviconPath = \App\Models\Setting::where('key', 'site_favicon')->value('value') 
+                ?? \App\Models\Setting::where('key', 'site_logo')->value('value');
+            $finalFavicon = $faviconPath && $faviconPath !== 'images/logo.png' && $faviconPath !== 'images/logo.svg' 
+                ? asset($faviconPath) 
+                : (file_exists(public_path('images/logo.png')) ? asset('images/logo.png') : asset('images/logo.svg'));
+        @endphp
+        <link rel="icon" href="{{ $finalFavicon }}">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

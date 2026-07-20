@@ -10,6 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    @php
+        $faviconPath = $global_settings['site_favicon'] ?? ($global_settings['site_logo'] ?? null);
+        $finalFavicon = $faviconPath && $faviconPath !== 'images/logo.png' && $faviconPath !== 'images/logo.svg' 
+            ? asset($faviconPath) 
+            : (file_exists(public_path('images/logo.png')) ? asset('images/logo.png') : asset('images/logo.svg'));
+    @endphp
+    <link rel="icon" href="{{ $finalFavicon }}">
+    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Tailwind CSS -->

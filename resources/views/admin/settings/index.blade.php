@@ -292,7 +292,7 @@
                                         </div>
                                         <div>
                                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Active Logo Preview & Replacement</label>
-                                            <div class="flex flex-col sm:flex-row items-center gap-6 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-lg text-white">
+                                            <div class="flex flex-col sm:flex-row items-center gap-6 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-lg text-white mb-6">
                                                 <div class="h-20 w-48 flex flex-col items-center justify-center bg-white rounded-xl p-3 shrink-0 shadow-md">
                                                     @php
                                                         $logoPath = $flatSettings['site_logo'] ?? null;
@@ -312,7 +312,32 @@
                                                         <input type="file" name="site_logo" accept="image/*" class="block w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-500 cursor-pointer">
                                                     </div>
                                                     <p class="text-[11px] text-slate-400 mt-2 flex items-center gap-1.5">
-                                                        <i class="fa-solid fa-circle-info text-blue-400"></i> Recommended: 250x60px Transparent PNG. Changes apply instantly after saving.
+                                                        <i class="fa-solid fa-circle-info text-blue-400"></i> Recommended: 250x60px Transparent PNG.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-col sm:flex-row items-center gap-6 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-lg text-white">
+                                                <div class="h-20 w-20 flex flex-col items-center justify-center bg-white rounded-xl p-3 shrink-0 shadow-md">
+                                                    @php
+                                                        $faviconPath = $flatSettings['site_favicon'] ?? null;
+                                                    @endphp
+                                                    @if($faviconPath)
+                                                        <img src="{{ asset($faviconPath) }}" alt="Site Favicon" class="max-h-12 max-w-full object-contain">
+                                                    @else
+                                                        <i class="fa-solid fa-globe text-3xl text-slate-300"></i>
+                                                    @endif
+                                                    <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase tracking-tighter">Favicon</span>
+                                                </div>
+                                                <div class="flex-1 w-full">
+                                                    <label class="block text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                                                        <i class="fa-solid fa-cloud-arrow-up text-sm"></i> Upload Favicon (Icon for Browser Tab)
+                                                    </label>
+                                                    <div class="relative border-2 border-dashed border-slate-700 hover:border-emerald-500 bg-slate-800/80 rounded-xl p-3 transition-all">
+                                                        <input type="file" name="site_favicon" accept="image/png, image/x-icon, image/jpeg, image/svg+xml" class="block w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-emerald-600 file:text-white hover:file:bg-emerald-500 cursor-pointer">
+                                                    </div>
+                                                    <p class="text-[11px] text-slate-400 mt-2 flex items-center gap-1.5">
+                                                        <i class="fa-solid fa-circle-info text-emerald-400"></i> Recommended: 64x64px or 512x512px PNG/ICO.
                                                     </p>
                                                 </div>
                                             </div>
