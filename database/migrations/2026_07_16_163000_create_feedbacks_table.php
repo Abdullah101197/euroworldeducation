@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedbacks', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->integer('rating')->default(5);
-            $table->string('category')->default('General');
-            $table->text('message');
-            $table->boolean('is_reviewed')->default(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('feedbacks')) {
+            Schema::create('feedbacks', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('email')->nullable();
+                $table->string('phone')->nullable();
+                $table->integer('rating')->default(5);
+                $table->string('category')->default('General');
+                $table->text('message');
+                $table->boolean('is_reviewed')->default(false);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

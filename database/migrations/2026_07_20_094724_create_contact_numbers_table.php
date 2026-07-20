@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contact_numbers', function (Blueprint $table) {
-            $table->id();
-            $table->enum('type', ['whatsapp', 'phone'])->default('whatsapp');
-            $table->string('label');
-            $table->string('number');
-            $table->integer('sort_order')->default(0);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('contact_numbers')) {
+            Schema::create('contact_numbers', function (Blueprint $table) {
+                $table->id();
+                $table->enum('type', ['whatsapp', 'phone'])->default('whatsapp');
+                $table->string('label');
+                $table->string('number');
+                $table->integer('sort_order')->default(0);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

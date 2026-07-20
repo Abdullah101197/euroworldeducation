@@ -20,7 +20,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         try {
-            // Auto create scholarships table on live environments if not yet migrated
+            // Auto migrate on live environments if feedbacks or new tables are missing
+            if (!\Illuminate\Support\Facades\Schema::hasTable('feedbacks') || 
+                !\Illuminate\Support\Facades\Schema::hasTable('destinations') || 
+                !\Illuminate\Support\Facades\Schema::hasTable('contact_numbers')) {
+                \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+            }
+            
+            // Auto create scholarships table on live environments if not yet migrated (Legacy fallback)
             if (!\Illuminate\Support\Facades\Schema::hasTable('scholarships')) {
                 \Illuminate\Support\Facades\Schema::create('scholarships', function (\Illuminate\Database\Schema\Blueprint $table) {
                     $table->id();
