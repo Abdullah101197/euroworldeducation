@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="dDbeSuvBMGmX6G2lwGkCL-cnx7hUozLTCav78Qy4oc4" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Euro World Education')</title>
     <meta name="description" content="@yield('description', 'Study abroad with Euro World Education')">
